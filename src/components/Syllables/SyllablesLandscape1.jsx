@@ -1,9 +1,9 @@
 import './Syllables.css';
 
-function SyllablesLandscape1({isLogged, showSyllable}) {
+function SyllablesLandscape1({showSyllable}) {
 
     return (<div className='tableLandscape'>
-            <table border='1' >
+            <table border='1'>
                 <tr className='soglas'>
                     <th className='null'></th>
                     <th>Н</th>
@@ -257,7 +257,7 @@ function SyllablesLandscape1({isLogged, showSyllable}) {
                     <th className='null'></th>
                     <th className='null'></th>
                 </tr>
-            </table >
+            </table>
         </div>
     )
 }

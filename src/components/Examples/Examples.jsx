@@ -1,8 +1,7 @@
-
 import {useRef, useState} from 'react';
 import Example from './Example';
-import helper from "../../files/helper4.gif";
-import {Redirect} from "react-router-dom";
+import helper from '../../files/helper4.gif';
+import {Redirect} from 'react-router-dom';
 
 function Examples({n, isLogged}) {
 
@@ -99,10 +98,10 @@ function Examples({n, isLogged}) {
                 setD5(Math.trunc(Math.random() * (n - 1) + 1));
                 start = new Date();
             }
-        }, 300000);
+        }, 3000);
     }
 
-    if (!isLogged) return <Redirect to="/"  />
+    if (!isLogged) return <Redirect to='/'/>
 
     return (
         <div>
@@ -113,15 +112,15 @@ function Examples({n, isLogged}) {
             <Example arr={arr} a={A4} b={B4} c={C4} d={D4}/>
             <Example arr={arr} a={A5} b={B5} c={C5} d={D5}/>
 
-            <div class='container text-center'>
-                <button class='btn btn-success'  onClick={showResult} ref={button}>Принять</button>
+            <div className='container text-center'>
+                <button className='btn btn-success' onClick={showResult} ref={button}>Принять</button>
             </div>
-            <div class='row align-items-center text-center'>
-                <span class='col-lg-6 col-md-12 col-sm-12 col-xs-12 time' ref={time}></span>
-                <span class='col-lg-6 col-md-12 col-sm-12 col-xs-12 result' ref={result}></span>
+            <div className='row align-items-center text-center'>
+                <span className='col-lg-6 col-md-12 col-sm-12 col-xs-12 time' ref={time}></span>
+                <span className='col-lg-6 col-md-12 col-sm-12 col-xs-12 result' ref={result}></span>
             </div>
             <div>
-                <img class='helper' src={helper} alt="helper"/>
+                <img className='helper' src={helper} alt="helper"/>
             </div>
         </div>
     )

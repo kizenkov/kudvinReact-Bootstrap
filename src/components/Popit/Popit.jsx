@@ -1,5 +1,5 @@
 import Block from './Block';
-import lopp from './lop.mp3';
+import lopp from '../../files/lop.mp3';
 import {useState} from 'react';
 
 function Popit() {
@@ -14,59 +14,59 @@ function Popit() {
     }
 
     return (<div className='container text-center align-self-center popit'>
-                    <div>
-                        <Block lop={lop} score={score} colorBlock={colorBlock} changeScore={changeScore} setScore={setScore}/>
-                        <Block lop={lop} score={score} colorBlock={colorBlock} changeScore={changeScore} setScore={setScore}/>
-                        <Block lop={lop} score={score} colorBlock={colorBlock} changeScore={changeScore} setScore={setScore}/>
-                        <Block lop={lop} score={score} colorBlock={colorBlock} changeScore={changeScore} setScore={setScore}/>
-                        <Block lop={lop} score={score} colorBlock={colorBlock} changeScore={changeScore} setScore={setScore}/>
-                        <Block lop={lop} score={score} colorBlock={colorBlock} changeScore={changeScore} setScore={setScore}/>
-                    </div>
+            <div>
+                <Block lop={lop} score={score} colorBlock={colorBlock} changeScore={changeScore} setScore={setScore}/>
+                <Block lop={lop} score={score} colorBlock={colorBlock} changeScore={changeScore} setScore={setScore}/>
+                <Block lop={lop} score={score} colorBlock={colorBlock} changeScore={changeScore} setScore={setScore}/>
+                <Block lop={lop} score={score} colorBlock={colorBlock} changeScore={changeScore} setScore={setScore}/>
+                <Block lop={lop} score={score} colorBlock={colorBlock} changeScore={changeScore} setScore={setScore}/>
+                <Block lop={lop} score={score} colorBlock={colorBlock} changeScore={changeScore} setScore={setScore}/>
+            </div>
 
-                    <div>
-                        <Block lop={lop} score={score} colorBlock={colorBlock} changeScore={changeScore} setScore={setScore}/>
-                        <Block lop={lop} score={score} colorBlock={colorBlock} changeScore={changeScore} setScore={setScore}/>
-                        <Block lop={lop} score={score} colorBlock={colorBlock} changeScore={changeScore} setScore={setScore}/>
-                        <Block lop={lop} score={score} colorBlock={colorBlock} changeScore={changeScore} setScore={setScore}/>
-                        <Block lop={lop} score={score} colorBlock={colorBlock} changeScore={changeScore} setScore={setScore}/>
-                        <Block lop={lop} score={score} colorBlock={colorBlock} changeScore={changeScore} setScore={setScore}/>
-                    </div>
+            <div>
+                <Block lop={lop} score={score} colorBlock={colorBlock} changeScore={changeScore} setScore={setScore}/>
+                <Block lop={lop} score={score} colorBlock={colorBlock} changeScore={changeScore} setScore={setScore}/>
+                <Block lop={lop} score={score} colorBlock={colorBlock} changeScore={changeScore} setScore={setScore}/>
+                <Block lop={lop} score={score} colorBlock={colorBlock} changeScore={changeScore} setScore={setScore}/>
+                <Block lop={lop} score={score} colorBlock={colorBlock} changeScore={changeScore} setScore={setScore}/>
+                <Block lop={lop} score={score} colorBlock={colorBlock} changeScore={changeScore} setScore={setScore}/>
+            </div>
 
-                    <div>
-                        <Block lop={lop} score={score} colorBlock={colorBlock} changeScore={changeScore} setScore={setScore}/>
-                        <Block lop={lop} score={score} colorBlock={colorBlock} changeScore={changeScore} setScore={setScore}/>
-                        <Block lop={lop} score={score} colorBlock={colorBlock} changeScore={changeScore} setScore={setScore}/>
-                        <Block lop={lop} score={score} colorBlock={colorBlock} changeScore={changeScore} setScore={setScore}/>
-                        <Block lop={lop} score={score} colorBlock={colorBlock} changeScore={changeScore} setScore={setScore}/>
-                        <Block lop={lop} score={score} colorBlock={colorBlock} changeScore={changeScore} setScore={setScore}/>
-                    </div>
+            <div>
+                <Block lop={lop} score={score} colorBlock={colorBlock} changeScore={changeScore} setScore={setScore}/>
+                <Block lop={lop} score={score} colorBlock={colorBlock} changeScore={changeScore} setScore={setScore}/>
+                <Block lop={lop} score={score} colorBlock={colorBlock} changeScore={changeScore} setScore={setScore}/>
+                <Block lop={lop} score={score} colorBlock={colorBlock} changeScore={changeScore} setScore={setScore}/>
+                <Block lop={lop} score={score} colorBlock={colorBlock} changeScore={changeScore} setScore={setScore}/>
+                <Block lop={lop} score={score} colorBlock={colorBlock} changeScore={changeScore} setScore={setScore}/>
+            </div>
 
-                    <div>
-                        <Block lop={lop} score={score} colorBlock={colorBlock} changeScore={changeScore} setScore={setScore}/>
-                        <Block lop={lop} score={score} colorBlock={colorBlock} changeScore={changeScore} setScore={setScore}/>
-                        <Block lop={lop} score={score} colorBlock={colorBlock} changeScore={changeScore} setScore={setScore}/>
-                        <Block lop={lop} score={score} colorBlock={colorBlock} changeScore={changeScore} setScore={setScore}/>
-                        <Block lop={lop} score={score} colorBlock={colorBlock} changeScore={changeScore} setScore={setScore}/>
-                        <Block lop={lop} score={score} colorBlock={colorBlock} changeScore={changeScore} setScore={setScore}/>
-                    </div>
+            <div>
+                <Block lop={lop} score={score} colorBlock={colorBlock} changeScore={changeScore} setScore={setScore}/>
+                <Block lop={lop} score={score} colorBlock={colorBlock} changeScore={changeScore} setScore={setScore}/>
+                <Block lop={lop} score={score} colorBlock={colorBlock} changeScore={changeScore} setScore={setScore}/>
+                <Block lop={lop} score={score} colorBlock={colorBlock} changeScore={changeScore} setScore={setScore}/>
+                <Block lop={lop} score={score} colorBlock={colorBlock} changeScore={changeScore} setScore={setScore}/>
+                <Block lop={lop} score={score} colorBlock={colorBlock} changeScore={changeScore} setScore={setScore}/>
+            </div>
 
-                    <div>
-                        <Block lop={lop} score={score} colorBlock={colorBlock} changeScore={changeScore} setScore={setScore}/>
-                        <Block lop={lop} score={score} colorBlock={colorBlock} changeScore={changeScore} setScore={setScore}/>
-                        <Block lop={lop} score={score} colorBlock={colorBlock} changeScore={changeScore} setScore={setScore}/>
-                        <Block lop={lop} score={score} colorBlock={colorBlock} changeScore={changeScore} setScore={setScore}/>
-                        <Block lop={lop} score={score} colorBlock={colorBlock} changeScore={changeScore} setScore={setScore}/>
-                        <Block lop={lop} score={score} colorBlock={colorBlock} changeScore={changeScore} setScore={setScore}/>
-                    </div>
+            <div>
+                <Block lop={lop} score={score} colorBlock={colorBlock} changeScore={changeScore} setScore={setScore}/>
+                <Block lop={lop} score={score} colorBlock={colorBlock} changeScore={changeScore} setScore={setScore}/>
+                <Block lop={lop} score={score} colorBlock={colorBlock} changeScore={changeScore} setScore={setScore}/>
+                <Block lop={lop} score={score} colorBlock={colorBlock} changeScore={changeScore} setScore={setScore}/>
+                <Block lop={lop} score={score} colorBlock={colorBlock} changeScore={changeScore} setScore={setScore}/>
+                <Block lop={lop} score={score} colorBlock={colorBlock} changeScore={changeScore} setScore={setScore}/>
+            </div>
 
-                    <div>
-                        <Block lop={lop} score={score} colorBlock={colorBlock} changeScore={changeScore} setScore={setScore}/>
-                        <Block lop={lop} score={score} colorBlock={colorBlock} changeScore={changeScore} setScore={setScore}/>
-                        <Block lop={lop} score={score} colorBlock={colorBlock} changeScore={changeScore} setScore={setScore}/>
-                        <Block lop={lop} score={score} colorBlock={colorBlock} changeScore={changeScore} setScore={setScore}/>
-                        <Block lop={lop} score={score} colorBlock={colorBlock} changeScore={changeScore} setScore={setScore}/>
-                        <Block lop={lop} score={score} colorBlock={colorBlock} changeScore={changeScore} setScore={setScore}/>
-                    </div>
+            <div>
+                <Block lop={lop} score={score} colorBlock={colorBlock} changeScore={changeScore} setScore={setScore}/>
+                <Block lop={lop} score={score} colorBlock={colorBlock} changeScore={changeScore} setScore={setScore}/>
+                <Block lop={lop} score={score} colorBlock={colorBlock} changeScore={changeScore} setScore={setScore}/>
+                <Block lop={lop} score={score} colorBlock={colorBlock} changeScore={changeScore} setScore={setScore}/>
+                <Block lop={lop} score={score} colorBlock={colorBlock} changeScore={changeScore} setScore={setScore}/>
+                <Block lop={lop} score={score} colorBlock={colorBlock} changeScore={changeScore} setScore={setScore}/>
+            </div>
         </div>
     )
 }

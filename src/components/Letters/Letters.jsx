@@ -1,11 +1,10 @@
 import {useRef} from 'react';
-import helper from "../../files/helper3.gif";
-import {Redirect} from "react-router-dom";
+import helper from '../../files/helper3.gif';
+import {Redirect} from 'react-router-dom';
 
 function Letters({isLogged}) {
 
     const ref = useRef();
-
     let words = [];
     words.push('А', 'Б', 'В', 'Г', 'Д', 'Е');
     words.push('Ё', 'Ж', 'З', 'И', 'Й', 'К');
@@ -22,7 +21,7 @@ function Letters({isLogged}) {
     }
 
     function getRand() {
-        ref.current.style.color = colorsArray[Math.floor(Math.random() * colorsArray.length)];
+        ref.current['style'].color = colorsArray[Math.floor(Math.random() * colorsArray.length)];
     }
 
     let i = 0;
@@ -45,56 +44,60 @@ function Letters({isLogged}) {
         ref.current.innerHTML = words[i];
     }
 
-    if (!isLogged) return <Redirect to="/"/>
+    if (!isLogged) return <Redirect to='/'/>
 
     return (
-        <div class='container text-center'><br/>
+        <div className='container text-center'><br/>
             <h2>Выберите буквы, которые вы НЕ выговариваете:</h2><br/>
-                <button class="btn btn-warning" onClick={disabled}>А</button>
-                <button class="btn btn-warning" onClick={disabled}>Б</button>
-                <button class="btn btn-warning" onClick={disabled}>В</button>
-                <button class="btn btn-warning" onClick={disabled}>Г</button>
-                <button class="btn btn-warning" onClick={disabled}>Д</button>
-                <button class="btn btn-warning" onClick={disabled}>Е</button>
-                <button class="btn btn-warning" onClick={disabled}>Ё</button>
-                <button class="btn btn-warning" onClick={disabled}>Ж</button>
-                <button class="btn btn-warning" onClick={disabled}>З</button>
-                <button class="btn btn-warning" onClick={disabled}>И</button>
-                <button class="btn btn-warning" onClick={disabled}>Й</button>
-                <button class="btn btn-warning" onClick={disabled}>К</button>
-                <button class="btn btn-warning" onClick={disabled}>Л</button>
-                <button class="btn btn-warning" onClick={disabled}>М</button>
-                <button class="btn btn-warning" onClick={disabled}>Н</button>
-                <button class="btn btn-warning" onClick={disabled}>О</button>
-                <button class="btn btn-warning" onClick={disabled}>П</button>
-                <button class="btn btn-warning" onClick={disabled}>Р</button>
-                <button class="btn btn-warning" onClick={disabled}>С</button>
-                <button class="btn btn-warning" onClick={disabled}>Т</button>
-                <button class="btn btn-warning" onClick={disabled}>У</button>
-                <button class="btn btn-warning" onClick={disabled}>Ф</button>
-                <button class="btn btn-warning" onClick={disabled}>Х</button>
-                <button class="btn btn-warning" onClick={disabled}>Ц</button>
-                <button class="btn btn-warning" onClick={disabled}>Ч</button>
-                <button class="btn btn-warning" onClick={disabled}>Ш</button>
-                <button class="btn btn-warning" onClick={disabled}>Щ</button>
-                <button class="btn btn-warning" onClick={disabled}>Ъ</button>
-                <button class="btn btn-warning" onClick={disabled}>Ы</button>
-                <button class="btn btn-warning" onClick={disabled}>Ь</button>
-                <button class="btn btn-warning" onClick={disabled}>Э</button>
-                <button class="btn btn-warning" onClick={disabled}>Ю</button>
-                <button class="btn btn-warning" onClick={disabled}>Я</button>
-            <div class='row align-items-center'>
-                <div class='col'>
-                    <button class="btn btn-warning" onClick={showPrevWord}><i className="bi bi-chevron-left"></i></button>
+            <button className='btn btn-sm btn-warning' onClick={disabled}>А</button>
+            <button className='btn btn-sm btn-warning' onClick={disabled}>Б</button>
+            <button className='btn btn-sm btn-warning' onClick={disabled}>В</button>
+            <button className='btn btn-sm btn-warning' onClick={disabled}>Г</button>
+            <button className='btn btn-sm btn-warning' onClick={disabled}>Д</button>
+            <button className='btn btn-sm btn-warning' onClick={disabled}>Е</button>
+            <button className='btn btn-sm btn-warning' onClick={disabled}>Ё</button>
+            <button className='btn btn-sm btn-warning' onClick={disabled}>Ж</button>
+            <button className='btn btn-sm btn-warning' onClick={disabled}>З</button>
+            <button className='btn btn-sm btn-warning' onClick={disabled}>И</button>
+            <button className='btn btn-sm btn-warning' onClick={disabled}>Й</button>
+            <button className='btn btn-sm btn-warning' onClick={disabled}>К</button>
+            <button className='btn btn-sm btn-warning' onClick={disabled}>Л</button>
+            <button className='btn btn-sm btn-warning' onClick={disabled}>М</button>
+            <button className='btn btn-sm btn-warning' onClick={disabled}>Н</button>
+            <button className='btn btn-sm btn-warning' onClick={disabled}>О</button>
+            <button className='btn btn-sm btn-warning' onClick={disabled}>П</button>
+            <button className='btn btn-sm btn-warning' onClick={disabled}>Р</button>
+            <button className='btn btn-sm btn-warning' onClick={disabled}>С</button>
+            <button className='btn btn-sm btn-warning' onClick={disabled}>Т</button>
+            <button className='btn btn-sm btn-warning' onClick={disabled}>У</button>
+            <button className='btn btn-sm btn-warning' onClick={disabled}>Ф</button>
+            <button className='btn btn-sm btn-warning' onClick={disabled}>Х</button>
+            <button className='btn btn-sm btn-warning' onClick={disabled}>Ц</button>
+            <button className='btn btn-sm btn-warning' onClick={disabled}>Ч</button>
+            <button className='btn btn-sm btn-warning' onClick={disabled}>Ш</button>
+            <button className='btn btn-sm btn-warning' onClick={disabled}>Щ</button>
+            <button className='btn btn-sm btn-warning' onClick={disabled}>Ъ</button>
+            <button className='btn btn-sm btn-warning' onClick={disabled}>Ы</button>
+            <button className='btn btn-sm btn-warning' onClick={disabled}>Ь</button>
+            <button className='btn btn-sm btn-warning' onClick={disabled}>Э</button>
+            <button className='btn btn-sm btn-warning' onClick={disabled}>Ю</button>
+            <button className='btn btn-sm btn-warning' onClick={disabled}>Я</button>
+            <div className='row align-items-center'>
+                <div className='col'>
+                    <button className='btn btn-warning' onClick={showPrevWord}>
+                        <i className='bi bi-chevron-left'></i>
+                    </button>
                 </div>
-                    <span class='col letter' ref={ref}>A</span>
-                <div class='col'>
-                    <button class="btn btn-warning" onClick={showNextWord}><i className="bi bi-chevron-right"></i></button>
+                <span className='col letter' ref={ref}>A</span>
+                <div className='col'>
+                    <button className='btn btn-warning' onClick={showNextWord}>
+                        <i className='bi bi-chevron-right'></i>
+                    </button>
                 </div>
             </div>
-            <div>
-                <img class='helper' src={helper} alt="helper"/>
-            </div>
+            {/*<div>*/}
+            {/*    <img className='helper' src={helper} alt='helper'/>*/}
+            {/*</div>*/}
         </div>
     )
 }

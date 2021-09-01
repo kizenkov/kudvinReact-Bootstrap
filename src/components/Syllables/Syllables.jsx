@@ -1,8 +1,8 @@
 import './Syllables.css';
 import {useRef} from 'react';
-import {Redirect} from "react-router-dom";
-import SyllablesLandscape1 from "./SyllablesLandscape1";
-import SyllablesPortrait1 from "./SyllablesPortrait1";
+import {Redirect} from 'react-router-dom';
+import SyllablesLandscape1 from './SyllablesLandscape1';
+import SyllablesPortrait1 from './SyllablesPortrait1';
 
 function Syllables({isLogged}) {
 
@@ -17,7 +17,7 @@ function Syllables({isLogged}) {
         }
     }
 
-    if (!isLogged) return <Redirect to="/" />
+    if (!isLogged) return <Redirect to='/'/>
 
     return (
         <div className='syllables'>

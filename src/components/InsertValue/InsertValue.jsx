@@ -2,10 +2,10 @@ import {useRef, useState, useEffect} from 'react';
 import ExampleValue1 from './ExampleValue1';
 import ExampleValue2 from './ExampleValue2';
 import helper from '../../files/helper1.gif';
-import {Redirect} from "react-router-dom";
-import Example from "../Examples/Example";
+import {Redirect} from 'react-router-dom';
 
 function InsertValue({isLogged}) {
+
     let [sec, setSec] = useState(60);
 
     const [A1, setA1] = useState(Math.trunc(Math.random() * 11));
@@ -41,7 +41,7 @@ function InsertValue({isLogged}) {
     //timer
     useEffect(() => {
         showTime = setInterval(function () {
-            setSec(sec-1)
+            setSec(sec - 1)
         }, 1000);
         if (sec === 0) {
             showResult();
@@ -51,7 +51,6 @@ function InsertValue({isLogged}) {
             clearInterval(showTime);
         }
     }, [sec])
-
 
     function showResult() {
         clearInterval(showTime);
@@ -129,10 +128,10 @@ function InsertValue({isLogged}) {
                 setC5(Math.trunc(Math.random() * 11));
                 setD5(Math.trunc(Math.random() * 11));
             }
-        }, 300000);
+        }, 3000);
     }
 
-    if (!isLogged) return <Redirect to="/"  />
+    if (!isLogged) return <Redirect to="/"/>
 
     return (
         <div><br/>
@@ -141,38 +140,19 @@ function InsertValue({isLogged}) {
             <ExampleValue1 arr={arr} a={A3} b={B3} c={C3} d={D3}/>
             <ExampleValue2 arr={arr} a={A4} b={B4} c={C4} d={D4}/>
             <ExampleValue1 arr={arr} a={A5} b={B5} c={C5} d={D5}/>
-
-            <div class='row align-items-center text-center'>
-                <span class='col-lg-4 col-md-12 col-sm-12 col-xs-12 time'>Осталось: {sec < 10 && sec >= 0 && '0'}{sec} сек</span>
-                <div class='col-lg-4 col-md-12 col-sm-12 col-xs-12'>
+            <div className='row align-items-center text-center'>
+                <span className='col-lg-4 col-md-12 col-sm-12 col-xs-12 time'>Осталось: {sec < 10 && sec >= 0 && '0'}{sec} сек</span>
+                <div className='col-lg-4 col-md-12 col-sm-12 col-xs-12'>
                     <button className='btn btn-success' onClick={showResult}
                             ref={button}>Принять
                     </button>
-
                 </div>
                 <span class='col-lg-4 col-md-12 col-sm-12 col-xs-12 result' ref={result}></span>
             </div>
-
-
             <div>
-                <img class='helper' src={helper} alt='helper' />
+                <img class='helper' src={helper} alt='helper'/>
             </div>
-
         </div>
-
-
-    //
-    //     <div className='container text-center'>
-    //         <button className='btn btn-success' onClick={showResult} ref={button}>Принять</button>
-    //     </div>
-    //     <div className='row align-items-center text-center'>
-    //         <span className='col-lg-6 col-md-12 col-sm-12 col-xs-12 time' ref={time}></span>
-    //         <span className='col-lg-6 col-md-12 col-sm-12 col-xs-12 result' ref={result}></span>
-    //     </div>
-    //     <div>
-    //         <img src={helper} alt="helper"/>
-    //     </div>
-    // </div>
     )
 }
 

@@ -44,6 +44,7 @@
     cursor: default;
     background-color: skyblue;
 }
+
 .soglas th:hover {
     cursor: default;
     background-color: skyblue;
@@ -58,7 +59,7 @@
     background-color: gold;
 }
 
-.syllables .glas:hover{
+.syllables .glas:hover {
     cursor: default;
     background-color: gold;
 }
@@ -76,55 +77,63 @@
     cursor: default;
 }
 
-@media screen and (orientation:portrait) {
+@media screen and (orientation: portrait) {
     .tableLandscape {
         display: none;
     }
+
     .syllables .newSyllable {
         font-size: 40vw;
         top: calc(10vh + 80px);
         bottom: 10vh;
     }
+
     .syllables th {
         font-size: 1.7vh;
     }
-    }
-@media screen and (orientation:landscape) {
+}
+
+@media screen and (orientation: landscape) {
     .tablePortrait {
         display: none;
     }
+
     .syllables .newSyllable {
         font-size: 45vh;
         top: calc(5vh + 80px);
         bottom: 5vh;
     }
+
     .syllables th {
         font-size: 1.7vw;
     }
 }
 
-@media screen and (max-width: 500px) and (orientation:portrait) {
+@media screen and (max-width: 500px) and (orientation: portrait) {
     .syllables th {
         font-size: 1.5vh;
     }
+
     .syllables {
         margin: 10vh 0;
     }
 }
 
-@media screen and (max-width: 375px) and (orientation:portrait) {
+@media screen and (max-width: 375px) and (orientation: portrait) {
     .syllables th {
         font-size: 1.2vh;
     }
+
     .syllables {
         margin: 15vh 0;
     }
 }
 
-@media screen and (max-width: 305px) and (orientation:portrait) {
+@media screen and (max-width: 305px) and (orientation: portrait) {
     .syllables th {
         font-size: 1vh;
     }
+
     .syllables {
         margin: 15vh 0;
     }

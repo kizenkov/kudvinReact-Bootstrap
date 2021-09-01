@@ -1,10 +1,10 @@
-
-function Main({isLogged, isClicked}) {
+function Main() {
 
     return (
-        <div class='main'>
-            <h1 id='start'>homepage</h1>
+        <div>
+            <h1>homepage</h1>
         </div>
     )
 }
+
 export default Main

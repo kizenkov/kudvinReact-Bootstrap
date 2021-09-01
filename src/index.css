@@ -1,278 +1,248 @@
 body {
-  margin: 0 12px 0 12px;
-  padding-top: 86px;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    margin: 0 12px 0 12px;
+    padding-top: 86px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background:
-          repeating-linear-gradient(
-                  transparent,transparent 30px, skyblue 32px
-          ),
-          repeating-linear-gradient(
-                  90deg,
-                  transparent,transparent 30px, skyblue 32px
-          );
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background: linear-gradient(#bbb, transparent 1px), linear-gradient(90deg, #bbb, transparent 1px) center;
+    background-size: 25px 25px;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-i {
-  font-size: 1rem;
+
+/*underline*/
+a {
+    position: relative;
 }
 
-.nav-link {
-  position: relative;
-  color: #00a650; /*задаём цвет ссылки*/
-  cursor: pointer;
-  line-height: 1; /*задаём высоту строки*/
-  text-decoration: none; /*убираем подчёркивание*/
-}
-.nav-link:after {
-  display: block;
-  position: absolute;
-  left: 0; /*изменить на right:0;, чтобы изменить направление подчёркивания */
-  width: 0;/*задаём длинну линии до наведения курсора*/
-  height: 2px; /*задаём ширину линии*/
-  background-color: white; /*задаём цвет линии*/
-  content: "";
-  transition: width 0.3s ease-out; /*задаём время анимации*/
+a:after {
+    display: block;
+    position: absolute;
+    left: 1%; /*изменить на right:0;, чтобы изменить направление подчёркивания */
+    width: 0; /*задаём длинну линии до наведения курсора*/
+    height: 2px; /*задаём ширину линии*/
+    background-color: white; /*задаём цвет линии*/
+    content: "";
+    transition: width 0.3s ease-out; /*задаём время анимации*/
 }
 
-.nav-link:hover:after,
-.nav-link:focus:after {
-  width: 100%; /*устанавливаем значение 100% чтобы ссылка подчёркивалась полностью*/
+a:hover:after {
+    width: 95%; /*устанавливаем значение 100% чтобы ссылка подчёркивалась полностью*/
 }
 
 .navbar {
-  position: absolute;
-  top: 0;
-  font-size: 1.25rem;
+    position: fixed;
+    top: 0;
+    font-size: 1.25rem;
+    z-index: 100;
 }
 
 .navbar-brand {
-  font-size: 2.5rem;
-  font-family: "Comic Sans MS";
-  font-style: italic;
-  margin-right: 35px;
-}
-
-.nav-link {
-  color: #FFFFFF8C;
-}
-
-.nav-link:hover {
-  color: white;
+    font-size: 2.5rem;
+    font-style: italic;
+    margin-right: 35px;
 }
 
 .letter {
-  font-size: 25vw;
-  font-weight: bold;
+    font-size: 25vw;
+    font-weight: bold;
 }
 
 .btn-warning {
-  margin: 5px;
-  padding: 3px 9px;
+    margin: 4px;
+    padding: 3px 9px;
 }
 
 .btn-success {
-  margin: 15px;
-  padding: 10px 20px;
-  font-size: 1.5rem;
+    margin: 15px;
+    padding: 10px 20px;
+    font-size: 1.5rem;
 }
 
 .bi-chevron-left, .bi-chevron-right {
-  font-size: 5vw;
+    font-size: 5vw;
 }
 
 .numbers {
-  margin-top: 11vh;
+    margin-top: 11vh;
 }
 
 .example {
-  font-size: 3rem;
-  padding: 20px;
+    font-size: 3rem;
+    padding: 20px;
 }
 
 input {
-  width: 90px;
-  border: none;
-  border-radius: 5px;
-  outline: none;
-  background-color: gainsboro;
-  text-align: center;
+    width: 90px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    background-color: gainsboro;
+    text-align: center;
 }
 
 .time {
-  color: saddlebrown;
-  font-size: 1.5rem;
-  font-style: italic;
-  padding: 20px;
+    color: saddlebrown;
+    font-size: 1.5rem;
+    font-style: italic;
+    padding: 20px;
 }
 
 .result {
-  color: blue;
-  font-size: 3rem;
+    color: blue;
+    font-size: 3rem;
 }
 
 .task {
-  background-color: blanchedalmond;
-  padding: 30px;
-  margin: 40px 15vw;
-  border-radius: 20px;
-  font-size: 2rem;
-}
-
-.taskAnswer {
-  font-size: 2rem;
-}
-
-.taskResult {
-  font-size: 4rem;
-  font-weight: bold;
-  font-family: Mistral;
-}
-
-table {
-  font-size: 2rem;
+    background-color: blanchedalmond;
+    padding: 30px;
+    margin: 40px 15vw;
+    border-radius: 20px;
 }
 
 .popitBlock {
-  border: 1px solid darkgrey;
-  border-radius: 50%;
-  background-color: crimson;
-  margin: 5px;
-  transition: 0.3s;
+    border: 1px solid darkgrey;
+    border-radius: 50%;
+    background-color: crimson;
+    margin: 5px;
+    transition: 0.3s;
 }
 
 .popit {
-  margin-top: 3vh;
+    margin-top: 1vh;
 }
 
 .helper {
-  position: absolute;
-  bottom: 10px;
-  left: 30px
+    position: fixed;
+    bottom: 10px;
+    left: 40px;
+    z-index: 20;
 }
 
 .contact {
-  width: 50px;
+    width: 50px;
 }
+
 @media screen and (max-width: 1300px) {
-  .letter {
-    font-size: 35vw;
-  }
+    .letter {
+        font-size: 35vw;
+    }
 }
+
 @media screen and (max-width: 884px) {
-  .letter {
-    font-size: 53vw;
-  }
-  .navbar-brand {
-    margin-right: 0;
-  }
-  table {
-    font-size: 1.5rem;
-  }
-  .taskAnswer {
-    margin-left: 50px;
-  }
+    .letter {
+        font-size: 53vw;
+    }
+
+    .navbar-brand {
+        margin-right: 0;
+    }
 }
 
 @media screen and (max-width: 600px) {
-  .task {
-    padding: 30px;
-    margin: 40px 5vw;
-    border-radius: 20px;
-    font-size: 1.5rem;
-  }
-  .taskAnswer {
-    font-size: 1.5rem;
-  }
-  input {
-    width: 65px;
-  }
-  table {
-    font-size: 1rem;
-  }
-  .popit {
-    margin-top: 20%;
-  }
+    .task {
+        padding: 30px;
+        margin: 40px 5vw;
+        border-radius: 20px;
+    }
 
+    input {
+        width: 65px;
+    }
 }
 
 @media screen and (max-width: 500px) {
-  .example {
-    font-size: 2rem;
-    padding: 20px;
-  }
-  input {
-    width: 65px;
-  }
-  .popitBlock {
-    margin: 2px;
-  }
-  .popit {
-    margin-top: 30%;
-  }
-  .navbar-brand {
-    font-size: 2rem;
-  }
+    .example {
+        font-size: 2rem;
+        padding: 20px;
+    }
+
+    input {
+        width: 65px;
+    }
+
+    .popitBlock {
+        margin: 2px;
+    }
+
+    .navbar-brand {
+        font-size: 2rem;
+    }
+
+    .letter {
+        font-size: 35vw;
+    }
+}
+
+@media screen and (max-width: 343px) {
+    body {
+        padding-top: 114px;
+    }
 }
 
 @media screen and (max-width: 265px) {
-  body {
-    padding-top: 114px;
-  }
-  .example {
-    font-size: 1.5rem;
-    padding: 10px;
-  }
-  input {
-    width: 40px;
-  }
-  .time {
-    font-size: 1rem;
-    padding: 20px;
-  }
+    body {
+        padding-top: 114px;
+    }
 
-  .result {
-    font-size: 2rem;
-  }
-  .btn-success {
-    font-size: 1rem;
-  }
-  .taskResult {
-    font-size: 3rem;
-  }
-  .popitBlock {
-    margin: 0;
-  }
-  .popit {
-    margin-top: 40%;
-  }
-  .navbar-brand {
-    font-size: 1rem;
-  }
+    .example {
+        font-size: 1.5rem;
+        padding: 10px;
+    }
+
+    input {
+        width: 40px;
+    }
+
+    .time {
+        font-size: 1rem;
+        padding: 20px;
+    }
+
+    .result {
+        font-size: 2rem;
+    }
+
+    .btn-success {
+        font-size: 1rem;
+    }
+
+    .popitBlock {
+        margin: 0;
+    }
+
+    .navbar-brand {
+        font-size: 1rem;
+    }
+
+    .letter {
+        font-size: 25vw;
+    }
 }
 
-@media screen and (orientation:portrait) {
-img {
-  width: 25vw;
+@media screen and (orientation: portrait) {
+    img {
+        width: 25vw;
+    }
+
+    .popitBlock {
+        width: 13vw;
+        height: 13vw;
+    }
 }
-  .popitBlock {
-    width: 13vw;
-    height: 13vw;
-  }
-}
-@media screen and (orientation:landscape) {
-  img {
-    width: 25vh;
-  }
-  .popitBlock {
-    width: 13vh;
-    height: 13vh;
-  }
+
+@media screen and (orientation: landscape) {
+    img {
+        width: 25vh;
+    }
+
+    .popitBlock {
+        width: 10vh;
+        height: 10vh;
+    }
 }

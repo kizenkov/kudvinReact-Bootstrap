@@ -2,7 +2,7 @@ import React, {useRef, useEffect} from 'react';
 import yes from './../../files/yes.mp3';
 import no from './../../files/no.mp3';
 import helper from './../../files/helper.gif';
-import {Redirect} from "react-router-dom";
+import {Redirect} from 'react-router-dom';
 
 function Tasks({isLogged}) {
     const task = useRef();
@@ -30,6 +30,8 @@ function Tasks({isLogged}) {
     tasks.push('Мультфильм в кинотеатре начался в 5 часов, а закончился в 7 часов. Сколько часов шёл мультфильм?');
     tasks.push('На новый год в вазе лежали 13 мандаринов. 5 мандаринов сьел папа, 4 мандарина съела мама и еще 4 - бабушка. Сколько мандаринов осталось в вазе?');
 
+    let results = [8, 11, 5, 10, 4, 2, 13, 4, 10, 15, 10, 3, 11, 2, 0];
+
     let i = Math.round(Math.random() * (tasks.length - 1));
     let scoreTrueValue = 0;
     let scoreFalseValue = 0;
@@ -42,10 +44,8 @@ function Tasks({isLogged}) {
         }, [isLogged, i]
     );
 
-    let results = [8, 11, 5, 10, 4, 2, 13, 4, 10, 15, 10, 3, 11, 2, 0];
-
     function isNumber() {
-        let val = inputAnswer.current.value;
+        let val = inputAnswer.current['value'];
         if (isNaN(val) || val === ' ') {
             inputAnswer.current.value = null;
         }
@@ -56,20 +56,20 @@ function Tasks({isLogged}) {
         let audioNo = new Audio();
         audioYes.src = yes;
         audioNo.src = no;
-        if (inputAnswer.current.value === '') {
+        if (inputAnswer.current['value'] === '') {
             result.current.innerHTML = 'ВВЕДИТЕ ОТВЕТ';
-            result.current.style.color = 'yellow';
+            result.current['style'].color = 'gold';
             setTimeout(() => {
                 result.current.innerHTML = null
             }, 100000)
         } else {
-            if (+inputAnswer.current.value === results[i]) {
+            if (+inputAnswer.current['value'] === results[i]) {
                 audioYes.play();
                 scoreTrue.current.innerHTML = ++scoreTrueValue;
                 inputAnswer.current.disabled = 'disabled'
                 button.current.disabled = true;
                 result.current.innerHTML = 'ВЕРНО &#128521';
-                result.current.style.color = 'green';
+                result.current['style'].color = 'green';
                 setTimeout(function () {
                     inputAnswer.current.disabled = null;
                     button.current.disabled = false;
@@ -91,32 +91,32 @@ function Tasks({isLogged}) {
                 inputAnswer.current.disabled = 'disabled'
                 button.current.disabled = true;
                 result.current.innerHTML = 'НЕПРАВИЛЬНО &#128553';
-                result.current.style.color = 'red';
+                result.current['style'].color = 'red';
                 setTimeout(function () {
                     inputAnswer.current.disabled = null;
                     button.current.disabled = false;
                     result.current.innerHTML = null;
                     inputAnswer.current.value = null;
-                }, 100000)
+                }, 2000)
             }
         }
     }
 
-    if (!isLogged) return <Redirect to="/"/>
+    if (!isLogged) return <Redirect to='/'/>
 
     return (
-        <div class='container text-center'>
-            <div className="task">
-                <div ref={task}></div>
+        <div className='container text-center'>
+            <div className='task'>
+                <div className='fs-1' ref={task}></div>
             </div>
-            <div className="container">
-                <div className="row justify-content-center text-center align-items-center">
-                    <div className="col-4">
-                        <table class="table table-bordered border-dark ">
+            <div className='container'>
+                <div className='row justify-content-center text-center align-items-center'>
+                    <div className='col-lg-2 col-md-2 col-sm-2 col-xs-12'>
+                        <table className='table table-bordered border-dark '>
                             <thead>
                             <tr>
-                                <th scope="col">✓</th>
-                                <th scope="col">❌</th>
+                                <th>✓</th>
+                                <th>❌</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -127,21 +127,25 @@ function Tasks({isLogged}) {
                             </tbody>
                         </table>
                     </div>
-                    <div className="col-4 taskAnswer">
-                            <span >Ответ: </span>
-                            <input  type='text' maxLength='2' onKeyUp={isNumber} ref={inputAnswer}/>
+                    <div className='col-lg-4 col-md-4 col-sm-4 col-xs-12 fs-1'>
+                        <span>Ответ: </span>
+                        <input type='text' maxLength='2' onKeyUp={isNumber} ref={inputAnswer}/>
                     </div>
-                    <div className="col-4">
+                    <div className='col-lg-4 col-md-4 col-sm-4 col-xs-12'>
                         <button className='btn btn-success' onClick={getResult} ref={button}>Принять</button>
 
                     </div>
                 </div>
-<br/>
-            <div class='taskResult' ref={result}></div>
-            <div >
-                <img class='helper' src={helper} alt="helper"/>
+                <br/>
+                <div className='container'>
+                    <div className='row justify-content-center'>
+                        <p className='fs-1 fw-bold' ref={result}></p>
+                    </div>
+                </div>
+                <div>
+                    <img className='helper' src={helper} alt='helper'/>
+                </div>
             </div>
-        </div>
         </div>
     )
 }
