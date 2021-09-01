@@ -36,7 +36,7 @@ a:hover:after {
 }
 
 .navbar {
-    position: fixed;
+    position: absolute;
     top: 0;
     font-size: 1.25rem;
     z-index: 100;
