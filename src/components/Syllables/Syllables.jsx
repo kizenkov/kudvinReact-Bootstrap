@@ -3,6 +3,7 @@ import {useRef} from 'react';
 import {Redirect} from 'react-router-dom';
 import SyllablesLandscape1 from './SyllablesLandscape1';
 import SyllablesPortrait1 from './SyllablesPortrait1';
+import Contacts from '../Contacts/Contacts';
 
 function Syllables({isLogged}) {
 
@@ -24,6 +25,7 @@ function Syllables({isLogged}) {
             <SyllablesLandscape1 showSyllable={showSyllable}/>
             <SyllablesPortrait1 showSyllable={showSyllable}/>
             <div ref={syllable}></div>
+            <Contacts />
         </div>
     )
 }

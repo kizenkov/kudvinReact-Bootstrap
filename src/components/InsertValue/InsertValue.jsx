@@ -3,6 +3,11 @@ import ExampleValue1 from './ExampleValue1';
 import ExampleValue2 from './ExampleValue2';
 import helper from '../../files/helper1.gif';
 import {Redirect} from 'react-router-dom';
+import tg from '../../files/icontg.png';
+import viber from '../../files/viber.png';
+import ig from '../../files/iconig.png';
+import vk from '../../files/iconvk.png';
+import Contacts from '../Contacts/Contacts';
 
 function InsertValue({isLogged}) {
 
@@ -131,7 +136,7 @@ function InsertValue({isLogged}) {
         }, 3000);
     }
 
-    if (!isLogged) return <Redirect to="/"/>
+    if (!isLogged) return <Redirect to='/'/>
 
     return (
         <div><br/>
@@ -152,6 +157,28 @@ function InsertValue({isLogged}) {
             <div>
                 <img class='helper' src={helper} alt='helper'/>
             </div>
+            <div className='offcanvas offcanvas-bottom' tabIndex='-1' id='offcanvasBottom' aria-labelledby='offcanvasBottomLabel'>
+                <div className='offcanvas-header'>
+                    <h5 className='offcanvas-title' id='offcanvasBottomLabel'>Контакты для отзывов и предложений</h5>
+                    <button type='button' className='btn-close text-reset' data-bs-dismiss='offcanvas'
+                            aria-label='Close'></button>
+                </div>
+                <div className='row offcanvas-body small align-items-center justify-content-evenly'>
+                    <a className='col-2' href='http://t.me/umnikill'>
+                        <img className='contact' src={tg} alt=''/>
+                    </a>
+                    <a className='col-2' href='viber://chat?number=%2B375336950899'>
+                        <img className='contact' src={viber} alt=''/>
+                    </a>
+                    <a className='col-2' href='http://instagram.com/kizenkov_'>
+                        <img className='contact' src={ig} alt=''/>
+                    </a>
+                    <a className='col-2' href='https://vk.me/kotenok_kuzya'>
+                        <img className='contact' src={vk} alt=''/>
+                    </a>
+                </div>
+            </div>
+            <Contacts />
         </div>
     )
 }

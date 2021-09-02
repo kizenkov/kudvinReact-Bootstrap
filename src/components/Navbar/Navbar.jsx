@@ -96,12 +96,16 @@ function Navbar({isLogged, setLogged}) {
                             </ul>
                         </li>
                     </ul>
-                    {/*<div ref={okMessage} className='okMessage'></div>*/}
                     <ul className='navbar-nav'>
-                        <li className='nav-item d-flex'>
-                            <NavLink to='contacts' className='nav-link' onClick={notShowMenu}>Контакты</NavLink>
+                        <li>
+                            <hr className='dropdown-divider text-white'  />
+                        </li>
+                        <li className='nav-item'>
+                            <a className='nav-link' data-bs-toggle='offcanvas' data-bs-target='#offcanvasBottom'
+                               aria-controls='offcanvasBottom'>Контакты</a>
                         </li>
                     </ul>
+                    {/*<div ref={okMessage} className='okMessage'></div>*/}
                     {/*{!isLogged ? <form className='d-flex' onSubmit={checkCode} ref={form}>*/}
                     {/*    <input className='form-control me-1' type='search' placeholder='Введите ключ' aria-label='Search' value={code} onChange={(e) => setCode(e.target.value)} ref={input}/>*/}
                     {/*    <button className='btn btn-outline-success' type='submit'>Отправить</button>*/}

@@ -3,6 +3,7 @@ import yes from './../../files/yes.mp3';
 import no from './../../files/no.mp3';
 import helper from './../../files/helper.gif';
 import {Redirect} from 'react-router-dom';
+import Contacts from '../Contacts/Contacts';
 
 function Tasks({isLogged}) {
     const task = useRef();
@@ -146,6 +147,7 @@ function Tasks({isLogged}) {
                     <img className='helper' src={helper} alt='helper'/>
                 </div>
             </div>
+            <Contacts />
         </div>
     )
 }

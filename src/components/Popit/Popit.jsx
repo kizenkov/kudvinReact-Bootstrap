@@ -1,6 +1,7 @@
 import Block from './Block';
 import lopp from '../../files/lop.mp3';
 import {useState} from 'react';
+import Contacts from '../Contacts/Contacts';
 
 function Popit() {
     let lop = new Audio(lopp);
@@ -67,6 +68,7 @@ function Popit() {
                 <Block lop={lop} score={score} colorBlock={colorBlock} changeScore={changeScore} setScore={setScore}/>
                 <Block lop={lop} score={score} colorBlock={colorBlock} changeScore={changeScore} setScore={setScore}/>
             </div>
+            <Contacts />
         </div>
     )
 }

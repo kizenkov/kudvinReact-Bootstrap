@@ -1,6 +1,11 @@
 import {useRef} from 'react';
 import helper from '../../files/helper3.gif';
 import {Redirect} from 'react-router-dom';
+import tg from '../../files/icontg.png';
+import viber from '../../files/viber.png';
+import ig from '../../files/iconig.png';
+import vk from '../../files/iconvk.png';
+import Contacts from '../Contacts/Contacts';
 
 function Letters({isLogged}) {
 
@@ -98,6 +103,7 @@ function Letters({isLogged}) {
             {/*<div>*/}
             {/*    <img className='helper' src={helper} alt='helper'/>*/}
             {/*</div>*/}
+            <Contacts />
         </div>
     )
 }

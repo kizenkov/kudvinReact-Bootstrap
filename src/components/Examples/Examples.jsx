@@ -2,6 +2,7 @@ import {useRef, useState} from 'react';
 import Example from './Example';
 import helper from '../../files/helper4.gif';
 import {Redirect} from 'react-router-dom';
+import Contacts from '../Contacts/Contacts';
 
 function Examples({n, isLogged}) {
 
@@ -122,6 +123,7 @@ function Examples({n, isLogged}) {
             <div>
                 <img className='helper' src={helper} alt="helper"/>
             </div>
+            <Contacts />
         </div>
     )
 }
