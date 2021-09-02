@@ -125,11 +125,19 @@
     .syllables th {
         font-size: 1.7vh;
     }
+
+    .syllables {
+        margin: 6vh 0;
+    }
 }
 
 @media screen and (max-width: 400px) and (orientation: portrait) {
     .syllables th {
         font-size: 1.4vh;
+    }
+
+    .syllables {
+        margin: 11vh 0;
     }
 }
 

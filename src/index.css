@@ -15,6 +15,16 @@ code {
     monospace;
 }
 
+.main {
+    text-align: justify;
+}
+
+.main h4 {
+    text-indent: 70px;
+    line-height: 50px;
+    margin: 0;
+}
+
 /*underline*/
 a {
     position: relative;
@@ -102,8 +112,9 @@ input {
 }
 
 .result {
-    color: blue;
+    color: red;
     font-size: 3rem;
+    font-style: italic;
 }
 
 .task {
@@ -128,7 +139,7 @@ input {
 .helper {
     position: fixed;
     bottom: 10px;
-    left: 40px;
+    left: 20px;
     z-index: 20;
 }
 
@@ -151,9 +162,22 @@ input {
     border: none;
 }
 
+.taskResult {
+    font-size: 5vw;
+}
+
+.carousel img {
+    height: 327px;
+    width: auto;
+}
+
 @media screen and (max-width: 1300px) {
     .letter {
         font-size: 35vw;
+    }
+
+    .taskResult {
+        font-size: 6vw;
     }
 }
 
@@ -164,6 +188,10 @@ input {
 
     .navbar-brand {
         margin-right: 0;
+    }
+
+    .taskResult {
+        font-size: 8vw;
     }
 }
 

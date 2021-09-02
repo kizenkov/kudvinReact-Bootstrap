@@ -74,6 +74,11 @@ function Navbar({isLogged, setLogged}) {
                                 Счёт
                             </NavLink>
                         </li>
+                        <li className='nav-item'>
+                            <NavLink to='tasks' className='nav-link' onClick={notShow}>
+                                Задачи
+                            </NavLink>
+                        </li>
                         <li className='nav-item dropdown'>
                             <a className='nav-link' href='#' id='navbarDropdown' role='button'
                                data-bs-toggle='dropdown' aria-expanded='false'>
@@ -90,11 +95,6 @@ function Navbar({isLogged, setLogged}) {
                                 Вставить число
                                 </NavLink></li>
                             </ul>
-                        </li>
-                        <li className='nav-item'>
-                            <NavLink to='tasks' className='nav-link' onClick={notShow}>
-                                Задачи
-                            </NavLink>
                         </li>
                         <li className='nav-item dropdown'>
                             <a className='nav-link' href='#' id='navbarDropdown' role='button'
