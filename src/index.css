@@ -20,9 +20,9 @@ code {
 }
 
 .main h4 {
-    text-indent: 70px;
-    line-height: 50px;
-    margin: 0;
+    text-indent: 40px;
+    line-height: 49px;
+    margin: 7px 0;
 }
 
 /*underline*/
@@ -166,10 +166,6 @@ input {
     font-size: 5vw;
 }
 
-.carousel img {
-    height: 327px;
-    width: auto;
-}
 
 @media screen and (max-width: 1300px) {
     .letter {
@@ -271,6 +267,9 @@ input {
         width: 13vw;
         height: 13vw;
     }
+    .carousel img {
+        width: 75vw;
+    }
 }
 
 @media screen and (orientation: landscape) {
@@ -281,5 +280,9 @@ input {
     .popitBlock {
         width: 10vh;
         height: 10vh;
+    }
+    .carousel img {
+        height: 327px;
+        width: auto;
     }
 }
