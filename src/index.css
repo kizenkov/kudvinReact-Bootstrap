@@ -42,6 +42,10 @@ a:hover:after {
     z-index: 100;
 }
 
+.navbar li {
+    margin: 10px;
+}
+
 .navbar-brand {
     font-size: 2.5rem;
     font-style: italic;
@@ -138,6 +142,15 @@ input {
     height: max-content;
 }
 
+.nav-link {
+    padding: 0;
+    cursor: pointer;
+}
+
+.card {
+    border: none;
+}
+
 @media screen and (max-width: 1300px) {
     .letter {
         font-size: 35vw;
@@ -180,10 +193,6 @@ input {
         margin: 2px;
     }
 
-    .navbar-brand {
-        font-size: 2rem;
-    }
-
     .letter {
         font-size: 35vw;
     }
@@ -224,10 +233,6 @@ input {
 
     .popitBlock {
         margin: 0;
-    }
-
-    .navbar-brand {
-        font-size: 1rem;
     }
 
     .letter {

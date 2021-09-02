@@ -43,10 +43,6 @@ function Navbar({isLogged, setLogged}) {
     //     }
     // }
 
-    function notShowMenu() {
-        menu.current['classList'].remove('show')
-    }
-
     return (
 
         <nav className='navbar navbar-expand-lg navbar-dark bg-dark'>
@@ -60,45 +56,92 @@ function Navbar({isLogged, setLogged}) {
                 <div ref={menu} class='collapse navbar-collapse' id='navbarSupportedContent'>
                     <ul className='navbar-nav me-auto mb-2 mb-lg-0'>
                         <li className='nav-item'>
-                            <NavLink to='letters' className='nav-link' onClick={notShowMenu}>Буквы</NavLink>
+                            <NavLink to='letters' className='nav-link'>
+                                <span className='w-100 text-start' type='button' data-bs-toggle='collapse'
+                                      data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent'>
+                                Буквы
+                                </span>
+                            </NavLink>
                         </li>
                         <li className='nav-item'>
-                            <NavLink to='syllables' className='nav-link' onClick={notShowMenu}>Слоги</NavLink>
+                            <NavLink to='syllables' className='nav-link'>
+                                <span className='w-100 text-start' type='button' data-bs-toggle='collapse'
+                                      data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent'>
+                                Слоги
+                                </span>
+                            </NavLink>
                         </li>
                         <li className='nav-item'>
-                            <NavLink to='numbers' className='nav-link' onClick={notShowMenu}>Счёт</NavLink>
+                            <NavLink to='numbers' className='nav-link'>
+                                <span className='w-100 text-start' type='button' data-bs-toggle='collapse'
+                                      data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent'>
+                                Счёт
+                                </span>
+                            </NavLink>
                         </li>
-                        <li className='nav-item dropdown'>
-                            <a className='nav-link ' href='#' id='navbarDropdown' role='button'
-                               data-bs-toggle='dropdown' aria-expanded='false'>
-                                Примеры<i className='bi bi-caret-down fs-6'></i>
+
+                        <li className='nav-item'>
+                            <a className="nav-link" data-bs-toggle="collapse" href="#collapseExamples"
+                               role="button" aria-expanded="false" aria-controls="collapseExamples">
+                                Примеры <i className='bi bi-caret-down  fs-6'></i>
                             </a>
-                            <ul className='dropdown-menu dropdown-menu-dark bg-dark' aria-labelledby='navbarDropdown'>
-                                <li><NavLink to='examples' className='dropdown-item'
-                                             onClick={notShowMenu}>Лёгкие</NavLink></li>
-                                <li><NavLink to='hardExamples' className='dropdown-item'
-                                             onClick={notShowMenu}>Сложные</NavLink></li>
-                                <li><NavLink to='insertValue' className='dropdown-item' onClick={notShowMenu}>Вставить
-                                    число</NavLink></li>
-                            </ul>
                         </li>
+                        <div className="collapse " id="collapseExamples">
+                            <div className="card card-body bg-dark ms-4">
+                                <NavLink to='examples' className='nav-link'>
+                                    <span className='w-100 text-start' type='button' data-bs-toggle='collapse'
+                                          data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent'>
+                                Лёгкие
+                                </span> </NavLink>
+                            </div>
+                            <div className="card card-body bg-dark ms-4">
+                                <NavLink to='hardExamples' className='nav-link'>
+                                <span className='w-100 text-start' type='button' data-bs-toggle='collapse'
+                                      data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent'>
+                                Сложные
+                                </span>
+                                </NavLink>
+                            </div>
+                            <div className="card card-body bg-dark ms-4">
+                                <NavLink to='insertValue' className='nav-link'>
+                                <span className='w-100 text-start' type='button' data-bs-toggle='collapse'
+                                      data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent'>
+                                Вставить число
+                                </span>
+                                </NavLink>
+                            </div>
+                        </div>
+
                         <li className='nav-item'>
-                            <NavLink to='tasks' className='nav-link' onClick={notShowMenu}>Задачи</NavLink>
+                            <NavLink to='tasks' className='nav-link'>
+                                <span className='w-100 text-start' type='button' data-bs-toggle='collapse'
+                                      data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent'>
+                                Задачи
+                                </span>
+                            </NavLink>
                         </li>
-                        <li className='nav-item dropdown'>
-                            <a className='nav-link' href='#' id='navbarDropdown' role='button'
-                               data-bs-toggle='dropdown' aria-expanded='false'>
-                                Отдых<i className='bi bi-caret-down  fs-6'></i>
+
+                        <li className='nav-item'>
+                            <a className="nav-link" data-bs-toggle="collapse" href="#collapseRelax"
+                               role="button" aria-expanded="false" aria-controls="collapseRelax">
+                                Отдых <i className='bi bi-caret-down  fs-6'></i>
                             </a>
-                            <ul className='dropdown-menu dropdown-menu-dark bg-dark' aria-labelledby='navbarDropdown'>
-                                <li><NavLink to='popit' className='dropdown-item'
-                                             onClick={notShowMenu}>Popit</NavLink></li>
-                            </ul>
                         </li>
+                        <div className="collapse " id="collapseRelax">
+                            <div className="card card-body bg-dark ms-4">
+                                <NavLink to='popit' className='nav-link'>
+                                <span className='w-100 text-start' type='button' data-bs-toggle='collapse'
+                                      data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent'>
+                                Popit
+                                </span>
+                                </NavLink>
+                            </div>
+                        </div>
+
                     </ul>
                     <ul className='navbar-nav'>
                         <li>
-                            <hr className='dropdown-divider text-white'  />
+                            <hr className='dropdown-divider text-white'/>
                         </li>
                         <li className='nav-item'>
                             <a className='nav-link' data-bs-toggle='offcanvas' data-bs-target='#offcanvasBottom'
