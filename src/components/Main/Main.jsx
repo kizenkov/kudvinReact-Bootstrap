@@ -10,7 +10,7 @@ function Main() {
 
     return (
         <div className='main'><br/><br/>
-            <h1 className='text-center'>Дорогие родители и их дети!</h1><br/><br/>
+            <h1 className='text-center mx-5 lh-base'>Дорогие родители и их дети!</h1><br/><br/>
             <div className='row justify-content-center'>
                 <p className='col-10'>
                     <h4>Сегодня не всем удаётся полностью изолировать своих чад от современных гаджетов.

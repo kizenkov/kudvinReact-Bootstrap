@@ -139,7 +139,7 @@ function Tasks({isLogged}) {
                 <br/>
                 <div className='container'>
                     <div className='row justify-content-center'>
-                        <p className='taskResult fw-bold' ref={result}></p>
+                        <p className='taskResult fw-bold ms-4' ref={result}></p>
                     </div>
                 </div>
                 <div>

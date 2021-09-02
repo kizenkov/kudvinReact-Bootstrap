@@ -51,7 +51,7 @@ function Navbar({isLogged, setLogged}) {
 
         <nav className='navbar navbar-expand-lg navbar-dark bg-dark'>
             <div className='container-fluid'>
-                <NavLink to='/' className='navbar-brand'>=Z=</NavLink>
+                <NavLink to='/' className='navbar-brand' onClick={notShow}>=Z=</NavLink>
                 <button className='navbar-toggler' type='button' data-bs-toggle='collapse'
                         data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent'
                         aria-expanded='false' aria-label='Toggle navigation'>
