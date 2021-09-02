@@ -58,9 +58,11 @@ function Tasks({isLogged}) {
         audioYes.src = yes;
         audioNo.src = no;
         if (inputAnswer.current['value'] === '') {
+            window.scrollTo(0, document.body.scrollHeight);
             result.current.innerHTML = 'ВВЕДИТЕ ОТВЕТ';
             result.current['style'].color = 'gold';
             setTimeout(() => {
+                window.scrollTo(document.body.scrollWidth, 0);
                 result.current.innerHTML = null
             }, 2000)
         } else {
@@ -72,6 +74,7 @@ function Tasks({isLogged}) {
                 result.current.innerHTML = 'ВЕРНО &#128521';
                 result.current['style'].color = 'green';
                 setTimeout(function () {
+                    window.scrollTo(document.body.scrollWidth, 0);
                     inputAnswer.current.disabled = null;
                     button.current.disabled = false;
                     tasks.splice(i, 1);
@@ -85,7 +88,7 @@ function Tasks({isLogged}) {
                         task.current.innerHTML = 'ЗАДАЧКИ ЗАКОНЧИЛИСЬ';
                         answer.current.innerHTML = null;
                     }
-                }, 2000)
+                }, 3000)
             } else {
                 audioNo.play();
                 scoreFalse.current.innerHTML = ++scoreFalseValue;
@@ -94,13 +97,15 @@ function Tasks({isLogged}) {
                 result.current.innerHTML = 'НЕПРАВИЛЬНО &#128553';
                 result.current['style'].color = 'red';
                 setTimeout(function () {
+                    window.scrollTo(document.body.scrollWidth, 0);
                     inputAnswer.current.disabled = null;
                     button.current.disabled = false;
                     result.current.innerHTML = null;
                     inputAnswer.current.value = null;
-                }, 2000)
+                }, 3000)
             }
         }
+        window.scrollTo(0, document.body.scrollHeight);
     }
 
     if (!isLogged) return <Redirect to='/'/>

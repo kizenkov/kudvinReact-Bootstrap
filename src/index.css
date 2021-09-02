@@ -201,7 +201,7 @@ input {
 
 @media screen and (max-width: 884px) {
     .letter {
-        font-size: 53vw;
+        font-size: 40vw;
     }
 
     .navbar-brand {
@@ -240,13 +240,25 @@ input {
     }
 
     .letter {
-        font-size: 35vw;
+        font-size: 30vw;
+    }
+
+    .btn-success {
+        margin: 5px;
+        padding: 10px 10px;
     }
 }
 
 @media screen and (max-width: 310px) {
     .navbar-brand {
         font-size: 1.5rem;
+    }
+    .letter {
+        font-size: 27vw;
+    }
+    .btn-success {
+        margin: 2px;
+        padding: 1px 5px 10px;
     }
 }
 
@@ -274,7 +286,7 @@ input {
     }
 
     .btn-success {
-        font-size: 1rem;
+        margin: 2px;
     }
 
     .popitBlock {

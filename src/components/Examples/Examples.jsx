@@ -68,6 +68,7 @@ function Examples({n, isLogged, colorsArray}) {
         time.current.innerHTML = 'Затрачено: ' + min + ' мин ' + seconds + ' сек';
         setTimeout(() => {
             if (result.current) {
+                window.scrollTo(document.body.scrollWidth, 0);
                 result.current.innerHTML = '';
                 time.current.innerHTML = '';
                 button.current.disabled = false;
@@ -100,6 +101,7 @@ function Examples({n, isLogged, colorsArray}) {
                 start = new Date();
             }
         }, 5000);
+        window.scrollTo(0, document.body.scrollHeight);
     }
 
     if (!isLogged) return <Redirect to='/'/>

@@ -54,6 +54,7 @@ function InsertValue({isLogged, colorsArray}) {
     }, [sec])
 
     function showResult() {
+        window.scrollTo(document.body.scrollWidth, 0);
         clearInterval(showTime);
         let score = 0;
         button.current.disabled = true;
@@ -98,6 +99,7 @@ function InsertValue({isLogged, colorsArray}) {
 
         setTimeout(() => {
             if (result.current) {
+                window.scrollTo(document.body.scrollWidth, 0);
                 setSec(60);
                 result.current.innerHTML = '';
                 button.current.disabled = false;
@@ -130,6 +132,7 @@ function InsertValue({isLogged, colorsArray}) {
                 setD5(Math.trunc(Math.random() * 11));
             }
         }, 5000);
+        window.scrollTo(0, document.body.scrollHeight);
     }
 
     if (!isLogged) return <Redirect to="/"/>
