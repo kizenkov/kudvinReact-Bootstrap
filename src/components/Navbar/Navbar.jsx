@@ -43,6 +43,10 @@ function Navbar({isLogged, setLogged}) {
     //     }
     // }
 
+    function notShow() {
+        menu.current.classList.remove('show');
+    }
+
     return (
 
         <nav className='navbar navbar-expand-lg navbar-dark bg-dark'>
@@ -56,88 +60,53 @@ function Navbar({isLogged, setLogged}) {
                 <div ref={menu} class='collapse navbar-collapse' id='navbarSupportedContent'>
                     <ul className='navbar-nav me-auto mb-2 mb-lg-0'>
                         <li className='nav-item'>
-                            <NavLink to='letters' className='nav-link'>
-                                <span className='w-100 text-start' type='button' data-bs-toggle='collapse'
-                                      data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent'>
+                            <NavLink to='letters' className='nav-link' onClick={notShow}>
                                 Буквы
-                                </span>
                             </NavLink>
                         </li>
                         <li className='nav-item'>
-                            <NavLink to='syllables' className='nav-link'>
-                                <span className='w-100 text-start' type='button' data-bs-toggle='collapse'
-                                      data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent'>
+                            <NavLink to='syllables' className='nav-link' onClick={notShow}>
                                 Слоги
-                                </span>
                             </NavLink>
                         </li>
                         <li className='nav-item'>
-                            <NavLink to='numbers' className='nav-link'>
-                                <span className='w-100 text-start' type='button' data-bs-toggle='collapse'
-                                      data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent'>
+                            <NavLink to='numbers' className='nav-link' onClick={notShow}>
                                 Счёт
-                                </span>
                             </NavLink>
                         </li>
-
-                        <li className='nav-item'>
-                            <a className="nav-link" data-bs-toggle="collapse" href="#collapseExamples"
-                               role="button" aria-expanded="false" aria-controls="collapseExamples">
-                                Примеры <i className='bi bi-caret-down  fs-6'></i>
+                        <li className='nav-item dropdown'>
+                            <a className='nav-link' href='#' id='navbarDropdown' role='button'
+                               data-bs-toggle='dropdown' aria-expanded='false'>
+                                Примеры <i className='bi bi-caret-down fs-6'></i>
                             </a>
-                        </li>
-                        <div className="collapse " id="collapseExamples">
-                            <div className="card card-body bg-dark ms-4">
-                                <NavLink to='examples' className='nav-link'>
-                                    <span className='w-100 text-start' type='button' data-bs-toggle='collapse'
-                                          data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent'>
+                            <ul className='dropdown-menu dropdown-menu-dark bg-dark' aria-labelledby='navbarDropdown'>
+                                <li><NavLink to='examples' className='nav-link' onClick={notShow}>
                                 Лёгкие
-                                </span> </NavLink>
-                            </div>
-                            <div className="card card-body bg-dark ms-4">
-                                <NavLink to='hardExamples' className='nav-link'>
-                                <span className='w-100 text-start' type='button' data-bs-toggle='collapse'
-                                      data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent'>
+                                </NavLink></li>
+                                <li><NavLink to='hardExamples' className='nav-link' onClick={notShow}>
                                 Сложные
-                                </span>
-                                </NavLink>
-                            </div>
-                            <div className="card card-body bg-dark ms-4">
-                                <NavLink to='insertValue' className='nav-link'>
-                                <span className='w-100 text-start' type='button' data-bs-toggle='collapse'
-                                      data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent'>
+                                </NavLink></li>
+                                <li><NavLink to='insertValue' className='nav-link' onClick={notShow}>
                                 Вставить число
-                                </span>
-                                </NavLink>
-                            </div>
-                        </div>
-
+                                </NavLink></li>
+                            </ul>
+                        </li>
                         <li className='nav-item'>
-                            <NavLink to='tasks' className='nav-link'>
-                                <span className='w-100 text-start' type='button' data-bs-toggle='collapse'
-                                      data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent'>
+                            <NavLink to='tasks' className='nav-link' onClick={notShow}>
                                 Задачи
-                                </span>
                             </NavLink>
                         </li>
-
-                        <li className='nav-item'>
-                            <a className="nav-link" data-bs-toggle="collapse" href="#collapseRelax"
-                               role="button" aria-expanded="false" aria-controls="collapseRelax">
+                        <li className='nav-item dropdown'>
+                            <a className='nav-link' href='#' id='navbarDropdown' role='button'
+                               data-bs-toggle='dropdown' aria-expanded='false'>
                                 Отдых <i className='bi bi-caret-down  fs-6'></i>
                             </a>
-                        </li>
-                        <div className="collapse " id="collapseRelax">
-                            <div className="card card-body bg-dark ms-4">
-                                <NavLink to='popit' className='nav-link'>
-                                <span className='w-100 text-start' type='button' data-bs-toggle='collapse'
-                                      data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent'>
+                            <ul className='dropdown-menu dropdown-menu-dark bg-dark' aria-labelledby='navbarDropdown'>
+                                <li><NavLink to='popit' className='nav-link' onClick={notShow}>
                                 Popit
-                                </span>
-                                </NavLink>
-                            </div>
-                        </div>
-
+                                </NavLink></li>
+                            </ul>
+                        </li>
                     </ul>
                     <ul className='navbar-nav'>
                         <li>
@@ -156,7 +125,6 @@ function Navbar({isLogged, setLogged}) {
                 </div>
             </div>
         </nav>
-
     )
 }
 

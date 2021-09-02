@@ -198,12 +198,6 @@ input {
     }
 }
 
-@media screen and (max-width: 343px) {
-    body {
-        padding-top: 114px;
-    }
-}
-
 @media screen and (max-width: 265px) {
     body {
         padding-top: 114px;

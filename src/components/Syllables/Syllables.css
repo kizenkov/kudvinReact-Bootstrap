@@ -2,7 +2,7 @@
     display: grid;
     align-items: center;
     justify-items: center;
-    margin: 5vh 0;
+    margin: 1vh 0;
 }
 
 .syllables th {
@@ -88,8 +88,8 @@
         bottom: 10vh;
     }
 
-    .syllables th {
-        font-size: 1.7vh;
+    .syllables {
+        font-size: 1.95vh;
     }
 }
 
@@ -109,32 +109,32 @@
     }
 }
 
+@media screen and (max-width: 800px) and (orientation: portrait) {
+    .syllables th {
+        font-size: 2vh;
+    }
+}
+
+@media screen and (max-width: 700px) and (orientation: portrait) {
+    .syllables th {
+        font-size: 2.2vh;
+    }
+}
+
 @media screen and (max-width: 500px) and (orientation: portrait) {
     .syllables th {
-        font-size: 1.5vh;
-    }
-
-    .syllables {
-        margin: 10vh 0;
+        font-size: 1.7vh;
     }
 }
 
-@media screen and (max-width: 375px) and (orientation: portrait) {
+@media screen and (max-width: 400px) and (orientation: portrait) {
+    .syllables th {
+        font-size: 1.4vh;
+    }
+}
+
+@media screen and (max-width: 340px) and (orientation: portrait) {
     .syllables th {
         font-size: 1.2vh;
-    }
-
-    .syllables {
-        margin: 15vh 0;
-    }
-}
-
-@media screen and (max-width: 305px) and (orientation: portrait) {
-    .syllables th {
-        font-size: 1vh;
-    }
-
-    .syllables {
-        margin: 15vh 0;
     }
 }
