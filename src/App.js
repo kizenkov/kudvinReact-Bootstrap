@@ -13,7 +13,7 @@ import Contacts from './components/Contacts/Contacts';
 
 function App() {
 
-    let colorsArray = ['green', 'blue', 'saddlebrown', 'mediumvioletred', 'indigo', 'red'];
+    let colorsArray = ['blueviolet', 'blue', 'limegreen', 'gold', 'orange', 'red']
     const [isLogged, setIsLogged] = useState(true)
     let setLogged = () => {
         setIsLogged(true);

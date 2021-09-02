@@ -50,8 +50,8 @@ function Navbar({isLogged, setLogged}) {
     return (
 
         <nav className='navbar navbar-expand-lg navbar-dark bg-dark'>
-            <div className='container-fluid'>
-                <NavLink to='/' className='navbar-brand' onClick={notShow}>=Z=</NavLink>
+            <div className='container-fluid px-1'>
+                <NavLink to='/' className='navbar-brand' onClick={notShow}>CleverKUDViN</NavLink>
                 <button className='navbar-toggler' type='button' data-bs-toggle='collapse'
                         data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent'
                         aria-expanded='false' aria-label='Toggle navigation'>
@@ -82,7 +82,7 @@ function Navbar({isLogged, setLogged}) {
                         <li className='nav-item dropdown'>
                             <a className='nav-link' href='#' id='navbarDropdown' role='button'
                                data-bs-toggle='dropdown' aria-expanded='false'>
-                                Примеры <i className='bi bi-caret-down fs-6'></i>
+                                Примеры
                             </a>
                             <ul className='dropdown-menu dropdown-menu-dark bg-dark' aria-labelledby='navbarDropdown'>
                                 <li><NavLink to='examples' className='nav-link' onClick={notShow}>
@@ -99,7 +99,7 @@ function Navbar({isLogged, setLogged}) {
                         <li className='nav-item dropdown'>
                             <a className='nav-link' href='#' id='navbarDropdown' role='button'
                                data-bs-toggle='dropdown' aria-expanded='false'>
-                                Отдых <i className='bi bi-caret-down  fs-6'></i>
+                                Отдых
                             </a>
                             <ul className='dropdown-menu dropdown-menu-dark bg-dark' aria-labelledby='navbarDropdown'>
                                 <li><NavLink to='popit' className='nav-link' onClick={notShow}>

@@ -41,13 +41,13 @@ function Numbers({isLogged, colorsArray}) {
         <div className='container text-center numbers'>
             <div className='row align-items-center'>
                 <div className='col'>
-                    <button className='btn btn-warning' onClick={showPrevWord}>
+                    <button className='btn btn-success' onClick={showPrevWord}>
                         <i className='bi bi-chevron-left'></i>
                     </button>
                 </div>
                 <span className='col letter' ref={ref}>0</span>
                 <div className='col'>
-                    <button className='btn btn-warning' onClick={showNextWord}>
+                    <button className='btn btn-success' onClick={showNextWord}>
                         <i className='bi bi-chevron-right'></i>
                     </button>
                 </div>

@@ -10,8 +10,8 @@ function Main() {
 
     return (
         <div><br/><br/>
-            <h1 className='text-center mx-5 lh-base main'>Дорогие родители и их дети!</h1><br/><br/>
-            <div className='row justify-content-center'>
+            <h1 className='text-center mx-5 main'>Дорогие родители и их дети!</h1><br/><br/>
+            <div className='row justify-content-center main'>
                 <p className='col-10'>
                     <h4>Сегодня не всем удаётся полностью изолировать своих чад от современных гаджетов.
                         И, чтобы скоротать время, сидя в очереди, или не заскучать в машине, дети просят телефон. Так

@@ -3,7 +3,7 @@ import ExampleValue1 from './ExampleValue1';
 import ExampleValue2 from './ExampleValue2';
 import helper from '../../files/helper1.gif';
 import {Redirect} from 'react-router-dom';
-import Contacts from "../Contacts/Contacts";
+import Contacts from '../Contacts/Contacts';
 
 function InsertValue({isLogged, colorsArray}) {
 
@@ -136,11 +136,11 @@ function InsertValue({isLogged, colorsArray}) {
 
     return (
         <div><br/>
-            <ExampleValue1 arr={arr} a={A1} b={B1} c={C1} d={D1}/>
-            <ExampleValue2 arr={arr} a={A2} b={B2} c={C2} d={D2}/>
-            <ExampleValue1 arr={arr} a={A3} b={B3} c={C3} d={D3}/>
-            <ExampleValue2 arr={arr} a={A4} b={B4} c={C4} d={D4}/>
-            <ExampleValue1 arr={arr} a={A5} b={B5} c={C5} d={D5}/>
+            <ExampleValue1 arr={arr} a={A1} b={B1} c={C1} d={D1} colorsArray={colorsArray}/>
+            <ExampleValue2 arr={arr} a={A2} b={B2} c={C2} d={D2} colorsArray={colorsArray}/>
+            <ExampleValue1 arr={arr} a={A3} b={B3} c={C3} d={D3} colorsArray={colorsArray}/>
+            <ExampleValue2 arr={arr} a={A4} b={B4} c={C4} d={D4} colorsArray={colorsArray}/>
+            <ExampleValue1 arr={arr} a={A5} b={B5} c={C5} d={D5} colorsArray={colorsArray}/>
             <div className='row align-items-center text-center'>
                 <span className='col-lg-4 col-md-12 col-sm-12 col-xs-12 time'>Осталось: {sec < 10 && sec >= 0 && '0'}{sec} сек</span>
                 <div className='col-lg-4 col-md-12 col-sm-12 col-xs-12'>
@@ -152,13 +152,6 @@ function InsertValue({isLogged, colorsArray}) {
             </div>
             <div>
                 <img class='helper' src={helper} alt='helper'/>
-            </div>
-            <div className='offcanvas offcanvas-bottom' tabIndex='-1' id='offcanvasBottom' aria-labelledby='offcanvasBottomLabel'>
-                <div className='offcanvas-header'>
-                    <h5 className='offcanvas-title' id='offcanvasBottomLabel'>Контакты для отзывов и предложений</h5>
-                    <button type='button' className='btn-close text-reset' data-bs-dismiss='offcanvas'
-                            aria-label='Close'></button>
-                </div>
             </div>
             <Contacts />
         </div>

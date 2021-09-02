@@ -1,17 +1,16 @@
 import {useEffect, useRef} from 'react';
 
-function Block({lop, score, changeScore, setScore, colorsArray}) {
+function Block({lop, score, changeScore, setScore, color}) {
 
-    let colorBlock = colorsArray[Math.floor(Math.random() * colorsArray.length)];
     let div = useRef();
 
     useEffect(() => {
-        {div.current['style'].backgroundColor = colorBlock}
+        {div.current['style'].backgroundColor = color}
     }, [])
 
     if (score === 36) {
         setTimeout(() => {
-            div.current['style'].backgroundColor = colorBlock;
+            div.current['style'].backgroundColor = color;
             div.current.disabled = false;
             setScore(0)
         }, 2000)

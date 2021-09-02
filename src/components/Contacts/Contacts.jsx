@@ -2,6 +2,7 @@ import tg from '../../files/icontg.png';
 import ig from '../../files/iconig.png';
 import vk from '../../files/iconvk.png';
 import viber from '../../files/viber.png';
+import clover from '../../files/clover.png';
 
 function Contacts() {
 
@@ -26,6 +27,7 @@ function Contacts() {
                 <a className='col text-center' href='https://vk.me/kotenok_kuzya'>
                     <img className='contact' src={vk} alt=''/>
                 </a>
+                <span className='text-center label fs-6'>© 2021 CleverKUDViN <img src={clover} alt='clover'/></span>
             </div>
         </div>
     )

@@ -1,6 +1,6 @@
 body {
     margin: 0 12px 0 12px;
-    padding-top: 86px;
+    padding-top: 74px;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -17,6 +17,7 @@ code {
 
 .main {
     text-align: justify;
+    line-height: 25px;
 }
 
 .main h4 {
@@ -36,7 +37,7 @@ a:after {
     left: 0; /*изменить на right:0;, чтобы изменить направление подчёркивания */
     width: 0; /*задаём длинну линии до наведения курсора*/
     height: 2px; /*задаём ширину линии*/
-    background-color: white; /*задаём цвет линии*/
+    background-color: limegreen; /*задаём цвет линии*/
     content: "";
     transition: width 0.3s ease-out; /*задаём время анимации*/
 }
@@ -57,21 +58,42 @@ a:hover:after {
 }
 
 .navbar-brand {
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-style: italic;
-    margin-right: 35px;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: white;
+}
+
+.navbar-dark .navbar-nav .nav-link.active, .navbar-dark .navbar-nav .show>.nav-link, .navbar-dark .navbar-brand, .label {
+    color: limegreen;
+}
+
+.label img {
+    width: 15px;
+    margin: 0 0 3px 3px;
+}
+
+.navbar-dark .navbar-brand:hover {
+    transition: 0.3s;
+}
+
+.navbar-dark .navbar-brand:not(:hover) {
+    transition: 0.3s;
 }
 
 .nav-item {
-    margin: 5px;
+    margin: 2px;
 }
 
 .letter {
     font-size: 25vw;
     font-weight: bold;
+    color: saddlebrown;
 }
 
-.btn-warning {
+.btn-info {
     margin: 4px;
     padding: 3px 9px;
 }
@@ -100,7 +122,7 @@ input {
     border: none;
     border-radius: 5px;
     outline: none;
-    background-color: gainsboro;
+    background-color: blanchedalmond;
     text-align: center;
 }
 
@@ -145,7 +167,7 @@ input {
 .contact {
     width: 10vw;
     max-width: 60px;
-    margin: 20px 0 30px;
+    margin: 5px 0 30px;
 }
 
 .offcanvas {
@@ -219,6 +241,12 @@ input {
 
     .letter {
         font-size: 35vw;
+    }
+}
+
+@media screen and (max-width: 310px) {
+    .navbar-brand {
+        font-size: 1.5rem;
     }
 }
 
