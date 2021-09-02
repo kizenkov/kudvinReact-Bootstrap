@@ -1,8 +1,14 @@
-import {useRef} from 'react';
+import {useEffect, useRef} from 'react';
 
-function Block({lop, score, changeScore, setScore, colorBlock}) {
+function Block({lop, score, changeScore, setScore, colorsArray}) {
 
+    let colorBlock = colorsArray[Math.floor(Math.random() * colorsArray.length)];
     let div = useRef();
+
+    useEffect(() => {
+        {div.current['style'].backgroundColor = colorBlock}
+    }, [])
+
     if (score === 36) {
         setTimeout(() => {
             div.current['style'].backgroundColor = colorBlock;

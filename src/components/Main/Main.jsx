@@ -9,8 +9,8 @@ import insertValue from '../../files/insertValue.png';
 function Main() {
 
     return (
-        <div className='main'><br/><br/>
-            <h1 className='text-center mx-5 lh-base'>Дорогие родители и их дети!</h1><br/><br/>
+        <div><br/><br/>
+            <h1 className='text-center mx-5 lh-base main'>Дорогие родители и их дети!</h1><br/><br/>
             <div className='row justify-content-center'>
                 <p className='col-10'>
                     <h4>Сегодня не всем удаётся полностью изолировать своих чад от современных гаджетов.
@@ -141,7 +141,7 @@ function Main() {
                     </div><br/><br/>
 
                     <h2 className='text-center'>
-                        Всем удачи!
+                        Успехов!
                     </h2><br/><br/>
                 </p>
             </div>

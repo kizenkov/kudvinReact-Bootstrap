@@ -4,7 +4,7 @@ import helper from '../../files/helper4.gif';
 import {Redirect} from 'react-router-dom';
 import Contacts from '../Contacts/Contacts';
 
-function Examples({n, isLogged}) {
+function Examples({n, isLogged, colorsArray}) {
 
     const [A1, setA1] = useState(Math.trunc(Math.random() * (n - 1) + 1));
     const [B1, setB1] = useState(Math.trunc(Math.random() * (n - 1) + 1));
@@ -99,7 +99,7 @@ function Examples({n, isLogged}) {
                 setD5(Math.trunc(Math.random() * (n - 1) + 1));
                 start = new Date();
             }
-        }, 3000);
+        }, 5000);
     }
 
     if (!isLogged) return <Redirect to='/'/>
@@ -107,11 +107,11 @@ function Examples({n, isLogged}) {
     return (
         <div>
             <br/>
-            <Example arr={arr} a={A1} b={B1} c={C1} d={D1}/>
-            <Example arr={arr} a={A2} b={B2} c={C2} d={D2}/>
-            <Example arr={arr} a={A3} b={B3} c={C3} d={D3}/>
-            <Example arr={arr} a={A4} b={B4} c={C4} d={D4}/>
-            <Example arr={arr} a={A5} b={B5} c={C5} d={D5}/>
+            <Example arr={arr} a={A1} b={B1} c={C1} d={D1} colorsArray={colorsArray}/>
+            <Example arr={arr} a={A2} b={B2} c={C2} d={D2} colorsArray={colorsArray}/>
+            <Example arr={arr} a={A3} b={B3} c={C3} d={D3} colorsArray={colorsArray}/>
+            <Example arr={arr} a={A4} b={B4} c={C4} d={D4} colorsArray={colorsArray}/>
+            <Example arr={arr} a={A5} b={B5} c={C5} d={D5} colorsArray={colorsArray}/>
 
             <div className='container text-center'>
                 <button className='btn btn-success' onClick={showResult} ref={button}>Принять</button>

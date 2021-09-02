@@ -1,13 +1,9 @@
 import {useRef} from 'react';
 import helper from '../../files/helper3.gif';
 import {Redirect} from 'react-router-dom';
-import tg from '../../files/icontg.png';
-import viber from '../../files/viber.png';
-import ig from '../../files/iconig.png';
-import vk from '../../files/iconvk.png';
 import Contacts from '../Contacts/Contacts';
 
-function Letters({isLogged}) {
+function Letters({isLogged, colorsArray}) {
 
     const ref = useRef();
     let words = [];
@@ -17,8 +13,6 @@ function Letters({isLogged}) {
     words.push('С', 'Т', 'У', 'Ф', 'Х', 'Ц');
     words.push('Ч', 'Ш', 'Щ', 'Ъ', 'Ы', 'Ь');
     words.push('Э', 'Ю', 'Я');
-
-    let colorsArray = ['green', 'blue', 'magenta', 'darkorange'];
 
     function disabled(e) {
         words.splice(words.indexOf(e.currentTarget.innerHTML), 1);

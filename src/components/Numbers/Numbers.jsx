@@ -3,11 +3,10 @@ import helper from '../../files/helper2.gif';
 import {Redirect} from 'react-router-dom';
 import Contacts from '../Contacts/Contacts';
 
-function Numbers({isLogged}) {
+function Numbers({isLogged, colorsArray}) {
 
     const ref = useRef();
     let words = [];
-    let colorsArray = ['green', 'red', 'blue', 'chocolate', 'darkmagenta', 'magenta', 'darkorange'];
     for (let i = 0; i <= 21; i++) {
         words.push(i);
     }

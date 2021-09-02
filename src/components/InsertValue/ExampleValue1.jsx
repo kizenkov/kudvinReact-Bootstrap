@@ -1,6 +1,6 @@
 import {useRef, useEffect} from 'react';
 
-function ExampleValue1({a, b, c, d, arr}) {
+function ExampleValue1({a, b, c, d, arr, colorsArray}) {
 
     const numFirst1 = useRef();
     const numFirst2 = useRef();
@@ -12,7 +12,6 @@ function ExampleValue1({a, b, c, d, arr}) {
     const result2 = useRef();
     const sign1 = useRef();
     const sign2 = useRef();
-    let colorsArray = ['deeppink', 'blueviolet', 'green', 'orange', 'blue', 'saddlebrown', 'gold'];
 
     useEffect(
         () => {

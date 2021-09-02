@@ -127,7 +127,6 @@ input {
 .popitBlock {
     border: 1px solid darkgrey;
     border-radius: 50%;
-    background-color: crimson;
     margin: 5px;
     transition: 0.3s;
 }

@@ -62,7 +62,7 @@ function Tasks({isLogged}) {
             result.current['style'].color = 'gold';
             setTimeout(() => {
                 result.current.innerHTML = null
-            }, 100000)
+            }, 2000)
         } else {
             if (+inputAnswer.current['value'] === results[i]) {
                 audioYes.play();
@@ -85,7 +85,7 @@ function Tasks({isLogged}) {
                         task.current.innerHTML = 'ЗАДАЧКИ ЗАКОНЧИЛИСЬ';
                         answer.current.innerHTML = null;
                     }
-                }, 100000)
+                }, 2000)
             } else {
                 audioNo.play();
                 scoreFalse.current.innerHTML = ++scoreFalseValue;

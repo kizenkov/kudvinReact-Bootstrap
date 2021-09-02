@@ -13,6 +13,7 @@ import Contacts from './components/Contacts/Contacts';
 
 function App() {
 
+    let colorsArray = ['green', 'blue', 'saddlebrown', 'mediumvioletred', 'indigo', 'red'];
     const [isLogged, setIsLogged] = useState(true)
     let setLogged = () => {
         setIsLogged(true);
@@ -26,15 +27,15 @@ function App() {
             </div>
             <div class='row'>
                 <Route exact path='/' render={() => <Main/>}/>
-                <Route path='/letters' render={() => <Letters isLogged={isLogged}/>}/>
+                <Route path='/letters' render={() => <Letters isLogged={isLogged} colorsArray={colorsArray}/>}/>
                 <Route path='/syllables' render={() => <Syllables isLogged={isLogged}/>}/>
-                <Route path='/numbers' render={() => <Numbers isLogged={isLogged}/>}/>
+                <Route path='/numbers' render={() => <Numbers isLogged={isLogged} colorsArray={colorsArray}/>}/>
                 <Route path='/tasks' render={() => <Tasks isLogged={isLogged}/>}/>
-                <Route path='/examples' render={() => <Examples n={10} isLogged={isLogged}/>}/>
-                <Route path='/hardExamples' render={() => <Examples n={30} isLogged={isLogged}/>}/>
-                <Route path='/insertValue' render={() => <InsertValue isLogged={isLogged}/>}/>
+                <Route path='/examples' render={() => <Examples n={10} isLogged={isLogged} colorsArray={colorsArray}/>}/>
+                <Route path='/hardExamples' render={() => <Examples n={30} isLogged={isLogged} colorsArray={colorsArray}/>}/>
+                <Route path='/insertValue' render={() => <InsertValue isLogged={isLogged} colorsArray={colorsArray}/>}/>
                 <Route path='/contacts' render={() => <Contacts/>}/>
-                <Route path='/popit' render={() => <Popit/>}/>
+                <Route path='/popit' render={() => <Popit colorsArray={colorsArray}/>}/>
             </div>
         </div>
     )

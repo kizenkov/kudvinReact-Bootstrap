@@ -5,7 +5,7 @@ import helper from '../../files/helper1.gif';
 import {Redirect} from 'react-router-dom';
 import Contacts from "../Contacts/Contacts";
 
-function InsertValue({isLogged}) {
+function InsertValue({isLogged, colorsArray}) {
 
     let [sec, setSec] = useState(60);
 
@@ -129,7 +129,7 @@ function InsertValue({isLogged}) {
                 setC5(Math.trunc(Math.random() * 11));
                 setD5(Math.trunc(Math.random() * 11));
             }
-        }, 3000);
+        }, 5000);
     }
 
     if (!isLogged) return <Redirect to="/"/>
