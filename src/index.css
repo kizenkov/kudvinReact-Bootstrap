@@ -188,6 +188,9 @@ input {
     z-index: 50;
 }
 
+.helperForMain {
+    width: 60px;
+}
 
 @media screen and (max-width: 1300px) {
     .letter {

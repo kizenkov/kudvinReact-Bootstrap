@@ -6,30 +6,30 @@ import Contacts from '../Contacts/Contacts';
 
 function Examples({n, isLogged, colorsArray}) {
 
-    const [A1, setA1] = useState(Math.trunc(Math.random() * (n - 1) + 1));
-    const [B1, setB1] = useState(Math.trunc(Math.random() * (n - 1) + 1));
-    const [C1, setC1] = useState(Math.trunc(Math.random() * (n - 1) + 1));
-    const [D1, setD1] = useState(Math.trunc(Math.random() * (n - 1) + 1));
+    const [A1, setA1] = useState(Math.trunc(Math.random() * n));
+    const [B1, setB1] = useState(Math.trunc(Math.random() * n));
+    const [C1, setC1] = useState(Math.trunc(Math.random() * n));
+    const [D1, setD1] = useState(Math.trunc(Math.random() * n));
 
-    const [A2, setA2] = useState(Math.trunc(Math.random() * (n - 1) + 1));
-    const [B2, setB2] = useState(Math.trunc(Math.random() * (n - 1) + 1));
-    const [C2, setC2] = useState(Math.trunc(Math.random() * (n - 1) + 1));
-    const [D2, setD2] = useState(Math.trunc(Math.random() * (n - 1) + 1));
+    const [A2, setA2] = useState(Math.trunc(Math.random() * n));
+    const [B2, setB2] = useState(Math.trunc(Math.random() * n));
+    const [C2, setC2] = useState(Math.trunc(Math.random() * n));
+    const [D2, setD2] = useState(Math.trunc(Math.random() * n));
 
-    const [A3, setA3] = useState(Math.trunc(Math.random() * (n - 1) + 1));
-    const [B3, setB3] = useState(Math.trunc(Math.random() * (n - 1) + 1));
-    const [C3, setC3] = useState(Math.trunc(Math.random() * (n - 1) + 1));
-    const [D3, setD3] = useState(Math.trunc(Math.random() * (n - 1) + 1));
+    const [A3, setA3] = useState(Math.trunc(Math.random() * n));
+    const [B3, setB3] = useState(Math.trunc(Math.random() * n));
+    const [C3, setC3] = useState(Math.trunc(Math.random() * n));
+    const [D3, setD3] = useState(Math.trunc(Math.random() * n));
 
-    const [A4, setA4] = useState(Math.trunc(Math.random() * (n - 1) + 1));
-    const [B4, setB4] = useState(Math.trunc(Math.random() * (n - 1) + 1));
-    const [C4, setC4] = useState(Math.trunc(Math.random() * (n - 1) + 1));
-    const [D4, setD4] = useState(Math.trunc(Math.random() * (n - 1) + 1));
+    const [A4, setA4] = useState(Math.trunc(Math.random() * n));
+    const [B4, setB4] = useState(Math.trunc(Math.random() * n));
+    const [C4, setC4] = useState(Math.trunc(Math.random() * n));
+    const [D4, setD4] = useState(Math.trunc(Math.random() * n));
 
-    const [A5, setA5] = useState(Math.trunc(Math.random() * (n - 1) + 1));
-    const [B5, setB5] = useState(Math.trunc(Math.random() * (n - 1) + 1));
-    const [C5, setC5] = useState(Math.trunc(Math.random() * (n - 1) + 1));
-    const [D5, setD5] = useState(Math.trunc(Math.random() * (n - 1) + 1));
+    const [A5, setA5] = useState(Math.trunc(Math.random() * n));
+    const [B5, setB5] = useState(Math.trunc(Math.random() * n));
+    const [C5, setC5] = useState(Math.trunc(Math.random() * n));
+    const [D5, setD5] = useState(Math.trunc(Math.random() * n));
 
     let start = new Date();
     let arr = [];
@@ -78,26 +78,26 @@ function Examples({n, isLogged, colorsArray}) {
                     el[6].current.innerHTML = '';
                     el[7].current.innerHTML = '';
                 })
-                setA1(Math.trunc(Math.random() * (n - 1) + 1));
-                setB1(Math.trunc(Math.random() * (n - 1) + 1));
-                setC1(Math.trunc(Math.random() * (n - 1) + 1));
-                setD1(Math.trunc(Math.random() * (n - 1) + 1));
-                setA2(Math.trunc(Math.random() * (n - 1) + 1));
-                setB2(Math.trunc(Math.random() * (n - 1) + 1));
-                setC2(Math.trunc(Math.random() * (n - 1) + 1));
-                setD2(Math.trunc(Math.random() * (n - 1) + 1));
-                setA3(Math.trunc(Math.random() * (n - 1) + 1));
-                setB3(Math.trunc(Math.random() * (n - 1) + 1));
-                setC3(Math.trunc(Math.random() * (n - 1) + 1));
-                setD3(Math.trunc(Math.random() * (n - 1) + 1));
-                setA4(Math.trunc(Math.random() * (n - 1) + 1));
-                setB4(Math.trunc(Math.random() * (n - 1) + 1));
-                setC4(Math.trunc(Math.random() * (n - 1) + 1));
-                setD4(Math.trunc(Math.random() * (n - 1) + 1));
-                setA5(Math.trunc(Math.random() * (n - 1) + 1));
-                setB5(Math.trunc(Math.random() * (n - 1) + 1));
-                setC5(Math.trunc(Math.random() * (n - 1) + 1));
-                setD5(Math.trunc(Math.random() * (n - 1) + 1));
+                setA1(Math.trunc(Math.random() * n));
+                setB1(Math.trunc(Math.random() * n));
+                setC1(Math.trunc(Math.random() * n));
+                setD1(Math.trunc(Math.random() * n));
+                setA2(Math.trunc(Math.random() * n));
+                setB2(Math.trunc(Math.random() * n));
+                setC2(Math.trunc(Math.random() * n));
+                setD2(Math.trunc(Math.random() * n));
+                setA3(Math.trunc(Math.random() * n));
+                setB3(Math.trunc(Math.random() * n));
+                setC3(Math.trunc(Math.random() * n));
+                setD3(Math.trunc(Math.random() * n));
+                setA4(Math.trunc(Math.random() * n));
+                setB4(Math.trunc(Math.random() * n));
+                setC4(Math.trunc(Math.random() * n));
+                setD4(Math.trunc(Math.random() * n));
+                setA5(Math.trunc(Math.random() * n));
+                setB5(Math.trunc(Math.random() * n));
+                setC5(Math.trunc(Math.random() * n));
+                setD5(Math.trunc(Math.random() * n));
                 start = new Date();
             }
         }, 5000);
@@ -109,12 +109,20 @@ function Examples({n, isLogged, colorsArray}) {
     return (
         <div>
             <br/>
-            <Example arr={arr} a={A1} b={B1} c={C1} d={D1} colorsArray={colorsArray}/>
-            <Example arr={arr} a={A2} b={B2} c={C2} d={D2} colorsArray={colorsArray}/>
-            <Example arr={arr} a={A3} b={B3} c={C3} d={D3} colorsArray={colorsArray}/>
-            <Example arr={arr} a={A4} b={B4} c={C4} d={D4} colorsArray={colorsArray}/>
-            <Example arr={arr} a={A5} b={B5} c={C5} d={D5} colorsArray={colorsArray}/>
-
+            {n === 10 && <>
+                <Example arr={arr} a={A1} b={B1} c={C1} d={D1} colorsArray={colorsArray}/>
+                <Example arr={arr} a={A2} b={B2} c={C2} d={D2} colorsArray={colorsArray}/>
+                <Example arr={arr} a={A3} b={B3} c={C3} d={D3} colorsArray={colorsArray}/>
+                <Example arr={arr} a={A4} b={B4} c={C4} d={D4} colorsArray={colorsArray}/>
+                <Example arr={arr} a={A5} b={B5} c={C5} d={D5} colorsArray={colorsArray}/>
+            </>}
+            {n === 20 && <>
+                <Example arr={arr} a={A1 + 10} b={B1 + 10} c={C1 + 10} d={D1 + 10} colorsArray={colorsArray}/>
+                <Example arr={arr} a={A2 + 10} b={B2 + 10} c={C2 + 10} d={D2 + 10} colorsArray={colorsArray}/>
+                <Example arr={arr} a={A3 + 10} b={B3 + 10} c={C3 + 10} d={D3 + 10} colorsArray={colorsArray}/>
+                <Example arr={arr} a={A4 + 10} b={B4 + 10} c={C4 + 10} d={D4 + 10} colorsArray={colorsArray}/>
+                <Example arr={arr} a={A5 + 10} b={B5 + 10} c={C5 + 10} d={D5 + 10} colorsArray={colorsArray}/>
+            </>}
             <div className='container text-center'>
                 <button className='btn btn-success' onClick={showResult} ref={button}>Принять</button>
             </div>
@@ -125,7 +133,7 @@ function Examples({n, isLogged, colorsArray}) {
             <div>
                 <img className='helper' src={helper} alt="helper"/>
             </div>
-            <Contacts />
+            <Contacts/>
         </div>
     )
 }

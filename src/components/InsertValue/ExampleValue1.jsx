@@ -33,7 +33,7 @@ function ExampleValue1({a, b, c, d, arr, colorsArray}) {
         x = a;
         y = b;
     } else {
-        y = a + 2;
+        y = a + 1;
         x = b;
     }
     if (c > d) {
@@ -43,22 +43,34 @@ function ExampleValue1({a, b, c, d, arr, colorsArray}) {
         f = d;
         e = c;
     } else {
-        f = c + 2;
+        f = c + 1;
         e = d;
     }
+
     arr.push([x, y, f, e, input1, input2, result1, result2]);
+
+    function isNumber() {
+        let val1 = input1.current['value'];
+        let val2 = input2.current['value'];
+        if (isNaN(val1) || val1 === ' ') {
+            input1.current.value = null;
+        }
+        if (isNaN(val2) || val2 === ' ') {
+            input2.current.value = null;
+        }
+    }
 
     return (
         <div className='row justify-content-around text-center'>
             <div className='col-lg-6 col-md-12 col-sm-12 col-xs-12 example'>
                 <span ref={numFirst1}></span>
                 <span ref={sign1}>+</span>
-                <input type='text' ref={input1}/>
+                <input type='text' ref={input1} onKeyUp={isNumber} maxLength={2}/>
                 <span ref={numSecond1}></span>
                 <span> </span><b ref={result1}></b>
             </div>
             <div className='col-lg-6 col-md-12 col-sm-12 col-xs-12 example'>
-                <input type='text' ref={input2}/>
+                <input type='text' ref={input2} onKeyUp={isNumber} maxLength={2}/>
                 <span ref={sign2}>-</span>
                 <span ref={numFirst2}></span>
                 <span ref={numSecond2}></span>

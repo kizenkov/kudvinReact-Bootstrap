@@ -15,16 +15,16 @@ function Contacts() {
                         aria-label='Close'></button>
             </div>
             <div className='row offcanvas-body small align-items-center '>
-                <a className='col text-center' href='http://t.me/umnikill'>
+                <a className='col text-center' href='http://t.me/cleverkudvin'>
                     <img className='contact' src={tg} alt=''/>
                 </a>
                 <a className='col text-center' href='viber://chat?number=%2B375336950899'>
                     <img className='contact' src={viber} alt=''/>
                 </a>
-                <a className='col text-center' href='http://instagram.com/kizenkov_'>
+                <a className='col text-center' href='http://instagram.com/clever_kudvin'>
                     <img className='contact' src={ig} alt=''/>
                 </a>
-                <a className='col text-center' href='https://vk.me/kotenok_kuzya'>
+                <a className='col text-center' href='https://vk.com/im?sel=-133509116'>
                     <img className='contact' src={vk} alt=''/>
                 </a>
                 <span className='text-center label fs-6'>© 2021 CleverKUDViN <img src={clover} alt='clover'/></span>

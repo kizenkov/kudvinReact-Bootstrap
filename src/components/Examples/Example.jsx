@@ -27,22 +27,33 @@ function Example({a, b, c, d, arr, colorsArray}) {
         f = d;
         e = c;
     } else {
-        f = c + 3;
+        f = c + 1;
         e = d;
     }
 
     arr.push([a, b, f, e, input1, input2, result1, result2]);
 
+    function isNumber() {
+        let val1 = input1.current['value'];
+        let val2 = input2.current['value'];
+        if (isNaN(val1) || val1 === ' ') {
+            input1.current.value = null;
+        }
+        if (isNaN(val2) || val2 === ' ') {
+            input2.current.value = null;
+        }
+    }
+
     return (
         <div className='row justify-content-around text-center'>
             <div className='col-lg-6 col-md-12 col-sm-12 col-xs-12  example'>
                 <span ref={example1}></span>
-                <input type='text' ref={input1}/>
+                <input type='text' ref={input1} onKeyUp={isNumber} maxLength={2}/>
                 <span> </span><span ref={result1}></span>
             </div>
             <div className='col-lg-6 col-md-12 col-sm-12 col-xs-12  example'>
                 <span ref={example2}></span>
-                <input type='text' ref={input2}/>
+                <input type='text' ref={input2} onKeyUp={isNumber} maxLength={2}/>
                 <span> </span><span ref={result2}></span>
             </div>
         </div>

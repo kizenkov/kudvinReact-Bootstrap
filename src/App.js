@@ -22,17 +22,17 @@ function App() {
 
     return (
         <div>
-            <div class='row'>
+            <div className='row'>
                 <Navbar isLogged={isLogged} setLogged={setLogged}/>
             </div>
-            <div class='row'>
+            <div className='row'>
                 <Route exact path='/' render={() => <Main/>}/>
                 <Route path='/letters' render={() => <Letters isLogged={isLogged} colorsArray={colorsArray}/>}/>
                 <Route path='/syllables' render={() => <Syllables isLogged={isLogged}/>}/>
                 <Route path='/numbers' render={() => <Numbers isLogged={isLogged} colorsArray={colorsArray}/>}/>
                 <Route path='/tasks' render={() => <Tasks isLogged={isLogged}/>}/>
                 <Route path='/examples' render={() => <Examples n={10} isLogged={isLogged} colorsArray={colorsArray}/>}/>
-                <Route path='/hardExamples' render={() => <Examples n={30} isLogged={isLogged} colorsArray={colorsArray}/>}/>
+                <Route path='/hardExamples' render={() => <Examples n={20} isLogged={isLogged} colorsArray={colorsArray}/>}/>
                 <Route path='/insertValue' render={() => <InsertValue isLogged={isLogged} colorsArray={colorsArray}/>}/>
                 <Route path='/contacts' render={() => <Contacts/>}/>
                 <Route path='/popit' render={() => <Popit colorsArray={colorsArray}/>}/>
