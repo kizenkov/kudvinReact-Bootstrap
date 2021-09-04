@@ -27,7 +27,7 @@ function Contacts() {
                 <a className='col text-center' href='https://vk.com/im?sel=-133509116'>
                     <img className='contact' src={vk} alt=''/>
                 </a>
-                <span className='text-center label fs-6'>© 2021 CleverKUDViN <img src={clover} alt='clover'/></span>
+                <span className='text-center label fs-6'><img src={clover} alt='clover'/> 2021 CleverKUDViN </span>
             </div>
         </div>
     )

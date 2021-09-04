@@ -47,49 +47,49 @@ function Letters({isLogged, colorsArray}) {
 
     return (
         <div className='container text-center'><br/>
-            <h2>Выберите буквы, которые вы НЕ выговариваете:</h2><br/>
-            <button className='btn btn-sm btn-info' onClick={disabled}>А</button>
-            <button className='btn btn-sm btn-info' onClick={disabled}>Б</button>
-            <button className='btn btn-sm btn-info' onClick={disabled}>В</button>
-            <button className='btn btn-sm btn-info' onClick={disabled}>Г</button>
-            <button className='btn btn-sm btn-info' onClick={disabled}>Д</button>
-            <button className='btn btn-sm btn-info' onClick={disabled}>Е</button>
-            <button className='btn btn-sm btn-info' onClick={disabled}>Ё</button>
-            <button className='btn btn-sm btn-info' onClick={disabled}>Ж</button>
-            <button className='btn btn-sm btn-info' onClick={disabled}>З</button>
-            <button className='btn btn-sm btn-info' onClick={disabled}>И</button>
-            <button className='btn btn-sm btn-info' onClick={disabled}>Й</button>
-            <button className='btn btn-sm btn-info' onClick={disabled}>К</button>
-            <button className='btn btn-sm btn-info' onClick={disabled}>Л</button>
-            <button className='btn btn-sm btn-info' onClick={disabled}>М</button>
-            <button className='btn btn-sm btn-info' onClick={disabled}>Н</button>
-            <button className='btn btn-sm btn-info' onClick={disabled}>О</button>
-            <button className='btn btn-sm btn-info' onClick={disabled}>П</button>
-            <button className='btn btn-sm btn-info' onClick={disabled}>Р</button>
-            <button className='btn btn-sm btn-info' onClick={disabled}>С</button>
-            <button className='btn btn-sm btn-info' onClick={disabled}>Т</button>
-            <button className='btn btn-sm btn-info' onClick={disabled}>У</button>
-            <button className='btn btn-sm btn-info' onClick={disabled}>Ф</button>
-            <button className='btn btn-sm btn-info' onClick={disabled}>Х</button>
-            <button className='btn btn-sm btn-info' onClick={disabled}>Ц</button>
-            <button className='btn btn-sm btn-info' onClick={disabled}>Ч</button>
-            <button className='btn btn-sm btn-info' onClick={disabled}>Ш</button>
-            <button className='btn btn-sm btn-info' onClick={disabled}>Щ</button>
-            <button className='btn btn-sm btn-info' onClick={disabled}>Ъ</button>
-            <button className='btn btn-sm btn-info' onClick={disabled}>Ы</button>
-            <button className='btn btn-sm btn-info' onClick={disabled}>Ь</button>
-            <button className='btn btn-sm btn-info' onClick={disabled}>Э</button>
-            <button className='btn btn-sm btn-info' onClick={disabled}>Ю</button>
-            <button className='btn btn-sm btn-info' onClick={disabled}>Я</button>
+            <h2>Выберите буквы, которые Вы НЕ выговариваете:</h2><br/>
+            <button className='btn btn-sm btn-warning' onClick={disabled}>А</button>
+            <button className='btn btn-sm btn-warning' onClick={disabled}>Б</button>
+            <button className='btn btn-sm btn-warning' onClick={disabled}>В</button>
+            <button className='btn btn-sm btn-warning' onClick={disabled}>Г</button>
+            <button className='btn btn-sm btn-warning' onClick={disabled}>Д</button>
+            <button className='btn btn-sm btn-warning' onClick={disabled}>Е</button>
+            <button className='btn btn-sm btn-warning' onClick={disabled}>Ё</button>
+            <button className='btn btn-sm btn-warning' onClick={disabled}>Ж</button>
+            <button className='btn btn-sm btn-warning' onClick={disabled}>З</button>
+            <button className='btn btn-sm btn-warning' onClick={disabled}>И</button>
+            <button className='btn btn-sm btn-warning' onClick={disabled}>Й</button>
+            <button className='btn btn-sm btn-warning' onClick={disabled}>К</button>
+            <button className='btn btn-sm btn-warning' onClick={disabled}>Л</button>
+            <button className='btn btn-sm btn-warning' onClick={disabled}>М</button>
+            <button className='btn btn-sm btn-warning' onClick={disabled}>Н</button>
+            <button className='btn btn-sm btn-warning' onClick={disabled}>О</button>
+            <button className='btn btn-sm btn-warning' onClick={disabled}>П</button>
+            <button className='btn btn-sm btn-warning' onClick={disabled}>Р</button>
+            <button className='btn btn-sm btn-warning' onClick={disabled}>С</button>
+            <button className='btn btn-sm btn-warning' onClick={disabled}>Т</button>
+            <button className='btn btn-sm btn-warning' onClick={disabled}>У</button>
+            <button className='btn btn-sm btn-warning' onClick={disabled}>Ф</button>
+            <button className='btn btn-sm btn-warning' onClick={disabled}>Х</button>
+            <button className='btn btn-sm btn-warning' onClick={disabled}>Ц</button>
+            <button className='btn btn-sm btn-warning' onClick={disabled}>Ч</button>
+            <button className='btn btn-sm btn-warning' onClick={disabled}>Ш</button>
+            <button className='btn btn-sm btn-warning' onClick={disabled}>Щ</button>
+            <button className='btn btn-sm btn-warning' onClick={disabled}>Ъ</button>
+            <button className='btn btn-sm btn-warning' onClick={disabled}>Ы</button>
+            <button className='btn btn-sm btn-warning' onClick={disabled}>Ь</button>
+            <button className='btn btn-sm btn-warning' onClick={disabled}>Э</button>
+            <button className='btn btn-sm btn-warning' onClick={disabled}>Ю</button>
+            <button className='btn btn-sm btn-warning' onClick={disabled}>Я</button>
             <div className='row align-items-center'>
                 <div className='col'>
-                    <button className='btn btn-success' onClick={showPrevWord}>
+                    <button className='btn btn-warning' onClick={showPrevWord}>
                         <i className='bi bi-chevron-left'></i>
                     </button>
                 </div>
                 <span className='col letter' ref={ref}>A</span>
                 <div className='col'>
-                    <button className='btn btn-success' onClick={showNextWord}>
+                    <button className='btn btn-warning' onClick={showNextWord}>
                         <i className='bi bi-chevron-right'></i>
                     </button>
                 </div>

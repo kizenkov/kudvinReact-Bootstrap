@@ -93,13 +93,13 @@ a:hover:after {
     color: saddlebrown;
 }
 
-.btn-info {
+.btn-warning {
     margin: 4px;
     padding: 3px 9px;
 }
 
 .btn-success {
-    margin: 15px;
+    margin: 20px;
     padding: 10px 20px;
     font-size: 1.5rem;
 }
@@ -247,7 +247,7 @@ input {
     }
 
     .btn-success {
-        margin: 5px;
+        /*margin: 5px;*/
         padding: 10px 10px;
     }
 }
@@ -260,7 +260,7 @@ input {
         font-size: 27vw;
     }
     .btn-success {
-        margin: 2px;
+        /*margin: 2px;*/
         padding: 1px 5px 10px;
     }
 }
@@ -288,9 +288,9 @@ input {
         font-size: 2rem;
     }
 
-    .btn-success {
-        margin: 2px;
-    }
+    /*.btn-success {*/
+    /*    margin: 2px;*/
+    /*}*/
 
     .popitBlock {
         margin: 0;
