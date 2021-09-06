@@ -142,14 +142,12 @@ function Tasks({isLogged, showKey}) {
                         <table className='table table-bordered border-dark '>
                             <thead>
                             <tr>
-                                <th>Ключ</th>
                                 <th>✓</th>
                                 <th>❌</th>
                             </tr>
                             </thead>
                             <tbody>
                             <tr>
-                                <td >?</td>
                                 <td ref={scoreTrue}>0</td>
                                 <td ref={scoreFalse}>0</td>
                             </tr>

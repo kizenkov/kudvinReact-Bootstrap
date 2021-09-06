@@ -159,7 +159,6 @@ function InsertValue({isLogged, colorsArray, trueKey, showKey}) {
                     </button>
                 </div>
                 {/*<span className='col-lg-6 col-md-12 col-sm-12 col-xs-12 result' ref={result}></span>*/}
-                <span className='col-lg-4 col-md-12 col-sm-12 col-xs-12 fw-bolder  mb-2' ref={key}></span>
             </div>
             <div>
                 <img class='helper' src={helper} alt='helper'/>

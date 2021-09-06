@@ -17,12 +17,26 @@ function Popit({colorsArray, trueKey, setNewKey, notShowKey}) {
         setScore(score + 1);
         if (score === 35) {
             setScore(0);
-            setIsKeyTrue(false);
-            setNewKey();
-            message.current.innerHTML = 'Решите еще несколько примеров или задач'
+            setTimeout(() => {
+                setIsKeyTrue(false);
+                setNewKey();
+                message.current.innerHTML = 'Решите еще несколько примеров или задач'
+            }, 1000)
             setTimeout(() => {
                 message.current.innerHTML = ''
+            }, 1500)
+            setTimeout(() => {
+                message.current.innerHTML = 'Решите еще несколько примеров или задач'
             }, 2000)
+            setTimeout(() => {
+                message.current.innerHTML = ''
+            }, 2500)
+            setTimeout(() => {
+                message.current.innerHTML = 'Решите еще несколько примеров или задач'
+            }, 3000)
+            setTimeout(() => {
+                message.current.innerHTML = ''
+            }, 3500)
         }
     }
 
@@ -157,7 +171,7 @@ function Popit({colorsArray, trueKey, setNewKey, notShowKey}) {
                 </div>
                 : null
             }
-
+            <Contacts/>
         </div>
     )
 }

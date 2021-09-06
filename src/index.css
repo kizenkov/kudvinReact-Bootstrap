@@ -306,9 +306,9 @@ input {
 }
 
 @media screen and (orientation: portrait) {
-    /*img {*/
-    /*    width: 25vw;*/
-    /*}*/
+    .helper {
+        width: 25vw;
+    }
 
     .popitBlock {
         width: 13vw;
@@ -321,7 +321,7 @@ input {
 }
 
 @media screen and (orientation: landscape) {
-    img {
+    .helper {
         width: 25vh;
     }
 
