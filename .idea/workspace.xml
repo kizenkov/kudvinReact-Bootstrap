@@ -6,7 +6,19 @@
   <component name="ChangeListManager">
     <list default="true" id="3ccc0f47-c84b-4be3-b90f-9d9c64d2d083" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Contacts/Contacts.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Contacts/Contacts.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Examples/Example.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Examples/Example.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Examples/Examples.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Examples/Examples.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/InsertValue/InsertValue.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/InsertValue/InsertValue.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Letters/Letters.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Letters/Letters.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Main/Main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Main/Main.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Navbar/Navbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navbar/Navbar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Numbers/Numbers.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Numbers/Numbers.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Popit/Block.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Popit/Block.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Popit/Popit.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Popit/Popit.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Syllables/Syllables.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Syllables/Syllables.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Tasks/Tasks.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Tasks/Tasks.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -67,7 +79,7 @@
       <workItem from="1630409793701" duration="45544000" />
       <workItem from="1630529237136" duration="45239000" />
       <workItem from="1630612605698" duration="1462000" />
-      <workItem from="1630699657158" duration="42441000" />
+      <workItem from="1630699657158" duration="63258000" />
     </task>
     <servers />
   </component>

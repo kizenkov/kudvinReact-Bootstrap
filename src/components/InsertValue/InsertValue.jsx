@@ -2,10 +2,10 @@ import {useRef, useState, useEffect} from 'react';
 import ExampleValue1 from './ExampleValue1';
 import ExampleValue2 from './ExampleValue2';
 import helper from '../../files/helper1.gif';
-import {Redirect} from 'react-router-dom';
 import Contacts from '../Contacts/Contacts';
+// import {Redirect} from 'react-router-dom';
 
-function InsertValue({isLogged, colorsArray, trueKey, showKey}) {
+function InsertValue({isLogged, colorsArray, showKey, right}) {
 
     let [sec, setSec] = useState(60);
 
@@ -39,7 +39,6 @@ function InsertValue({isLogged, colorsArray, trueKey, showKey}) {
     const button = useRef();
     // const result = useRef();
     const time = useRef();
-    const key = useRef();
 
     //timer
     useEffect(() => {
@@ -81,7 +80,7 @@ function InsertValue({isLogged, colorsArray, trueKey, showKey}) {
                 if (+el[5].current.value === el[2] - el[3]) {
                     el[7].current.innerHTML = '✓';
                     el[7].current.style.color = 'lime';
-                    score += 1;
+                    score++;
                 } else {
                     el[7].current.innerHTML = el[2] - el[3];
                     el[7].current.style.color = 'red';
@@ -90,7 +89,7 @@ function InsertValue({isLogged, colorsArray, trueKey, showKey}) {
                 if (+el[5].current.value === el[2] + el[3]) {
                     el[7].current.innerHTML = '✓';
                     el[7].current.style.color = 'lime';
-                    score += 1;
+                    score++;
                 } else {
                     el[7].current.innerHTML = el[2] + el[3];
                     el[7].current.style.color = 'red';
@@ -98,8 +97,7 @@ function InsertValue({isLogged, colorsArray, trueKey, showKey}) {
             }
         })
         // result.current.innerHTML = 'Оценка: ' + score;
-        if (score > 7) {
-            // key.current.innerHTML = 'Ключ: ' + '<span>' + trueKey + '</span>'
+        if (score >= right) {
             showKey();
         }
 
@@ -109,8 +107,6 @@ function InsertValue({isLogged, colorsArray, trueKey, showKey}) {
                 setSec(60);
                 // result.current.innerHTML = '';
                 button.current.disabled = false;
-                key.current.innerHTML = '';
-
                 arr.forEach(function (el) {
                     el[4].current.innerHTML = el[5].current.innerHTML = el[6].current.innerHTML = el[7].current.innerHTML = null;
                     el[4].current.value = el[5].current.value = el[6].current.value = el[7].current.value = null;
@@ -142,7 +138,7 @@ function InsertValue({isLogged, colorsArray, trueKey, showKey}) {
         window.scrollTo(0, document.body.scrollHeight);
     }
 
-    // if (!isLogged) return <Redirect to="/"/>
+    // if (!isLogged) return <Redirect to='/'/>
 
     return (
         <div><br/>
@@ -152,7 +148,8 @@ function InsertValue({isLogged, colorsArray, trueKey, showKey}) {
             <ExampleValue2 arr={arr} a={A4} b={B4} c={C4} d={D4} colorsArray={colorsArray}/>
             <ExampleValue1 arr={arr} a={A5} b={B5} c={C5} d={D5} colorsArray={colorsArray}/>
             <div className='row align-items-center text-center'>
-                <span className='col-lg-4 col-md-12 col-sm-12 col-xs-12 time' ref={time}>Осталось: {sec < 10 && sec >= 0 && '0'}{sec} сек</span>
+                <span className='col-lg-4 col-md-12 col-sm-12 col-xs-12 fs-4 fst-italic p-1 time'
+                      ref={time}>Осталось: {sec < 10 && sec >= 0 && '0'}{sec} сек</span>
                 <div className='col-lg-4 col-md-12 col-sm-12 col-xs-12'>
                     <button className='btn btn-success' onClick={showResult}
                             ref={button}>Принять
@@ -163,7 +160,7 @@ function InsertValue({isLogged, colorsArray, trueKey, showKey}) {
             <div>
                 <img class='helper' src={helper} alt='helper'/>
             </div>
-            <Contacts />
+            <Contacts/>
         </div>
     )
 }

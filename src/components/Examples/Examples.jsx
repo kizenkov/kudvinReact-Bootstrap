@@ -1,10 +1,11 @@
 import {useRef, useState} from 'react';
 import Example from './Example';
 import helper from '../../files/helper4.gif';
-import {Redirect} from 'react-router-dom';
 import Contacts from '../Contacts/Contacts';
+// import {Redirect} from 'react-router-dom';
 
-function Examples({showKey, n, isLogged, colorsArray}) {
+function Examples({showKey, n, isLogged, colorsArray, right}) {
+
     const [A1, setA1] = useState(Math.trunc(Math.random() * n));
     const [B1, setB1] = useState(Math.trunc(Math.random() * n));
     const [C1, setC1] = useState(Math.trunc(Math.random() * n));
@@ -34,9 +35,8 @@ function Examples({showKey, n, isLogged, colorsArray}) {
     let arr = [];
 
     const button = useRef();
-    // const result = useRef();
     const time = useRef();
-    const key = useRef();
+    // const result = useRef();
 
     function showResult() {
         let score = 0;
@@ -49,7 +49,7 @@ function Examples({showKey, n, isLogged, colorsArray}) {
             if ((+el[4].current.value === el[0] + el[1])) {
                 el[6].current.innerHTML = '✓';
                 el[6].current.style.color = 'lime';
-                score += 1;
+                score++;
             } else {
                 el[6].current.innerHTML = +el[0] + +el[1];
                 el[6].current.style.color = 'red';
@@ -57,15 +57,14 @@ function Examples({showKey, n, isLogged, colorsArray}) {
             if ((+el[5].current.value === el[2] - el[3])) {
                 el[7].current.innerHTML = '✓';
                 el[7].current.style.color = 'lime';
-                score += 1;
+                score++;
             } else {
                 el[7].current.innerHTML = +el[2] - +el[3];
                 el[7].current.style.color = 'red';
             }
         })
 
-        if (score > 7) {
-            // key.current.innerHTML = 'Ключ: ' + '<span>' + trueKey + '</span>'
+        if (score >= right) {
             showKey();
         }
         // result.current.innerHTML = 'Оценка: ' + score;
@@ -75,7 +74,6 @@ function Examples({showKey, n, isLogged, colorsArray}) {
                 window.scrollTo(document.body.scrollWidth, 0);
                 // result.current.innerHTML = '';
                 time.current.innerHTML = '';
-                key.current.innerHTML = '';
                     button.current.disabled = false;
                 arr.forEach(function (el) {
                     el[4].current.value = '';
@@ -129,7 +127,7 @@ function Examples({showKey, n, isLogged, colorsArray}) {
                 <Example arr={arr} a={A5 + 10} b={B5 + 10} c={C5 + 10} d={D5 + 10} colorsArray={colorsArray}/>
             </>}
             <div className='row align-items-center text-center'>
-                <span className='col-lg-4 col-md-12 col-sm-12 col-xs-12 time' ref={time}></span>
+                <span className='col-lg-4 col-md-12 col-sm-12 col-xs-12 fs-4 fst-italic p-1 time' ref={time}></span>
                 <div className='col-lg-4 col-md-12 col-sm-12 col-xs-12'>
                     <button className='btn btn-success' onClick={showResult}
                             ref={button}>Принять

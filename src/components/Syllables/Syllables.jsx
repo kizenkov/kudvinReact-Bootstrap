@@ -1,15 +1,20 @@
 import './Syllables.css';
 import {useRef} from 'react';
-import {Redirect} from 'react-router-dom';
 import SyllablesLandscape1 from './SyllablesLandscape1';
 import SyllablesPortrait1 from './SyllablesPortrait1';
 import Contacts from '../Contacts/Contacts';
+// import {Redirect} from 'react-router-dom';
 
-function Syllables({isLogged}) {
+function Syllables({isLogged, right, showKey}) {
 
     const syllable = useRef();
+    let score = 0;
 
     function showSyllable(e) {
+        score++;
+        if (score >= right) {
+            showKey();
+        }
         syllable.current.innerHTML = e.currentTarget.innerHTML;
         syllable.current.className = 'newSyllable';
         syllable.current.onclick = () => {
@@ -25,7 +30,7 @@ function Syllables({isLogged}) {
             <SyllablesLandscape1 showSyllable={showSyllable}/>
             <SyllablesPortrait1 showSyllable={showSyllable}/>
             <div ref={syllable}></div>
-            <Contacts />
+            <Contacts/>
         </div>
     )
 }

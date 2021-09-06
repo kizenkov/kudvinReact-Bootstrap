@@ -2,16 +2,18 @@ import {useEffect, useRef} from 'react';
 
 function Block({lop, score, changeScore, setScore, color}) {
 
-    let div = useRef();
+    let block = useRef();
 
     useEffect(() => {
-        {div.current['style'].backgroundColor = color}
+        {
+            block.current['style'].backgroundColor = color
+        }
     }, [])
 
     if (score === 36) {
         setTimeout(() => {
-            div.current['style'].backgroundColor = color;
-            div.current.disabled = false;
+            block.current['style'].backgroundColor = color;
+            block.current.disabled = false;
             setScore(0)
         }, 2000)
     }
@@ -22,13 +24,13 @@ function Block({lop, score, changeScore, setScore, color}) {
             }).catch(function (error) {
             });
         }
-        div.current['style'].backgroundColor = 'white';
-        div.current.disabled = true;
+        block.current['style'].backgroundColor = 'white';
+        block.current.disabled = true;
         changeScore();
     }
 
     return (
-        <button className='popitBlock' ref={div} onClick={lopPop}></button>
+        <button className='popitBlock' ref={block} onClick={lopPop}></button>
     )
 }
 

@@ -1,9 +1,9 @@
 import {useRef} from 'react';
-import helper from '../../files/helper3.gif';
-import {Redirect} from 'react-router-dom';
 import Contacts from '../Contacts/Contacts';
+// import helper from '../../files/helper3.gif';
+// import {Redirect} from 'react-router-dom';
 
-function Letters({isLogged, colorsArray}) {
+function Letters({isLogged, colorsArray, showKey}) {
 
     const ref = useRef();
     let words = [];
@@ -30,6 +30,7 @@ function Letters({isLogged, colorsArray}) {
         i++;
         if (i >= (words.length)) {
             i = 0
+            showKey();
         }
         ref.current.innerHTML = words[i];
     }
@@ -97,7 +98,7 @@ function Letters({isLogged, colorsArray}) {
             {/*<div>*/}
             {/*    <img className='helper' src={helper} alt='helper'/>*/}
             {/*</div>*/}
-            <Contacts />
+            <Contacts/>
         </div>
     )
 }

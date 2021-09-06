@@ -1,6 +1,6 @@
 import {NavLink} from 'react-router-dom';
 import {useRef, useState} from 'react';
-import clover from "../../files/clover.png";
+import clover from '../../files/clover.png';
 
 function Navbar({isLogged, setLogged, keyForNavbar}) {
 
@@ -52,10 +52,9 @@ function Navbar({isLogged, setLogged, keyForNavbar}) {
 
         <nav className='navbar navbar-expand-lg navbar-dark bg-dark fs-5'>
             <div className='container-fluid px-1'>
-                <NavLink to='/' className='navbar-brand fs-2 fst-italic' onClick={notShow}><img className='fs-3'
-                                                                                                src={clover}
+                <NavLink to='/' className='navbar-brand fs-2 fst-italic' onClick={notShow}><img src={clover}
                                                                                                 alt='clover'/> CleverKUDViN</NavLink>
-                {keyForNavbar &&  <span className='nav-link fs-6 text-center'>
+                {keyForNavbar && <span className='nav-link fs-6 text-center'>
                     Ключ: <br/>{keyForNavbar}
                 </span>}
                 <button className='navbar-toggler' type='button' data-bs-toggle='collapse'
@@ -109,7 +108,7 @@ function Navbar({isLogged, setLogged, keyForNavbar}) {
                             </a>
                             <ul className='dropdown-menu dropdown-menu-dark bg-dark' aria-labelledby='navbarDropdown'>
                                 <li><NavLink to='popit' className='nav-link m-2' onClick={notShow}>
-                                    Popit
+                                    Pop-it
                                 </NavLink></li>
                             </ul>
                         </li>

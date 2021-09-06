@@ -21,24 +21,10 @@ code {
     text-align: justify;
 }
 
-/*underline*/
-a {
-    position: relative;
-}
-
-a:after {
-    display: block;
-    position: absolute;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background-color: limegreen;
-    content: "";
-    transition: width 0.3s ease-out;
-}
-
-a:hover:after {
-    width: 100%;
+.contact {
+    width: 10vw;
+    max-width: 60px;
+    margin: 5px 0 30px;
 }
 
 .navbar {
@@ -65,18 +51,18 @@ a:hover:after {
     color: white;
 }
 
-.navbar-dark .navbar-nav .nav-link.active, .navbar-dark .navbar-nav .show>.nav-link, .navbar-dark .navbar-brand, .label {
+.navbar-dark .navbar-nav .nav-link.active, .navbar-dark .navbar-nav .show > .nav-link, .navbar-dark .navbar-brand, .label {
     color: limegreen;
-}
-
-.label img {
-    width: 15px;
-    margin: 0 0 3px 3px;
 }
 
 .navbar img {
     width: 20px;
-    margin: 0 0 10px 3px;
+    margin: 0 0 5px;
+}
+
+.label img {
+    width: 15px;
+    margin: 0 0 5px;
 }
 
 .navbar-dark .navbar-brand:hover {
@@ -85,6 +71,48 @@ a:hover:after {
 
 .navbar-dark .navbar-brand:not(:hover) {
     transition: 0.3s;
+}
+
+a {
+    position: relative;
+}
+
+a:after {
+    display: block;
+    position: absolute;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: limegreen;
+    content: "";
+    transition: width 0.3s ease-out;
+}
+
+a:hover:after {
+    width: 100%;
+}
+
+.popit {
+    margin-top: 1vh;
+    /*padding: 0;*/
+}
+
+.popitBlock {
+    border: 1px solid darkgrey;
+    border-radius: 50%;
+    /*margin: 3px;*/
+    transition: 0.3s;
+}
+
+.task {
+    background-color: blanchedalmond;
+    padding: 30px;
+    margin: 40px 15vw;
+    border-radius: 20px;
+}
+
+.taskResult {
+    z-index: 50;
 }
 
 .letter {
@@ -107,50 +135,8 @@ a:hover:after {
     font-size: 5vw;
 }
 
-/*.example {*/
-/*    font-size: 3rem;*/
-/*    padding: 20px;*/
-/*}*/
-
-input {
-    width: 90px;
-    border: none;
-    border-radius: 5px;
-    outline: none;
-    background-color: blanchedalmond;
-    text-align: center;
-}
-
 .time {
     color: saddlebrown;
-    font-size: 1.5rem;
-    font-style: italic;
-    padding: 20px;
-}
-
-.result {
-    color: red;
-    font-size: 3rem;
-    font-style: italic;
-}
-
-.task {
-    background-color: blanchedalmond;
-    padding: 30px;
-    margin: 40px 15vw;
-    border-radius: 20px;
-}
-
-.popitBlock {
-    border: 1px solid darkgrey;
-    border-radius: 50%;
-    margin: 3px;
-    transition: 0.3s;
-}
-
-.popit {
-    margin-top: 1vh;
-    padding: 0;
 }
 
 .helper {
@@ -158,30 +144,6 @@ input {
     bottom: 10px;
     left: 10px;
     z-index: 20;
-}
-
-.contact {
-    width: 10vw;
-    max-width: 60px;
-    margin: 5px 0 30px;
-}
-
-.offcanvas {
-    height: max-content;
-}
-
-.nav-link {
-    padding: 0;
-    cursor: pointer;
-}
-
-.card {
-    border: none;
-}
-
-.taskResult {
-    font-size: 5vw;
-    z-index: 50;
 }
 
 .helperForMain {
@@ -194,27 +156,39 @@ input {
     width: auto;
 }
 
+.offcanvas {
+    height: max-content;
+}
+
+.nav-link {
+    padding: 0;
+    cursor: pointer;
+}
+
+/*.result {*/
+/*    color: red;*/
+/*    font-size: 3rem;*/
+/*    font-style: italic;*/
+/*}*/
+
+input {
+    width: 90px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    background-color: blanchedalmond;
+    text-align: center;
+}
+
 @media screen and (max-width: 1300px) {
     .letter {
         font-size: 35vw;
-    }
-
-    .taskResult {
-        font-size: 6vw;
     }
 }
 
 @media screen and (max-width: 884px) {
     .letter {
         font-size: 40vw;
-    }
-
-    /*.navbar-brand {*/
-    /*    margin-right: 0;*/
-    /*}*/
-
-    .taskResult {
-        font-size: 8vw;
     }
 }
 
@@ -231,78 +205,45 @@ input {
 }
 
 @media screen and (max-width: 500px) {
-    /*.example {*/
-    /*    font-size: 2rem;*/
-    /*    padding: 20px;*/
-    /*}*/
+    .letter {
+        font-size: 30vw;
+    }
 
     input {
         width: 65px;
     }
 
-    .popitBlock {
-        margin: 2px;
-    }
-
-    .letter {
-        font-size: 30vw;
-    }
-
     .btn-success {
-        /*margin: 5px;*/
         padding: 10px 10px;
     }
 }
 
 @media screen and (max-width: 310px) {
-    /*.navbar-brand {*/
-    /*    font-size: 1.5rem;*/
-    /*}*/
-
     .letter {
         font-size: 27vw;
     }
+
     .btn-success {
-        /*margin: 2px;*/
         padding: 1px 5px 10px;
     }
+
     body {
         padding-top: 114px;
     }
 }
 
 @media screen and (max-width: 265px) {
-
-
-    /*.example {*/
-    /*    font-size: 1.5rem;*/
-    /*    padding: 10px;*/
-    /*}*/
+    .letter {
+        font-size: 25vw;
+    }
 
     input {
         width: 40px;
     }
 
-    .time {
-        font-size: 1rem;
-        padding: 20px;
-    }
-
-    .result {
-        font-size: 2rem;
-    }
-
-    /*.btn-success {*/
-    /*    margin: 2px;*/
+    /*.result {*/
+    /*    font-size: 2rem;*/
     /*}*/
-
-    .popitBlock {
-        margin: 0;
-    }
-
-    .letter {
-        font-size: 25vw;
-    }
 }
 
 @media screen and (orientation: portrait) {
@@ -314,10 +255,6 @@ input {
         width: 13vw;
         height: 13vw;
     }
-    /*.carousel img {*/
-    /*    width: 70vw;*/
-    /*    height: auto;*/
-    /*}*/
 }
 
 @media screen and (orientation: landscape) {
@@ -329,8 +266,18 @@ input {
         width: 13vh;
         height: 13vh;
     }
-    /*.carousel img {*/
-    /*    height: 327px;*/
-    /*    width: auto;*/
-    /*}*/
 }
+
+.buttonUp {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    display: none;
+    z-index: 200;
+    opacity: 0.3;
+    border-radius: 10px;
+}
+
+/*.card {*/
+/*    border: none;*/
+/*}*/

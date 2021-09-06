@@ -44,13 +44,13 @@ function App() {
             </div>
             <div className='row'>
                 <Route exact path='/' render={() => <Main/>}/>
-                <Route path='/letters' render={() => <Letters isLogged={isLogged} colorsArray={colorsArray}/>}/>
-                <Route path='/syllables' render={() => <Syllables isLogged={isLogged}/>}/>
-                <Route path='/numbers' render={() => <Numbers isLogged={isLogged} colorsArray={colorsArray}/>}/>
-                <Route path='/tasks' render={() => <Tasks showKey={showKey} trueKey={key} isLogged={isLogged} />}/>
-                <Route path='/examples' render={() => <Examples showKey={showKey} trueKey={key} n={10} isLogged={isLogged} colorsArray={colorsArray} />}/>
-                <Route path='/hardExamples' render={() => <Examples showKey={showKey} trueKey={key} n={20} isLogged={isLogged} colorsArray={colorsArray}/>}/>
-                <Route path='/insertValue' render={() => <InsertValue showKey={showKey} trueKey={key} isLogged={isLogged} colorsArray={colorsArray}/>}/>
+                <Route path='/letters' render={() => <Letters showKey={showKey} isLogged={isLogged} colorsArray={colorsArray}/>}/>
+                <Route path='/syllables' render={() => <Syllables showKey={showKey} right={10} isLogged={isLogged}/>}/>
+                <Route path='/numbers' render={() => <Numbers showKey={showKey} isLogged={isLogged} colorsArray={colorsArray}/>}/>
+                <Route path='/tasks' render={() => <Tasks showKey={showKey} right={5} trueKey={key} isLogged={isLogged} />}/>
+                <Route path='/examples' render={() => <Examples showKey={showKey} right={8} trueKey={key} n={10} isLogged={isLogged} colorsArray={colorsArray} />}/>
+                <Route path='/hardExamples' render={() => <Examples showKey={showKey} right={6} trueKey={key} n={20} isLogged={isLogged} colorsArray={colorsArray}/>}/>
+                <Route path='/insertValue' render={() => <InsertValue showKey={showKey} right={8} trueKey={key} isLogged={isLogged} colorsArray={colorsArray}/>}/>
                 <Route path='/contacts' render={() => <Contacts/>}/>
                 <Route path='/popit' render={() => <Popit notShowKey={notShowKey} colorsArray={colorsArray} trueKey={key} setNewKey={setNewKey} />}/>
             </div>

@@ -2,10 +2,10 @@ import React, {useRef, useEffect} from 'react';
 import yes from './../../files/yes.mp3';
 import no from './../../files/no.mp3';
 import helper from './../../files/helper.gif';
-import {Redirect} from 'react-router-dom';
 import Contacts from '../Contacts/Contacts';
+// import {Redirect} from 'react-router-dom';
 
-function Tasks({isLogged, showKey}) {
+function Tasks({isLogged, showKey, right}) {
     const task = useRef();
     const result = useRef();
     const button = useRef();
@@ -13,7 +13,6 @@ function Tasks({isLogged, showKey}) {
     const scoreTrue = useRef();
     const scoreFalse = useRef();
     const answer = useRef();
-    const key = useRef();
 
     let tasks = [];
     tasks.push('Маша засушила 3 кленовых листика, а дубовых – на 2 листика больше. Сколько всего листиков засушила Маша?');
@@ -39,16 +38,9 @@ function Tasks({isLogged, showKey}) {
     let scoreTrueValue = 0;
     let scoreFalseValue = 0;
 
-    // useEffect(
-    //     () => {
-    //         if (isLogged) {
-    //             task.current.innerHTML = tasks[i];
-    //         }
-    //     }, [isLogged, i]
-    // );
     useEffect(
         () => {
-                task.current.innerHTML = tasks[i];
+            task.current.innerHTML = tasks[i];
         }, [i]
     );
 
@@ -80,7 +72,7 @@ function Tasks({isLogged, showKey}) {
         } else {
             if (+inputAnswer.current['value'] === results[i]) {
                 audioYes.play();
-                if (scoreTrueValue > 4) {
+                if (scoreTrueValue >= right) {
                     showKey();
                 }
                 scoreTrue.current.innerHTML = ++scoreTrueValue;
@@ -123,7 +115,7 @@ function Tasks({isLogged, showKey}) {
                         inputAnswer.current.value = null;
                     }
 
-                }, 3000)
+                }, 300000)
             }
         }
         window.scrollTo(0, document.body.scrollHeight);
@@ -165,14 +157,14 @@ function Tasks({isLogged, showKey}) {
                 <br/>
                 <div className='container'>
                     <div className='row justify-content-center'>
-                        <p className='taskResult fw-bold ms-4' ref={result}></p>
+                        <p className='taskResult fs-1 fw-bold ms-4' ref={result}></p>
                     </div>
                 </div>
                 <div>
                     <img className='helper' src={helper} alt='helper'/>
                 </div>
             </div>
-            <Contacts />
+            <Contacts/>
         </div>
     )
 }

@@ -20,7 +20,6 @@ function Example({a, b, c, d, arr, colorsArray}) {
 
     let f;
     let e;
-
     if (a === 0 && b === 0) {
         b = 4
     }

@@ -1,9 +1,9 @@
 import {useRef} from 'react';
 import helper from '../../files/helper2.gif';
-import {Redirect} from 'react-router-dom';
 import Contacts from '../Contacts/Contacts';
+// import {Redirect} from 'react-router-dom';
 
-function Numbers({isLogged, colorsArray}) {
+function Numbers({isLogged, colorsArray, showKey}) {
 
     const ref = useRef();
     let words = [];
@@ -21,6 +21,7 @@ function Numbers({isLogged, colorsArray}) {
         getRand();
         i++;
         if (i >= (words.length)) {
+            showKey();
             i = 0
         }
         ref.current.innerHTML = words[i];
@@ -55,7 +56,7 @@ function Numbers({isLogged, colorsArray}) {
             <div>
                 <img className='helper' src={helper} alt='helper'/>
             </div>
-            <Contacts />
+            <Contacts/>
         </div>
     )
 }

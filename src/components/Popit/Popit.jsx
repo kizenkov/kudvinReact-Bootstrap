@@ -2,7 +2,7 @@ import Block from './Block';
 import lopp from '../../files/lop.mp3';
 import {useState, useRef} from 'react';
 import Contacts from '../Contacts/Contacts';
-import {Redirect} from "react-router-dom";
+// import {Redirect} from 'react-router-dom';
 
 function Popit({colorsArray, trueKey, setNewKey, notShowKey}) {
 
@@ -20,23 +20,7 @@ function Popit({colorsArray, trueKey, setNewKey, notShowKey}) {
             setTimeout(() => {
                 setIsKeyTrue(false);
                 setNewKey();
-                message.current.innerHTML = 'Решите еще несколько примеров или задач'
             }, 1000)
-            setTimeout(() => {
-                message.current.innerHTML = ''
-            }, 1500)
-            setTimeout(() => {
-                message.current.innerHTML = 'Решите еще несколько примеров или задач'
-            }, 2000)
-            setTimeout(() => {
-                message.current.innerHTML = ''
-            }, 2500)
-            setTimeout(() => {
-                message.current.innerHTML = 'Решите еще несколько примеров или задач'
-            }, 3000)
-            setTimeout(() => {
-                message.current.innerHTML = ''
-            }, 3500)
         }
     }
 
@@ -46,9 +30,10 @@ function Popit({colorsArray, trueKey, setNewKey, notShowKey}) {
             setCode('');
             setIsKeyTrue(true);
             notShowKey();
+            message.current.innerHTML = ''
         } else {
             setCode('');
-            message.current.innerHTML = 'Ошибочный ключ'
+            message.current.innerHTML = 'Неверный ключ'
             setTimeout(() => {
                 message.current.innerHTML = ''
             }, 2000)
@@ -62,16 +47,24 @@ function Popit({colorsArray, trueKey, setNewKey, notShowKey}) {
             {!isKeyTrue ?
                 <div className='container'>
                     <br/>
-                    <form className="row align-items-center text-center" onSubmit={checkKey}>
-                        <div className="row text-center">
-                            <p className="text-center fs-5">
-                                Решите не менее 8 примеров или 6 задач и введите полученный ключ
-                            </p>
+                    <form className='row align-items-center' onSubmit={checkKey}>
+                        <div className='row'>
+                            <ul className='fs-5'>
+                                <h4>Чтобы сыграть в Pop-it, выполните одно из условий и введите полученный ключ:</h4>
+                                <br/>
+                                <li>pешите не менее 8 лёгких примеров за одну попытку</li>
+                                <li>pешите не менее 6 сложных примеров за одну попытку</li>
+                                <li>вставьте не менее 8 правильных чисел за одну попытку</li>
+                                <li>решите правильно 5 задач</li>
+                                <li>повторите все буквы</li>
+                                <li>повторите все числа</li>
+                                <li>повторите 10 слогов</li>
+                            </ul>
                         </div>
-                        <div className="row">
-                            <input className='form-control m-2' placeholder='Kлюч' value={code} maxLength='3'
+                        <div className='row'>
+                            <input className='form-control m-1' autoFocus={true} value={code} maxLength='3'
                                    onChange={(e) => setCode(e.target.value)} ref={input}/>
-                            <button className='btn btn-success m-2 fs-6' type='submit'>Проверить</button>
+                            <button className='btn btn-success m-1 fs-6 py-2' type='submit'>Подтвердить</button>
                         </div>
                     </form>
                 </div> : null}
