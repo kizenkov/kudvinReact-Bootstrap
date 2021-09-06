@@ -13,8 +13,14 @@ import Contacts from './components/Contacts/Contacts';
 
 function App() {
 
-    let colorsArray = ['blueviolet', 'blue', 'limegreen', 'saddlebrown', 'orange', 'red']
+    let keysArray = ['122', '324', '789', '566', '887', '435', '977', '215', '168', '890', '501', '607', '814'];
     const [isLogged, setIsLogged] = useState(true)
+    const [key, setKey] = useState(keysArray[Math.floor(Math.random() * keysArray.length)])
+
+    function setNewKey() {
+        setKey(keysArray[Math.floor(Math.random() * keysArray.length)]);
+    }
+    let colorsArray = ['blueviolet', 'blue', 'limegreen', 'saddlebrown', 'orange', 'red']
     let setLogged = () => {
         setIsLogged(true);
         window.scrollTo(0, 0);
@@ -30,12 +36,12 @@ function App() {
                 <Route path='/letters' render={() => <Letters isLogged={isLogged} colorsArray={colorsArray}/>}/>
                 <Route path='/syllables' render={() => <Syllables isLogged={isLogged}/>}/>
                 <Route path='/numbers' render={() => <Numbers isLogged={isLogged} colorsArray={colorsArray}/>}/>
-                <Route path='/tasks' render={() => <Tasks isLogged={isLogged}/>}/>
-                <Route path='/examples' render={() => <Examples n={10} isLogged={isLogged} colorsArray={colorsArray}/>}/>
-                <Route path='/hardExamples' render={() => <Examples n={20} isLogged={isLogged} colorsArray={colorsArray}/>}/>
-                <Route path='/insertValue' render={() => <InsertValue isLogged={isLogged} colorsArray={colorsArray}/>}/>
+                <Route path='/tasks' render={() => <Tasks trueKey={key} isLogged={isLogged}/>}/>
+                <Route path='/examples' render={() => <Examples trueKey={key} n={10} isLogged={isLogged} colorsArray={colorsArray} />}/>
+                <Route path='/hardExamples' render={() => <Examples trueKey={key} n={20} isLogged={isLogged} colorsArray={colorsArray}/>}/>
+                <Route path='/insertValue' render={() => <InsertValue trueKey={key} isLogged={isLogged} colorsArray={colorsArray}/>}/>
                 <Route path='/contacts' render={() => <Contacts/>}/>
-                <Route path='/popit' render={() => <Popit colorsArray={colorsArray}/>}/>
+                <Route path='/popit' render={() => <Popit colorsArray={colorsArray} trueKey={key} setNewKey={setNewKey} />}/>
             </div>
         </div>
     )

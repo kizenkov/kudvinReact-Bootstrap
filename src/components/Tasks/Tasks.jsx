@@ -5,7 +5,7 @@ import helper from './../../files/helper.gif';
 import {Redirect} from 'react-router-dom';
 import Contacts from '../Contacts/Contacts';
 
-function Tasks({isLogged}) {
+function Tasks({isLogged, trueKey}) {
     const task = useRef();
     const result = useRef();
     const button = useRef();
@@ -13,6 +13,7 @@ function Tasks({isLogged}) {
     const scoreTrue = useRef();
     const scoreFalse = useRef();
     const answer = useRef();
+    const key = useRef();
 
     let tasks = [];
     tasks.push('Маша засушила 3 кленовых листика, а дубовых – на 2 листика больше. Сколько всего листиков засушила Маша?');
@@ -29,7 +30,7 @@ function Tasks({isLogged}) {
     tasks.push('На крыше беседки висят 4 сосульки, а на крыше дома – на 6 сосулек больше. 3 сосульки растаяли. Сколько всего сосулек осталось висеть на крышах?');
     tasks.push('Мультфильм в кинотеатре начался в 5 часов, а закончился в 7. Сколько часов шёл мультфильм?');
     tasks.push('На Новый год в вазу положили 10 мандаринов. 4 мандарина съел папа, 3 мандарина съела мама и еще 3 - бабушка. Сколько мандаринов осталось в вазе?');
-    tasks.push('Катя слепила 5 снежковб а сережа - 7. По 3 снежка они бросили друг в друга. Сколько всего снежков осталось у ребят?');
+    tasks.push('Катя слепила 5 снежков, а сережа - 7. По 3 снежка они бросили друг в друга. Сколько всего снежков осталось у ребят?');
     tasks.push('У Саши есть 3 рубля, а пачка мороженого стоит 1 рубль. Сколько пачек мороженого сможет купить Саша?');
 
     let results = [8, 11, 5, 10, 4, 2, 13, 7, 15, 10, 3, 11, 2, 0, 6, 3];
@@ -38,13 +39,19 @@ function Tasks({isLogged}) {
     let scoreTrueValue = 0;
     let scoreFalseValue = 0;
 
+    // useEffect(
+    //     () => {
+    //         if (isLogged) {
+    //             task.current.innerHTML = tasks[i];
+    //         }
+    //     }, [isLogged, i]
+    // );
     useEffect(
         () => {
-            if (isLogged) {
                 task.current.innerHTML = tasks[i];
-            }
-        }, [isLogged, i]
+        }, [i]
     );
+
 
     function isNumber() {
         let val = inputAnswer.current['value'];
@@ -58,37 +65,47 @@ function Tasks({isLogged}) {
         let audioNo = new Audio();
         audioYes.src = yes;
         audioNo.src = no;
+
         if (inputAnswer.current['value'] === '') {
             window.scrollTo(0, document.body.scrollHeight);
             result.current.innerHTML = 'ВВЕДИТЕ ОТВЕТ';
             result.current['style'].color = 'gold';
             setTimeout(() => {
-                window.scrollTo(document.body.scrollWidth, 0);
-                result.current.innerHTML = null
+                if (result.current) {
+                    window.scrollTo(document.body.scrollWidth, 0);
+                    result.current.innerHTML = null
+                }
+
             }, 2000)
         } else {
             if (+inputAnswer.current['value'] === results[i]) {
                 audioYes.play();
+                if (scoreTrueValue > 4) {
+                    key.current.innerHTML = trueKey;
+                }
                 scoreTrue.current.innerHTML = ++scoreTrueValue;
                 inputAnswer.current.disabled = 'disabled'
                 button.current.disabled = true;
                 result.current.innerHTML = 'ВЕРНО &#128521';
                 result.current['style'].color = 'green';
                 setTimeout(function () {
-                    window.scrollTo(document.body.scrollWidth, 0);
-                    inputAnswer.current.disabled = null;
-                    button.current.disabled = false;
-                    tasks.splice(i, 1);
-                    results.splice(i, 1);
-                    result.current.innerHTML = null;
-                    inputAnswer.current.value = null;
-                    if (tasks.length) {
-                        i = Math.round(Math.random() * (tasks.length - 1))
-                        task.current.innerHTML = tasks[i];
-                    } else {
-                        task.current.innerHTML = 'ЗАДАЧКИ ЗАКОНЧИЛИСЬ';
-                        answer.current.innerHTML = null;
+                    if (result.current) {
+                        window.scrollTo(document.body.scrollWidth, 0);
+                        inputAnswer.current.disabled = null;
+                        button.current.disabled = false;
+                        tasks.splice(i, 1);
+                        results.splice(i, 1);
+                        result.current.innerHTML = null;
+                        inputAnswer.current.value = null;
+                        if (tasks.length) {
+                            i = Math.round(Math.random() * (tasks.length - 1))
+                            task.current.innerHTML = tasks[i];
+                        } else {
+                            task.current.innerHTML = 'ЗАДАЧКИ ЗАКОНЧИЛИСЬ';
+                            answer.current.innerHTML = null;
+                        }
                     }
+
                 }, 3000)
             } else {
                 audioNo.play();
@@ -98,18 +115,21 @@ function Tasks({isLogged}) {
                 result.current.innerHTML = 'НЕПРАВИЛЬНО &#128553';
                 result.current['style'].color = 'red';
                 setTimeout(function () {
-                    window.scrollTo(document.body.scrollWidth, 0);
-                    inputAnswer.current.disabled = null;
-                    button.current.disabled = false;
-                    result.current.innerHTML = null;
-                    inputAnswer.current.value = null;
+                    if (result.current) {
+                        window.scrollTo(document.body.scrollWidth, 0);
+                        inputAnswer.current.disabled = null;
+                        button.current.disabled = false;
+                        result.current.innerHTML = null;
+                        inputAnswer.current.value = null;
+                    }
+
                 }, 3000)
             }
         }
         window.scrollTo(0, document.body.scrollHeight);
     }
 
-    if (!isLogged) return <Redirect to='/'/>
+    // if (!isLogged) return <Redirect to='/'/>
 
     return (
         <div className='container text-center'>
@@ -118,16 +138,18 @@ function Tasks({isLogged}) {
             </div>
             <div className='container'>
                 <div className='row justify-content-center text-center align-items-center'>
-                    <div className='col-lg-2 col-md-2 col-sm-2 col-xs-12'>
+                    <div className='col-lg-3 col-md-3 col-sm-3 col-xs-12'>
                         <table className='table table-bordered border-dark '>
                             <thead>
                             <tr>
+                                <th>Ключ</th>
                                 <th>✓</th>
                                 <th>❌</th>
                             </tr>
                             </thead>
                             <tbody>
                             <tr>
+                                <td ref={key}>?</td>
                                 <td ref={scoreTrue}>0</td>
                                 <td ref={scoreFalse}>0</td>
                             </tr>

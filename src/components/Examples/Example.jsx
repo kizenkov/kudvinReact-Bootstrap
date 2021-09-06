@@ -20,6 +20,10 @@ function Example({a, b, c, d, arr, colorsArray}) {
 
     let f;
     let e;
+
+    if (a === 0 && b === 0) {
+        b = 4
+    }
     if (c > d) {
         f = c;
         e = d;
@@ -46,12 +50,12 @@ function Example({a, b, c, d, arr, colorsArray}) {
 
     return (
         <div className='row justify-content-around text-center'>
-            <div className='col-lg-6 col-md-12 col-sm-12 col-xs-12  example'>
+            <div className='col-lg-6 col-md-6 col-sm-12 col-xs-12 fs-1 p-4'>
                 <span ref={example1}></span>
                 <input type='text' ref={input1} onKeyUp={isNumber} maxLength={2}/>
                 <span> </span><span ref={result1}></span>
             </div>
-            <div className='col-lg-6 col-md-12 col-sm-12 col-xs-12  example'>
+            <div className='col-lg-6 col-md-6 col-sm-12 col-xs-12 fs-1 p-4'>
                 <span ref={example2}></span>
                 <input type='text' ref={input2} onKeyUp={isNumber} maxLength={2}/>
                 <span> </span><span ref={result2}></span>

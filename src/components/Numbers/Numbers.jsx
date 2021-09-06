@@ -35,17 +35,17 @@ function Numbers({isLogged, colorsArray}) {
         ref.current.innerHTML = words[i];
     }
 
-    if (!isLogged) return <Redirect to='/'/>
+    // if (!isLogged) return <Redirect to='/'/>
 
     return (
-        <div className='container text-center numbers'>
+        <div className='container text-center mt-5'>
             <div className='row align-items-center'>
                 <div className='col'>
                     <button className='btn btn-warning' onClick={showPrevWord}>
                         <i className='bi bi-chevron-left'></i>
                     </button>
                 </div>
-                <span className='col letter' ref={ref}>0</span>
+                <span className='col letter fw-bold' ref={ref}>0</span>
                 <div className='col'>
                     <button className='btn btn-warning' onClick={showNextWord}>
                         <i className='bi bi-chevron-right'></i>

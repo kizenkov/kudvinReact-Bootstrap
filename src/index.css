@@ -6,7 +6,7 @@ body {
     sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background: linear-gradient(#bbb, transparent 1px), linear-gradient(90deg, #bbb, transparent 1px) center;
+    background: linear-gradient(lavender, transparent 1px), linear-gradient(90deg, lavender, transparent 1px) center;
     background-size: 25px 25px;
 }
 
@@ -15,15 +15,10 @@ code {
     monospace;
 }
 
-.main {
-    text-align: justify;
-    line-height: 25px;
-}
-
-.main h4 {
-    text-indent: 40px;
+.main p {
+    text-indent: 30px;
     line-height: 49px;
-    margin: 7px 0;
+    text-align: justify;
 }
 
 /*underline*/
@@ -34,32 +29,36 @@ a {
 a:after {
     display: block;
     position: absolute;
-    left: 0; /*изменить на right:0;, чтобы изменить направление подчёркивания */
-    width: 0; /*задаём длинну линии до наведения курсора*/
-    height: 2px; /*задаём ширину линии*/
-    background-color: limegreen; /*задаём цвет линии*/
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: limegreen;
     content: "";
-    transition: width 0.3s ease-out; /*задаём время анимации*/
+    transition: width 0.3s ease-out;
 }
 
 a:hover:after {
-    width: 100%; /*устанавливаем значение 100% чтобы ссылка подчёркивалась полностью*/
+    width: 100%;
 }
 
 .navbar {
     position: absolute;
     top: 0;
-    font-size: 1.25rem;
     z-index: 100;
 }
 
-.navbar li {
-    margin: 10px;
+.navbar-brand {
+    border: 1px solid limegreen;
+    border-radius: 7px;
+    padding: 4px 5px;
 }
 
-.navbar-brand {
-    font-size: 2rem;
-    font-style: italic;
+.navbar-brand:hover {
+    border-color: white;
+}
+
+.navbar-brand:hover:after {
+    width: 0;
 }
 
 .navbar-dark .navbar-nav .nav-link {
@@ -75,6 +74,11 @@ a:hover:after {
     margin: 0 0 3px 3px;
 }
 
+.navbar img {
+    width: 20px;
+    margin: 0 0 10px 3px;
+}
+
 .navbar-dark .navbar-brand:hover {
     transition: 0.3s;
 }
@@ -83,13 +87,8 @@ a:hover:after {
     transition: 0.3s;
 }
 
-.nav-item {
-    margin: 2px;
-}
-
 .letter {
     font-size: 25vw;
-    font-weight: bold;
     color: saddlebrown;
 }
 
@@ -99,7 +98,7 @@ a:hover:after {
 }
 
 .btn-success {
-    margin: 20px;
+    margin: 40px;
     padding: 10px 20px;
     font-size: 1.5rem;
 }
@@ -108,14 +107,10 @@ a:hover:after {
     font-size: 5vw;
 }
 
-.numbers {
-    margin-top: 11vh;
-}
-
-.example {
-    font-size: 3rem;
-    padding: 20px;
-}
+/*.example {*/
+/*    font-size: 3rem;*/
+/*    padding: 20px;*/
+/*}*/
 
 input {
     width: 90px;
@@ -155,6 +150,7 @@ input {
 
 .popit {
     margin-top: 1vh;
+    padding: 0;
 }
 
 .helper {
@@ -190,6 +186,12 @@ input {
 
 .helperForMain {
     width: 60px;
+}
+
+.carousel img {
+    max-width: 60vw;
+    max-height: 350px;
+    width: auto;
 }
 
 @media screen and (max-width: 1300px) {
@@ -229,10 +231,10 @@ input {
 }
 
 @media screen and (max-width: 500px) {
-    .example {
-        font-size: 2rem;
-        padding: 20px;
-    }
+    /*.example {*/
+    /*    font-size: 2rem;*/
+    /*    padding: 20px;*/
+    /*}*/
 
     input {
         width: 65px;
@@ -263,17 +265,18 @@ input {
         /*margin: 2px;*/
         padding: 1px 5px 10px;
     }
-}
-
-@media screen and (max-width: 265px) {
     body {
         padding-top: 114px;
     }
+}
 
-    .example {
-        font-size: 1.5rem;
-        padding: 10px;
-    }
+@media screen and (max-width: 265px) {
+
+
+    /*.example {*/
+    /*    font-size: 1.5rem;*/
+    /*    padding: 10px;*/
+    /*}*/
 
     input {
         width: 40px;
@@ -302,17 +305,18 @@ input {
 }
 
 @media screen and (orientation: portrait) {
-    img {
-        width: 25vw;
-    }
+    /*img {*/
+    /*    width: 25vw;*/
+    /*}*/
 
     .popitBlock {
-        width: 13vw;
-        height: 13vw;
+        width: 10vw;
+        height: 10vw;
     }
-    .carousel img {
-        width: 75vw;
-    }
+    /*.carousel img {*/
+    /*    width: 70vw;*/
+    /*    height: auto;*/
+    /*}*/
 }
 
 @media screen and (orientation: landscape) {
@@ -324,8 +328,8 @@ input {
         width: 10vh;
         height: 10vh;
     }
-    .carousel img {
-        height: 327px;
-        width: auto;
-    }
+    /*.carousel img {*/
+    /*    height: 327px;*/
+    /*    width: auto;*/
+    /*}*/
 }

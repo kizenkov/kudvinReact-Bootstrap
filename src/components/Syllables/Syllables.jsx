@@ -18,7 +18,7 @@ function Syllables({isLogged}) {
         }
     }
 
-    if (!isLogged) return <Redirect to='/'/>
+    // if (!isLogged) return <Redirect to='/'/>
 
     return (
         <div className='syllables'>

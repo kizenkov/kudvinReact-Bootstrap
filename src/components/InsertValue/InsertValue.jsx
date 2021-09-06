@@ -5,7 +5,7 @@ import helper from '../../files/helper1.gif';
 import {Redirect} from 'react-router-dom';
 import Contacts from '../Contacts/Contacts';
 
-function InsertValue({isLogged, colorsArray}) {
+function InsertValue({isLogged, colorsArray, trueKey}) {
 
     let [sec, setSec] = useState(60);
 
@@ -37,7 +37,9 @@ function InsertValue({isLogged, colorsArray}) {
     let showTime;
     let arr = [];
     const button = useRef();
-    const result = useRef();
+    // const result = useRef();
+    const time = useRef();
+    const key = useRef();
 
     //timer
     useEffect(() => {
@@ -95,14 +97,18 @@ function InsertValue({isLogged, colorsArray}) {
                 }
             }
         })
-        result.current.innerHTML = 'Оценка: ' + score;
+        // result.current.innerHTML = 'Оценка: ' + score;
+        if (score > 7) {
+            key.current.innerHTML = 'Ключ: ' + '<span>' + trueKey + '</span>'
+        }
 
         setTimeout(() => {
-            if (result.current) {
+            if (time.current) {
                 window.scrollTo(document.body.scrollWidth, 0);
                 setSec(60);
-                result.current.innerHTML = '';
+                // result.current.innerHTML = '';
                 button.current.disabled = false;
+                key.current.innerHTML = '';
 
                 arr.forEach(function (el) {
                     el[4].current.innerHTML = el[5].current.innerHTML = el[6].current.innerHTML = el[7].current.innerHTML = null;
@@ -135,7 +141,7 @@ function InsertValue({isLogged, colorsArray}) {
         window.scrollTo(0, document.body.scrollHeight);
     }
 
-    if (!isLogged) return <Redirect to="/"/>
+    // if (!isLogged) return <Redirect to="/"/>
 
     return (
         <div><br/>
@@ -145,13 +151,14 @@ function InsertValue({isLogged, colorsArray}) {
             <ExampleValue2 arr={arr} a={A4} b={B4} c={C4} d={D4} colorsArray={colorsArray}/>
             <ExampleValue1 arr={arr} a={A5} b={B5} c={C5} d={D5} colorsArray={colorsArray}/>
             <div className='row align-items-center text-center'>
-                <span className='col-lg-4 col-md-12 col-sm-12 col-xs-12 time'>Осталось: {sec < 10 && sec >= 0 && '0'}{sec} сек</span>
+                <span className='col-lg-4 col-md-12 col-sm-12 col-xs-12 time' ref={time}>Осталось: {sec < 10 && sec >= 0 && '0'}{sec} сек</span>
                 <div className='col-lg-4 col-md-12 col-sm-12 col-xs-12'>
                     <button className='btn btn-success' onClick={showResult}
                             ref={button}>Принять
                     </button>
                 </div>
-                <span class='col-lg-4 col-md-12 col-sm-12 col-xs-12 result' ref={result}></span>
+                {/*<span className='col-lg-6 col-md-12 col-sm-12 col-xs-12 result' ref={result}></span>*/}
+                <span className='col-lg-4 col-md-12 col-sm-12 col-xs-12 fw-bolder  mb-2' ref={key}></span>
             </div>
             <div>
                 <img class='helper' src={helper} alt='helper'/>

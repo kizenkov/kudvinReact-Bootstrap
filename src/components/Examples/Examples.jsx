@@ -4,8 +4,7 @@ import helper from '../../files/helper4.gif';
 import {Redirect} from 'react-router-dom';
 import Contacts from '../Contacts/Contacts';
 
-function Examples({n, isLogged, colorsArray}) {
-
+function Examples({trueKey, n, isLogged, colorsArray}) {
     const [A1, setA1] = useState(Math.trunc(Math.random() * n));
     const [B1, setB1] = useState(Math.trunc(Math.random() * n));
     const [C1, setC1] = useState(Math.trunc(Math.random() * n));
@@ -35,11 +34,13 @@ function Examples({n, isLogged, colorsArray}) {
     let arr = [];
 
     const button = useRef();
-    const result = useRef();
+    // const result = useRef();
     const time = useRef();
+    const key = useRef();
 
     function showResult() {
         let score = 0;
+        button.current.disabled = true;
         let end = new Date();
         let min = Math.trunc(Math.round((end - start) / 1000) / 60);
         let seconds = Math.round((end - start) / 1000) - min * 60;
@@ -63,15 +64,18 @@ function Examples({n, isLogged, colorsArray}) {
             }
         })
 
-        button.current.disabled = true;
-        result.current.innerHTML = 'Оценка: ' + score;
+        if (score > 7) {
+            key.current.innerHTML = 'Ключ: ' + '<span>' + trueKey + '</span>'
+        }
+        // result.current.innerHTML = 'Оценка: ' + score;
         time.current.innerHTML = 'Затрачено: ' + min + ' мин ' + seconds + ' сек';
         setTimeout(() => {
-            if (result.current) {
+            if (time.current) {
                 window.scrollTo(document.body.scrollWidth, 0);
-                result.current.innerHTML = '';
+                // result.current.innerHTML = '';
                 time.current.innerHTML = '';
-                button.current.disabled = false;
+                key.current.innerHTML = '';
+                    button.current.disabled = false;
                 arr.forEach(function (el) {
                     el[4].current.value = '';
                     el[5].current.value = '';
@@ -104,7 +108,7 @@ function Examples({n, isLogged, colorsArray}) {
         window.scrollTo(0, document.body.scrollHeight);
     }
 
-    if (!isLogged) return <Redirect to='/'/>
+    // if (!isLogged) return <Redirect to='/'/>
 
     return (
         <div>
@@ -123,15 +127,18 @@ function Examples({n, isLogged, colorsArray}) {
                 <Example arr={arr} a={A4 + 10} b={B4 + 10} c={C4 + 10} d={D4 + 10} colorsArray={colorsArray}/>
                 <Example arr={arr} a={A5 + 10} b={B5 + 10} c={C5 + 10} d={D5 + 10} colorsArray={colorsArray}/>
             </>}
-            <div className='container text-center'>
-                <button className='btn btn-success' onClick={showResult} ref={button}>Принять</button>
-            </div>
             <div className='row align-items-center text-center'>
-                <span className='col-lg-6 col-md-12 col-sm-12 col-xs-12 time' ref={time}></span>
-                <span className='col-lg-6 col-md-12 col-sm-12 col-xs-12 result' ref={result}></span>
+                <span className='col-lg-4 col-md-12 col-sm-12 col-xs-12 time' ref={time}></span>
+                <div className='col-lg-4 col-md-12 col-sm-12 col-xs-12'>
+                    <button className='btn btn-success' onClick={showResult}
+                            ref={button}>Принять
+                    </button>
+                </div>
+                {/*<span className='col-lg-6 col-md-12 col-sm-12 col-xs-12 result' ref={result}></span>*/}
+                <span className='col-lg-4 col-md-12 col-sm-12 col-xs-12 fw-bolder mb-2' ref={key}></span>
             </div>
             <div>
-                <img className='helper' src={helper} alt="helper"/>
+                <img className='helper' src={helper} alt='helper'/>
             </div>
             <Contacts/>
         </div>

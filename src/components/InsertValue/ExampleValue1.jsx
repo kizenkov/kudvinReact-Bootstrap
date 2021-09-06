@@ -62,14 +62,14 @@ function ExampleValue1({a, b, c, d, arr, colorsArray}) {
 
     return (
         <div className='row justify-content-around text-center'>
-            <div className='col-lg-6 col-md-12 col-sm-12 col-xs-12 example'>
+            <div className='col-lg-6 col-md-6 col-sm-12 col-xs-12 fs-1 p-4'>
                 <span ref={numFirst1}></span>
                 <span ref={sign1}>+</span>
                 <input type='text' ref={input1} onKeyUp={isNumber} maxLength={2}/>
                 <span ref={numSecond1}></span>
                 <span> </span><b ref={result1}></b>
             </div>
-            <div className='col-lg-6 col-md-12 col-sm-12 col-xs-12 example'>
+            <div className='col-lg-6 col-md-6 col-sm-12 col-xs-12 fs-1 p-4'>
                 <input type='text' ref={input2} onKeyUp={isNumber} maxLength={2}/>
                 <span ref={sign2}>-</span>
                 <span ref={numFirst2}></span>
