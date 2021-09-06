@@ -115,7 +115,7 @@ function Tasks({isLogged, showKey, right}) {
                         inputAnswer.current.value = null;
                     }
 
-                }, 300000)
+                }, 3000)
             }
         }
         window.scrollTo(0, document.body.scrollHeight);
