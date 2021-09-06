@@ -62,7 +62,7 @@ function Popit({colorsArray, trueKey, setNewKey, notShowKey}) {
                             </ul>
                         </div>
                         <div className='row'>
-                            <input className='form-control m-1' autoFocus={true} value={code} maxLength='3'
+                            <input className='form-control m-1' value={code} maxLength='3'
                                    onChange={(e) => setCode(e.target.value)} ref={input}/>
                             <button className='btn btn-success m-1 fs-6 py-2' type='submit'>Подтвердить</button>
                         </div>
