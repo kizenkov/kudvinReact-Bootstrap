@@ -50,7 +50,7 @@ a:hover:after {
 .navbar-brand {
     border: 1px solid limegreen;
     border-radius: 7px;
-    padding: 4px 5px;
+    padding: 4px 10px;
 }
 
 .navbar-brand:hover {
@@ -144,7 +144,7 @@ input {
 .popitBlock {
     border: 1px solid darkgrey;
     border-radius: 50%;
-    margin: 5px;
+    margin: 3px;
     transition: 0.3s;
 }
 
@@ -209,9 +209,9 @@ input {
         font-size: 40vw;
     }
 
-    .navbar-brand {
-        margin-right: 0;
-    }
+    /*.navbar-brand {*/
+    /*    margin-right: 0;*/
+    /*}*/
 
     .taskResult {
         font-size: 8vw;
@@ -255,9 +255,10 @@ input {
 }
 
 @media screen and (max-width: 310px) {
-    .navbar-brand {
-        font-size: 1.5rem;
-    }
+    /*.navbar-brand {*/
+    /*    font-size: 1.5rem;*/
+    /*}*/
+
     .letter {
         font-size: 27vw;
     }
@@ -310,8 +311,8 @@ input {
     /*}*/
 
     .popitBlock {
-        width: 10vw;
-        height: 10vw;
+        width: 13vw;
+        height: 13vw;
     }
     /*.carousel img {*/
     /*    width: 70vw;*/
@@ -325,8 +326,8 @@ input {
     }
 
     .popitBlock {
-        width: 10vh;
-        height: 10vh;
+        width: 13vh;
+        height: 13vh;
     }
     /*.carousel img {*/
     /*    height: 327px;*/

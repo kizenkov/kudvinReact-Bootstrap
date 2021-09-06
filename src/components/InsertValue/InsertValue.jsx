@@ -5,7 +5,7 @@ import helper from '../../files/helper1.gif';
 import {Redirect} from 'react-router-dom';
 import Contacts from '../Contacts/Contacts';
 
-function InsertValue({isLogged, colorsArray, trueKey}) {
+function InsertValue({isLogged, colorsArray, trueKey, showKey}) {
 
     let [sec, setSec] = useState(60);
 
@@ -99,7 +99,8 @@ function InsertValue({isLogged, colorsArray, trueKey}) {
         })
         // result.current.innerHTML = 'Оценка: ' + score;
         if (score > 7) {
-            key.current.innerHTML = 'Ключ: ' + '<span>' + trueKey + '</span>'
+            // key.current.innerHTML = 'Ключ: ' + '<span>' + trueKey + '</span>'
+            showKey();
         }
 
         setTimeout(() => {

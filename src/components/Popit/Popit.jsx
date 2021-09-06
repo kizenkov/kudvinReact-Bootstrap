@@ -4,7 +4,7 @@ import {useState, useRef} from 'react';
 import Contacts from '../Contacts/Contacts';
 import {Redirect} from "react-router-dom";
 
-function Popit({colorsArray, trueKey, setNewKey}) {
+function Popit({colorsArray, trueKey, setNewKey, notShowKey}) {
 
     let lop = new Audio(lopp);
     const [score, setScore] = useState(0);
@@ -18,8 +18,8 @@ function Popit({colorsArray, trueKey, setNewKey}) {
         if (score === 35) {
             setScore(0);
             setIsKeyTrue(false);
-            setNewKey()
-            message.current.innerHTML = 'Решите еще пару задач'
+            setNewKey();
+            message.current.innerHTML = 'Решите еще несколько примеров или задач'
             setTimeout(() => {
                 message.current.innerHTML = ''
             }, 2000)
@@ -31,6 +31,7 @@ function Popit({colorsArray, trueKey, setNewKey}) {
         if (code === trueKey) {
             setCode('');
             setIsKeyTrue(true);
+            notShowKey();
         } else {
             setCode('');
             message.current.innerHTML = 'Ошибочный ключ'
@@ -59,9 +60,10 @@ function Popit({colorsArray, trueKey, setNewKey}) {
                             <button className='btn btn-success m-2 fs-6' type='submit'>Проверить</button>
                         </div>
                     </form>
-                    <p ref={message} className='text-center fst-italic fs-6 m-2'></p>
                 </div> : null}
-            {isKeyTrue ? <div className='container text-center align-self-center popit'>
+            <p ref={message} className='text-center fst-italic fs-6 m-2'></p>
+
+            {isKeyTrue ? <div className='text-center align-self-center popit'>
                     <div>
                         <Block lop={lop} score={score} color={colorsArray[0]} changeScore={changeScore}
                                setScore={setScore}/>

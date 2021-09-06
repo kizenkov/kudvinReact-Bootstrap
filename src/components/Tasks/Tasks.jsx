@@ -5,7 +5,7 @@ import helper from './../../files/helper.gif';
 import {Redirect} from 'react-router-dom';
 import Contacts from '../Contacts/Contacts';
 
-function Tasks({isLogged, trueKey}) {
+function Tasks({isLogged, showKey}) {
     const task = useRef();
     const result = useRef();
     const button = useRef();
@@ -81,7 +81,7 @@ function Tasks({isLogged, trueKey}) {
             if (+inputAnswer.current['value'] === results[i]) {
                 audioYes.play();
                 if (scoreTrueValue > 4) {
-                    key.current.innerHTML = trueKey;
+                    showKey();
                 }
                 scoreTrue.current.innerHTML = ++scoreTrueValue;
                 inputAnswer.current.disabled = 'disabled'
@@ -149,7 +149,7 @@ function Tasks({isLogged, trueKey}) {
                             </thead>
                             <tbody>
                             <tr>
-                                <td ref={key}>?</td>
+                                <td >?</td>
                                 <td ref={scoreTrue}>0</td>
                                 <td ref={scoreFalse}>0</td>
                             </tr>

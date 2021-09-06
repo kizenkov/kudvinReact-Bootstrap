@@ -4,7 +4,7 @@ import helper from '../../files/helper4.gif';
 import {Redirect} from 'react-router-dom';
 import Contacts from '../Contacts/Contacts';
 
-function Examples({trueKey, n, isLogged, colorsArray}) {
+function Examples({showKey, n, isLogged, colorsArray}) {
     const [A1, setA1] = useState(Math.trunc(Math.random() * n));
     const [B1, setB1] = useState(Math.trunc(Math.random() * n));
     const [C1, setC1] = useState(Math.trunc(Math.random() * n));
@@ -65,7 +65,8 @@ function Examples({trueKey, n, isLogged, colorsArray}) {
         })
 
         if (score > 7) {
-            key.current.innerHTML = 'Ключ: ' + '<span>' + trueKey + '</span>'
+            // key.current.innerHTML = 'Ключ: ' + '<span>' + trueKey + '</span>'
+            showKey();
         }
         // result.current.innerHTML = 'Оценка: ' + score;
         time.current.innerHTML = 'Затрачено: ' + min + ' мин ' + seconds + ' сек';

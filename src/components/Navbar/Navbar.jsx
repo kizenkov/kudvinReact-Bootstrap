@@ -2,7 +2,7 @@ import {NavLink} from 'react-router-dom';
 import {useRef, useState} from 'react';
 import clover from "../../files/clover.png";
 
-function Navbar({isLogged, setLogged}) {
+function Navbar({isLogged, setLogged, keyForNavbar}) {
 
     const menu = useRef();
     // const okMessage = useRef();
@@ -55,6 +55,9 @@ function Navbar({isLogged, setLogged}) {
                 <NavLink to='/' className='navbar-brand fs-2 fst-italic' onClick={notShow}><img className='fs-3'
                                                                                                 src={clover}
                                                                                                 alt='clover'/> CleverKUDViN</NavLink>
+                {keyForNavbar &&  <span className='nav-link fs-6 text-center'>
+                    Ключ: <br/>{keyForNavbar}
+                </span>}
                 <button className='navbar-toggler' type='button' data-bs-toggle='collapse'
                         data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent'
                         aria-expanded='false' aria-label='Toggle navigation'>
@@ -111,6 +114,8 @@ function Navbar({isLogged, setLogged}) {
                             </ul>
                         </li>
                     </ul>
+
+
                     <ul className='navbar-nav'>
                         <li className='nav-item m-2'>
                             <hr className='dropdown-divider text-white'/>
