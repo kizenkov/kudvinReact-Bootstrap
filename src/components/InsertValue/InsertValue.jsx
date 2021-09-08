@@ -56,7 +56,6 @@ function InsertValue({isLogged, colorsArray, showKey, right, lang}) {
     }, [sec])
 
     function showResult() {
-        window.scrollTo(document.body.scrollWidth, 0);
         clearInterval(showTime);
         let score = 0;
         button.current.disabled = true;
@@ -166,7 +165,7 @@ function InsertValue({isLogged, colorsArray, showKey, right, lang}) {
                 {/*<span className='col-lg-6 col-md-12 col-sm-12 col-xs-12 result' ref={result}></span>*/}
             </div>
             <div>
-                <img class='helper' src={helper} alt='helper'/>
+                <img className='helper' src={helper} alt='helper'/>
             </div>
             <Contacts lang={lang}/>
         </div>

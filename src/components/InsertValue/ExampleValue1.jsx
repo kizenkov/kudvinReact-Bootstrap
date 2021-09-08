@@ -13,18 +13,6 @@ function ExampleValue1({a, b, c, d, arr, colorsArray}) {
     const sign1 = useRef();
     const sign2 = useRef();
 
-    useEffect(
-        () => {
-            numFirst1.current.innerHTML = x;
-            numSecond1.current.innerHTML = ' = ' + y;
-            numFirst2.current.innerHTML = f;
-            numSecond2.current.innerHTML = ' = ' + e;
-            numFirst1.current['style'].color = numSecond1.current['style'].color = sign1.current['style'].color = input1.current['style'].color = colorsArray[Math.floor(Math.random() * colorsArray.length)]
-            numFirst2.current['style'].color = numSecond2.current['style'].color = sign2.current['style'].color = input2.current['style'].color = colorsArray[Math.floor(Math.random() * colorsArray.length)]
-        },
-        [a, b, c, d],
-    );
-
     let f, e, x, y;
     if (a > b) {
         y = a;
@@ -46,6 +34,18 @@ function ExampleValue1({a, b, c, d, arr, colorsArray}) {
         f = c + 1;
         e = d;
     }
+
+    useEffect(
+        () => {
+            numFirst1.current.innerHTML = x;
+            numSecond1.current.innerHTML = ' = ' + y;
+            numFirst2.current.innerHTML = f;
+            numSecond2.current.innerHTML = ' = ' + e;
+            numFirst1.current['style'].color = numSecond1.current['style'].color = sign1.current['style'].color = input1.current['style'].color = colorsArray[Math.floor(Math.random() * colorsArray.length)]
+            numFirst2.current['style'].color = numSecond2.current['style'].color = sign2.current['style'].color = input2.current['style'].color = colorsArray[Math.floor(Math.random() * colorsArray.length)]
+        },
+        [x, y, f, e, colorsArray],
+    );
 
     arr.push([x, y, f, e, input1, input2, result1, result2]);
 

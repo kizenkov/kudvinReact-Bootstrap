@@ -22,7 +22,7 @@ function Main({lang}) {
                 {lang === 'en' && <>Dear parents and their children!</>}
             </h1><br/><br/>
             <div className='row justify-content-center main'>
-                <p className='col-11 '>
+                <div className='col-11 '>
                     <p className='fs-4 mainText'>
                         {lang === 'ru' && <>Сегодня не всем удаётся полностью изолировать своих чад от
                             современных гаджетов. И, чтобы скоротать время, сидя в очереди, или не заскучать в машине, дети просят телефон.
@@ -129,7 +129,7 @@ function Main({lang}) {
                             <span className='carousel-control-next-icon' aria-hidden='true'></span>
                         </button>
                     </div>
-                </p>
+                </div>
             </div><br/>
             <h1 className='text-center'>
                 {lang === 'ru' && <>Успехов!</>}

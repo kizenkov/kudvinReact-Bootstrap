@@ -59,12 +59,10 @@ function Tasks({isLogged, showKey, right, lang}) {
     let scoreTrueValue = 0;
     let scoreFalseValue = 0;
 
-    useEffect(
-        () => {
+    useEffect(() => {
             task.current.innerHTML = tasks[i];
-        }, [i]
+        }, [i, tasks]
     );
-
 
     function isNumber() {
         let val = inputAnswer.current['value'];
@@ -105,7 +103,7 @@ function Tasks({isLogged, showKey, right, lang}) {
                 inputAnswer.current.disabled = 'disabled'
                 button.current.disabled = true;
                 if (lang === 'ru') {
-                    result.current.innerHTML = 'RIGHT &#128521';
+                    result.current.innerHTML = 'ВЕРНО &#128521';
                 }
                 if (lang === 'en') {
                     result.current.innerHTML = 'RIGHT &#128521';
@@ -140,7 +138,7 @@ function Tasks({isLogged, showKey, right, lang}) {
                 inputAnswer.current.disabled = 'disabled'
                 button.current.disabled = true;
                 if (lang === 'ru') {
-                    result.current.innerHTML = 'NOT RIGHT &#128553';
+                    result.current.innerHTML = 'НЕПРАВИЛЬНО &#128553';
                 }
                 if (lang === 'en') {
                     result.current.innerHTML = 'NOT RIGHT &#128553';

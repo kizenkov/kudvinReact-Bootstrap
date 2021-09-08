@@ -1,5 +1,5 @@
 import {NavLink} from 'react-router-dom';
-import {useRef, useState} from 'react';
+import {useRef} from 'react';
 import clover from '../../files/clover.png';
 
 function Navbar({isLogged, setLogged, keyForNavbar, setLang, lang}) {
@@ -47,6 +47,7 @@ function Navbar({isLogged, setLogged, keyForNavbar, setLang, lang}) {
     function notShow() {
         menu.current.classList.remove('show');
     }
+
     function setLangAndNotShow(lang) {
         setLang(lang);
         menu.current.classList.remove('show');
@@ -71,6 +72,8 @@ function Navbar({isLogged, setLogged, keyForNavbar, setLang, lang}) {
                 <div ref={menu} className='collapse navbar-collapse' id='navbarSupportedContent'>
                     <ul className='navbar-nav me-auto mb-2 mb-lg-0'>
                         <li className='nav-item m-2'>
+                        </li>
+                        <li className='nav-item m-2'>
                             <NavLink to='letters' className='nav-link' onClick={notShow}>
                                 {lang === 'ru' && <>Буквы</>}
                                 {lang === 'en' && <>Letters</>}
@@ -94,7 +97,7 @@ function Navbar({isLogged, setLogged, keyForNavbar, setLang, lang}) {
                             </NavLink>
                         </li>
                         <li className='nav-item dropdown m-2'>
-                            <a className='nav-link' href='#' id='navbarDropdown' role='button'
+                            <a className='nav-link' href='/' id='navbarDropdown' role='button'
                                data-bs-toggle='dropdown' aria-expanded='false'>
                                 {lang === 'ru' && <>Примеры</>}
                                 {lang === 'en' && <>Examples</>}
@@ -115,7 +118,7 @@ function Navbar({isLogged, setLogged, keyForNavbar, setLang, lang}) {
                             </ul>
                         </li>
                         <li className='nav-item dropdown m-2'>
-                            <a className='nav-link' href='#' id='navbarDropdown' role='button'
+                            <a className='nav-link' href='/' id='navbarDropdown' role='button'
                                data-bs-toggle='dropdown' aria-expanded='false'>
                                 {lang === 'ru' && <>Отдых</>}
                                 {lang === 'en' && <>Relax</>}
@@ -132,28 +135,22 @@ function Navbar({isLogged, setLogged, keyForNavbar, setLang, lang}) {
                         <li className='nav-item m-2'>
                             <hr className='dropdown-divider text-white'/>
                         </li>
-
                         <li className='nav-item dropdown m-2'>
-                            <a className='nav-link' href='#' id='navbarDropdown' role='button'
+                            <a className='nav-link' href='/' id='navbarDropdown' role='button'
                                data-bs-toggle='dropdown' aria-expanded='false'>
-                               <i className="bi bi-globe"></i>
+                                <i className="bi bi-globe"></i>
                             </a>
                             <ul className='dropdown-menu dropdown-menu-dark bg-dark' aria-labelledby='navbarDropdown'>
-                                <li>
-                                    <li><a type='button' className='nav-link m-2' onClick={() => setLangAndNotShow('ru')}>
-                                        RU
-                                    </a></li>
-                                </li>
-                                <li>
-                                    <li><a type='button' className='nav-link m-2' onClick={() => setLangAndNotShow('en')}>
-                                        EN
-                                    </a></li>
-                                </li>
+                                <li><a type='button' className='nav-link m-2' href='/' onClick={() => setLangAndNotShow('ru')}>
+                                    RU
+                                </a></li>
+                                <li><a type='button' className='nav-link m-2' href='/' onClick={() => setLangAndNotShow('en')}>
+                                    EN
+                                </a></li>
                             </ul>
                         </li>
-
                         <li className='nav-item m-2'>
-                            <a className='nav-link' data-bs-toggle='offcanvas' data-bs-target='#offcanvasBottom'
+                            <a className='nav-link' href='/' data-bs-toggle='offcanvas' data-bs-target='#offcanvasBottom'
                                aria-controls='offcanvasBottom'>
                                 {lang === 'ru' && <>Контакты</>}
                                 {lang === 'en' && <>Contacts</>}

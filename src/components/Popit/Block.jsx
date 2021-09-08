@@ -5,10 +5,8 @@ function Block({lop, score, changeScore, setScore, color}) {
     let block = useRef();
 
     useEffect(() => {
-        {
             block.current['style'].backgroundColor = color
-        }
-    }, [])
+    }, [color])
 
     if (score === 36) {
         setTimeout(() => {

@@ -9,15 +9,6 @@ function Example({a, b, c, d, arr, colorsArray}) {
     const result1 = useRef();
     const result2 = useRef();
 
-    useEffect(
-        () => {
-            example1.current.innerHTML = a + ' + ' + b + ' = ';
-            example2.current.innerHTML = f + ' - ' + e + ' = ';
-            example1.current['style'].color = example2.current['style'].color = input1.current['style'].color = input2.current['style'].color = colorsArray[Math.floor(Math.random() * colorsArray.length)]
-        },
-        [a, b, c, d],
-    );
-
     let f;
     let e;
     if (a === 0 && b === 0) {
@@ -33,6 +24,15 @@ function Example({a, b, c, d, arr, colorsArray}) {
         f = c + 1;
         e = d;
     }
+
+    useEffect(
+        () => {
+            example1.current.innerHTML = a + ' + ' + b + ' = ';
+            example2.current.innerHTML = f + ' - ' + e + ' = ';
+            example1.current['style'].color = example2.current['style'].color = input1.current['style'].color = input2.current['style'].color = colorsArray[Math.floor(Math.random() * colorsArray.length)]
+        },
+        [a, b, e, f, colorsArray],
+    );
 
     arr.push([a, b, f, e, input1, input2, result1, result2]);
 
