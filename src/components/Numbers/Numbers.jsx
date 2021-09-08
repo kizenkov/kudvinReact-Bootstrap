@@ -3,7 +3,7 @@ import helper from '../../files/helper2.gif';
 import Contacts from '../Contacts/Contacts';
 // import {Redirect} from 'react-router-dom';
 
-function Numbers({isLogged, colorsArray, showKey}) {
+function Numbers({isLogged, colorsArray, showKey, lang}) {
 
     const ref = useRef();
     let words = [];
@@ -56,7 +56,7 @@ function Numbers({isLogged, colorsArray, showKey}) {
             <div>
                 <img className='helper' src={helper} alt='helper'/>
             </div>
-            <Contacts/>
+            <Contacts  lang={lang}/>
         </div>
     )
 }

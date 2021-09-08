@@ -269,12 +269,9 @@ input {
 }
 
 .buttonUp {
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    display: none;
+    float: right;
     z-index: 200;
-    opacity: 0.3;
+    opacity: 0.5;
     border-radius: 10px;
 }
 

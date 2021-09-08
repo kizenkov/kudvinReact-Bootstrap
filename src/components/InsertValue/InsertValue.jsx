@@ -3,9 +3,10 @@ import ExampleValue1 from './ExampleValue1';
 import ExampleValue2 from './ExampleValue2';
 import helper from '../../files/helper1.gif';
 import Contacts from '../Contacts/Contacts';
+
 // import {Redirect} from 'react-router-dom';
 
-function InsertValue({isLogged, colorsArray, showKey, right}) {
+function InsertValue({isLogged, colorsArray, showKey, right, lang}) {
 
     let [sec, setSec] = useState(60);
 
@@ -148,11 +149,18 @@ function InsertValue({isLogged, colorsArray, showKey, right}) {
             <ExampleValue2 arr={arr} a={A4} b={B4} c={C4} d={D4} colorsArray={colorsArray}/>
             <ExampleValue1 arr={arr} a={A5} b={B5} c={C5} d={D5} colorsArray={colorsArray}/>
             <div className='row align-items-center text-center'>
-                <span className='col-lg-4 col-md-12 col-sm-12 col-xs-12 fs-4 fst-italic p-1 time'
-                      ref={time}>Осталось: {sec < 10 && sec >= 0 && '0'}{sec} сек</span>
-                <div className='col-lg-4 col-md-12 col-sm-12 col-xs-12'>
-                    <button className='btn btn-success' onClick={showResult}
-                            ref={button}>Принять
+                <span className='col-lg-5 col-md-12 col-sm-12 col-xs-12 fs-4 fst-italic p-1 time'
+                      ref={time}>
+                    {lang === 'ru' && <>Осталось: </>}
+                    {lang === 'en' && <>Rest: </>}
+                    {sec < 10 && sec >= 0 && '0'}{sec}
+                    {lang === 'ru' && <> сек</>}
+                    {lang === 'en' && <> sec</>}
+                </span>
+                <div className='col-lg-3 col-md-12 col-sm-12 col-xs-12'>
+                    <button className='btn btn-success' onClick={showResult} ref={button}>
+                        {lang === 'ru' && <>Подтвердить</>}
+                        {lang === 'en' && <>Confirm</>}
                     </button>
                 </div>
                 {/*<span className='col-lg-6 col-md-12 col-sm-12 col-xs-12 result' ref={result}></span>*/}
@@ -160,7 +168,7 @@ function InsertValue({isLogged, colorsArray, showKey, right}) {
             <div>
                 <img class='helper' src={helper} alt='helper'/>
             </div>
-            <Contacts/>
+            <Contacts lang={lang}/>
         </div>
     )
 }

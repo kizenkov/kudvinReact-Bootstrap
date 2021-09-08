@@ -2,7 +2,7 @@ import {NavLink} from 'react-router-dom';
 import {useRef, useState} from 'react';
 import clover from '../../files/clover.png';
 
-function Navbar({isLogged, setLogged, keyForNavbar}) {
+function Navbar({isLogged, setLogged, keyForNavbar, setLang, lang}) {
 
     const menu = useRef();
     // const okMessage = useRef();
@@ -47,6 +47,10 @@ function Navbar({isLogged, setLogged, keyForNavbar}) {
     function notShow() {
         menu.current.classList.remove('show');
     }
+    function setLangAndNotShow(lang) {
+        setLang(lang);
+        menu.current.classList.remove('show');
+    }
 
     return (
 
@@ -55,7 +59,9 @@ function Navbar({isLogged, setLogged, keyForNavbar}) {
                 <NavLink to='/' className='navbar-brand fs-2 fst-italic' onClick={notShow}><img src={clover}
                                                                                                 alt='clover'/> CleverKUDViN</NavLink>
                 {keyForNavbar && <span className='nav-link fs-6 text-center'>
-                    Ключ: <br/>{keyForNavbar}
+                    {lang === 'ru' && <>Ключ</>}
+                    {lang === 'en' && <>Key</>}:
+                    <br/>{keyForNavbar}
                 </span>}
                 <button className='navbar-toggler' type='button' data-bs-toggle='collapse'
                         data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent'
@@ -66,45 +72,53 @@ function Navbar({isLogged, setLogged, keyForNavbar}) {
                     <ul className='navbar-nav me-auto mb-2 mb-lg-0'>
                         <li className='nav-item m-2'>
                             <NavLink to='letters' className='nav-link' onClick={notShow}>
-                                Буквы
+                                {lang === 'ru' && <>Буквы</>}
+                                {lang === 'en' && <>Letters</>}
                             </NavLink>
                         </li>
-                        <li className='nav-item m-2'>
+                        {lang === 'ru' && <li className='nav-item m-2'>
                             <NavLink to='syllables' className='nav-link' onClick={notShow}>
                                 Слоги
                             </NavLink>
-                        </li>
+                        </li>}
                         <li className='nav-item m-2'>
                             <NavLink to='numbers' className='nav-link' onClick={notShow}>
-                                Счёт
+                                {lang === 'ru' && <>Счёт</>}
+                                {lang === 'en' && <>Numbers</>}
                             </NavLink>
                         </li>
                         <li className='nav-item m-2'>
                             <NavLink to='tasks' className='nav-link' onClick={notShow}>
-                                Задачи
+                                {lang === 'ru' && <>Задачи</>}
+                                {lang === 'en' && <>Tasks</>}
                             </NavLink>
                         </li>
                         <li className='nav-item dropdown m-2'>
                             <a className='nav-link' href='#' id='navbarDropdown' role='button'
                                data-bs-toggle='dropdown' aria-expanded='false'>
-                                Примеры
+                                {lang === 'ru' && <>Примеры</>}
+                                {lang === 'en' && <>Examples</>}
                             </a>
                             <ul className='dropdown-menu dropdown-menu-dark bg-dark' aria-labelledby='navbarDropdown'>
                                 <li><NavLink to='examples' className='nav-link m-2' onClick={notShow}>
-                                    Лёгкие
+                                    {lang === 'ru' && <>Лёгкие</>}
+                                    {lang === 'en' && <>Easy</>}
                                 </NavLink></li>
                                 <li><NavLink to='hardExamples' className='nav-link m-2' onClick={notShow}>
-                                    Сложные
+                                    {lang === 'ru' && <>Сложные</>}
+                                    {lang === 'en' && <>Complex</>}
                                 </NavLink></li>
                                 <li><NavLink to='insertValue' className='nav-link m-2' onClick={notShow}>
-                                    Вставить число
+                                    {lang === 'ru' && <>Вставить число</>}
+                                    {lang === 'en' && <>Insert number</>}
                                 </NavLink></li>
                             </ul>
                         </li>
                         <li className='nav-item dropdown m-2'>
                             <a className='nav-link' href='#' id='navbarDropdown' role='button'
                                data-bs-toggle='dropdown' aria-expanded='false'>
-                                Отдых
+                                {lang === 'ru' && <>Отдых</>}
+                                {lang === 'en' && <>Relax</>}
                             </a>
                             <ul className='dropdown-menu dropdown-menu-dark bg-dark' aria-labelledby='navbarDropdown'>
                                 <li><NavLink to='popit' className='nav-link m-2' onClick={notShow}>
@@ -114,14 +128,36 @@ function Navbar({isLogged, setLogged, keyForNavbar}) {
                         </li>
                     </ul>
 
-
                     <ul className='navbar-nav'>
                         <li className='nav-item m-2'>
                             <hr className='dropdown-divider text-white'/>
                         </li>
+
+                        <li className='nav-item dropdown m-2'>
+                            <a className='nav-link' href='#' id='navbarDropdown' role='button'
+                               data-bs-toggle='dropdown' aria-expanded='false'>
+                               <i className="bi bi-globe"></i>
+                            </a>
+                            <ul className='dropdown-menu dropdown-menu-dark bg-dark' aria-labelledby='navbarDropdown'>
+                                <li>
+                                    <li><a type='button' className='nav-link m-2' onClick={() => setLangAndNotShow('ru')}>
+                                        RU
+                                    </a></li>
+                                </li>
+                                <li>
+                                    <li><a type='button' className='nav-link m-2' onClick={() => setLangAndNotShow('en')}>
+                                        EN
+                                    </a></li>
+                                </li>
+                            </ul>
+                        </li>
+
                         <li className='nav-item m-2'>
                             <a className='nav-link' data-bs-toggle='offcanvas' data-bs-target='#offcanvasBottom'
-                               aria-controls='offcanvasBottom'>Контакты</a>
+                               aria-controls='offcanvasBottom'>
+                                {lang === 'ru' && <>Контакты</>}
+                                {lang === 'en' && <>Contacts</>}
+                            </a>
                         </li>
                     </ul>
                     {/*<div ref={okMessage} className='okMessage'></div>*/}

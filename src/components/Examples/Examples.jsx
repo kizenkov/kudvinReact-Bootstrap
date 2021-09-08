@@ -4,7 +4,7 @@ import helper from '../../files/helper4.gif';
 import Contacts from '../Contacts/Contacts';
 // import {Redirect} from 'react-router-dom';
 
-function Examples({showKey, n, isLogged, colorsArray, right}) {
+function Examples({showKey, n, isLogged, colorsArray, right, lang}) {
 
     const [A1, setA1] = useState(Math.trunc(Math.random() * n));
     const [B1, setB1] = useState(Math.trunc(Math.random() * n));
@@ -68,7 +68,12 @@ function Examples({showKey, n, isLogged, colorsArray, right}) {
             showKey();
         }
         // result.current.innerHTML = 'Оценка: ' + score;
-        time.current.innerHTML = 'Затрачено: ' + min + ' мин ' + seconds + ' сек';
+        if (lang === 'ru') {
+            time.current.innerHTML = 'Затрачено: ' + min + ' мин ' + seconds + ' сек';
+        }
+        if (lang === 'en') {
+            time.current.innerHTML = 'Spent: ' + min + ' min ' + seconds + ' sek';
+        }
         setTimeout(() => {
             if (time.current) {
                 window.scrollTo(document.body.scrollWidth, 0);
@@ -129,8 +134,9 @@ function Examples({showKey, n, isLogged, colorsArray, right}) {
             <div className='row align-items-center text-center'>
                 <span className='col-lg-4 col-md-12 col-sm-12 col-xs-12 fs-4 fst-italic p-1 time' ref={time}></span>
                 <div className='col-lg-4 col-md-12 col-sm-12 col-xs-12'>
-                    <button className='btn btn-success' onClick={showResult}
-                            ref={button}>Принять
+                    <button className='btn btn-success' onClick={showResult} ref={button}>
+                        {lang === 'ru' && <>Подтвердить</>}
+                        {lang === 'en' && <>Confirm</>}
                     </button>
                 </div>
                 {/*<span className='col-lg-6 col-md-12 col-sm-12 col-xs-12 result' ref={result}></span>*/}
@@ -138,7 +144,7 @@ function Examples({showKey, n, isLogged, colorsArray, right}) {
             <div>
                 <img className='helper' src={helper} alt='helper'/>
             </div>
-            <Contacts/>
+            <Contacts  lang={lang}/>
         </div>
     )
 }

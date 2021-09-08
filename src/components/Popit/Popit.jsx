@@ -4,7 +4,7 @@ import {useState, useRef} from 'react';
 import Contacts from '../Contacts/Contacts';
 // import {Redirect} from 'react-router-dom';
 
-function Popit({colorsArray, trueKey, setNewKey, notShowKey}) {
+function Popit({colorsArray, trueKey, setNewKey, notShowKey, lang}) {
 
     let lop = new Audio(lopp);
     const [score, setScore] = useState(0);
@@ -50,21 +50,45 @@ function Popit({colorsArray, trueKey, setNewKey, notShowKey}) {
                     <form className='row align-items-center' onSubmit={checkKey}>
                         <div className='row'>
                             <ul className='fs-5'>
-                                <h4>Чтобы сыграть в Pop-it, выполните одно из условий и введите полученный ключ:</h4>
+                                <h4>
+                                    {lang === 'ru' && <>Чтобы сыграть в Pop-it, выполните одно из условий и введите полученный ключ:</>}
+                                    {lang === 'en' && <>To play Pop-it, fulfill one of the conditions and enter the received key:</>}
+                                </h4>
                                 <br/>
-                                <li>pешите не менее 8 лёгких примеров за одну попытку</li>
-                                <li>pешите не менее 6 сложных примеров за одну попытку</li>
-                                <li>вставьте не менее 8 правильных чисел за одну попытку</li>
-                                <li>решите правильно 5 задач</li>
-                                <li>повторите все буквы</li>
-                                <li>повторите все числа</li>
-                                <li>повторите 10 слогов</li>
+                                <li>
+                                    {lang === 'ru' && <>pешите не менее 8 лёгких примеров за одну попытку</>}
+                                    {lang === 'en' && <>solve at least 8 easy examples in one try</>}
+                                </li>
+                                <li>
+                                    {lang === 'ru' && <>pешите не менее 6 сложных примеров за одну попытку</>}
+                                    {lang === 'en' && <>solve at least 6 complex examples in one try</>}
+                                </li>
+                                <li>
+                                    {lang === 'ru' && <>вставьте не менее 8 правильных чисел за одну попытку</>}
+                                    {lang === 'en' && <>insert at least 8 correct numbers in one try</>}
+                                </li>
+                                <li>
+                                    {lang === 'ru' && <>решите правильно 5 задач</>}
+                                    {lang === 'en' && <>solve 5 problems correctly</>}
+                                </li>
+                                <li>
+                                    {lang === 'ru' && <>повторите все буквы</>}
+                                    {lang === 'en' && <>repeat all letters</>}
+                                </li>
+                                <li>
+                                    {lang === 'ru' && <>повторите все числа</>}
+                                    {lang === 'en' && <>repeat all numbers</>}
+                                </li>
+                                    {lang === 'ru' && <li>повторите 10 слогов</li>}
                             </ul>
                         </div>
                         <div className='row'>
                             <input className='form-control m-1' value={code} maxLength='3'
                                    onChange={(e) => setCode(e.target.value)} ref={input}/>
-                            <button className='btn btn-success m-1 fs-6 py-2' type='submit'>Подтвердить</button>
+                            <button className='btn btn-success m-1 fs-6 py-2' type='submit'>
+                                {lang === 'ru' && <>Подтвердить</>}
+                                {lang === 'en' && <>Confirm</>}
+                            </button>
                         </div>
                     </form>
                 </div> : null}
@@ -164,7 +188,7 @@ function Popit({colorsArray, trueKey, setNewKey, notShowKey}) {
                 </div>
                 : null
             }
-            <Contacts/>
+            <Contacts lang={lang}/>
         </div>
     )
 }

@@ -17,6 +17,7 @@ function App() {
     const [isLogged, setIsLogged] = useState(true)
     const [key, setKey] = useState(keysArray[Math.floor(Math.random() * keysArray.length)])
     const [keyForNavbar, setKeyForNavbar] = useState(null)
+    const [lang, setLang] = useState('ru')
 
     function setNewKey() {
         setKey(keysArray[Math.floor(Math.random() * keysArray.length)]);
@@ -40,19 +41,19 @@ function App() {
     return (
         <div>
             <div className='row'>
-                <Navbar keyForNavbar={keyForNavbar} isLogged={isLogged} setLogged={setLogged}/>
+                <Navbar keyForNavbar={keyForNavbar} isLogged={isLogged} setLogged={setLogged} setLang={setLang} lang={lang}/>
             </div>
             <div className='row'>
-                <Route exact path='/' render={() => <Main/>}/>
-                <Route path='/letters' render={() => <Letters showKey={showKey} isLogged={isLogged} colorsArray={colorsArray}/>}/>
+                <Route exact path='/' render={() => <Main lang={lang}/>}/>
+                <Route path='/letters' render={() => <Letters showKey={showKey} lang={lang} isLogged={isLogged} colorsArray={colorsArray}/>}/>
                 <Route path='/syllables' render={() => <Syllables showKey={showKey} right={10} isLogged={isLogged}/>}/>
                 <Route path='/numbers' render={() => <Numbers showKey={showKey} isLogged={isLogged} colorsArray={colorsArray}/>}/>
-                <Route path='/tasks' render={() => <Tasks showKey={showKey} right={5} trueKey={key} isLogged={isLogged} />}/>
-                <Route path='/examples' render={() => <Examples showKey={showKey} right={8} trueKey={key} n={10} isLogged={isLogged} colorsArray={colorsArray} />}/>
+                <Route path='/tasks' render={() => <Tasks showKey={showKey} right={5} trueKey={key} isLogged={isLogged} lang={lang} />}/>
+                <Route path='/examples' render={() => <Examples showKey={showKey} right={8} trueKey={key} n={10} isLogged={isLogged} colorsArray={colorsArray} lang={lang}/>}/>
                 <Route path='/hardExamples' render={() => <Examples showKey={showKey} right={6} trueKey={key} n={20} isLogged={isLogged} colorsArray={colorsArray}/>}/>
-                <Route path='/insertValue' render={() => <InsertValue showKey={showKey} right={8} trueKey={key} isLogged={isLogged} colorsArray={colorsArray}/>}/>
-                <Route path='/contacts' render={() => <Contacts/>}/>
-                <Route path='/popit' render={() => <Popit notShowKey={notShowKey} colorsArray={colorsArray} trueKey={key} setNewKey={setNewKey} />}/>
+                <Route path='/insertValue' render={() => <InsertValue showKey={showKey} right={8} trueKey={key} isLogged={isLogged} colorsArray={colorsArray} lang={lang}/>}/>
+                <Route path='/contacts' render={() => <Contacts lang={lang}/>}/>
+                <Route path='/popit' render={() => <Popit notShowKey={notShowKey} colorsArray={colorsArray} trueKey={key} setNewKey={setNewKey} lang={lang} />}/>
             </div>
         </div>
     )

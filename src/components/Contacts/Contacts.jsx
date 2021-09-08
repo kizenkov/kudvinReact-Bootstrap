@@ -4,14 +4,16 @@ import vk from '../../files/iconvk.png';
 import viber from '../../files/viber.png';
 import clover from '../../files/clover.png';
 
-function Contacts() {
+function Contacts({lang}) {
 
     return (
         <div className='offcanvas offcanvas-bottom' tabIndex='-1' id='offcanvasBottom'
              aria-labelledby='offcanvasBottomLabel'>
             <div className='offcanvas-header'>
-                <h4 className='offcanvas-title text-start' id='offcanvasBottomLabel'>Контакты для отзывов и предложений
-                    для улучшения имеющихся и создания новых разделов сайта</h4>
+                <span className='offcanvas-title text-start fs-5' id='offcanvasBottomLabel'>
+                    {lang === 'ru' && <>Контакты для отзывов и предложений для улучшения имеющихся и создания новых разделов сайта</>}
+                    {lang === 'en' && <>Contacts for feedback and suggestions for improving existing and creating new sections of the site</>}
+                </span>
                 <button type='button' className='btn-close text-reset' data-bs-dismiss='offcanvas'
                         aria-label='Close'></button>
             </div>

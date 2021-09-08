@@ -3,16 +3,25 @@ import Contacts from '../Contacts/Contacts';
 // import helper from '../../files/helper3.gif';
 // import {Redirect} from 'react-router-dom';
 
-function Letters({isLogged, colorsArray, showKey}) {
+function Letters({isLogged, colorsArray, showKey, lang}) {
 
     const ref = useRef();
     let words = [];
-    words.push('А', 'Б', 'В', 'Г', 'Д', 'Е');
-    words.push('Ё', 'Ж', 'З', 'И', 'Й', 'К');
-    words.push('Л', 'М', 'Н', 'О', 'П', 'Р');
-    words.push('С', 'Т', 'У', 'Ф', 'Х', 'Ц');
-    words.push('Ч', 'Ш', 'Щ', 'Ъ', 'Ы', 'Ь');
-    words.push('Э', 'Ю', 'Я');
+    if ( lang === 'ru') {
+        words.push('А', 'Б', 'В', 'Г', 'Д', 'Е');
+        words.push('Ё', 'Ж', 'З', 'И', 'Й', 'К');
+        words.push('Л', 'М', 'Н', 'О', 'П', 'Р');
+        words.push('С', 'Т', 'У', 'Ф', 'Х', 'Ц');
+        words.push('Ч', 'Ш', 'Щ', 'Ъ', 'Ы', 'Ь');
+        words.push('Э', 'Ю', 'Я');
+    }
+    if ( lang === 'en') {
+        words.push('А', 'B', 'C', 'D', 'E', 'F');
+        words.push('G', 'H', 'I', 'J', 'К');
+        words.push('L', 'М', 'N', 'О', 'Р');
+        words.push('Q', 'R', 'S', 'T', 'U','V', 'W');
+        words.push('X', 'Y', 'Z');
+    }
 
     function disabled(e) {
         words.splice(words.indexOf(e.currentTarget.innerHTML), 1);
@@ -24,7 +33,6 @@ function Letters({isLogged, colorsArray, showKey}) {
     }
 
     let i = 0;
-
     function showNextWord() {
         getRand();
         i++;
@@ -48,40 +56,43 @@ function Letters({isLogged, colorsArray, showKey}) {
 
     return (
         <div className='container text-center'><br/>
-            <h2>Выберите буквы, которые Вы НЕ выговариваете:</h2><br/>
-            <button className='btn btn-sm btn-warning' onClick={disabled}>А</button>
-            <button className='btn btn-sm btn-warning' onClick={disabled}>Б</button>
-            <button className='btn btn-sm btn-warning' onClick={disabled}>В</button>
-            <button className='btn btn-sm btn-warning' onClick={disabled}>Г</button>
-            <button className='btn btn-sm btn-warning' onClick={disabled}>Д</button>
-            <button className='btn btn-sm btn-warning' onClick={disabled}>Е</button>
-            <button className='btn btn-sm btn-warning' onClick={disabled}>Ё</button>
-            <button className='btn btn-sm btn-warning' onClick={disabled}>Ж</button>
-            <button className='btn btn-sm btn-warning' onClick={disabled}>З</button>
-            <button className='btn btn-sm btn-warning' onClick={disabled}>И</button>
-            <button className='btn btn-sm btn-warning' onClick={disabled}>Й</button>
-            <button className='btn btn-sm btn-warning' onClick={disabled}>К</button>
-            <button className='btn btn-sm btn-warning' onClick={disabled}>Л</button>
-            <button className='btn btn-sm btn-warning' onClick={disabled}>М</button>
-            <button className='btn btn-sm btn-warning' onClick={disabled}>Н</button>
-            <button className='btn btn-sm btn-warning' onClick={disabled}>О</button>
-            <button className='btn btn-sm btn-warning' onClick={disabled}>П</button>
-            <button className='btn btn-sm btn-warning' onClick={disabled}>Р</button>
-            <button className='btn btn-sm btn-warning' onClick={disabled}>С</button>
-            <button className='btn btn-sm btn-warning' onClick={disabled}>Т</button>
-            <button className='btn btn-sm btn-warning' onClick={disabled}>У</button>
-            <button className='btn btn-sm btn-warning' onClick={disabled}>Ф</button>
-            <button className='btn btn-sm btn-warning' onClick={disabled}>Х</button>
-            <button className='btn btn-sm btn-warning' onClick={disabled}>Ц</button>
-            <button className='btn btn-sm btn-warning' onClick={disabled}>Ч</button>
-            <button className='btn btn-sm btn-warning' onClick={disabled}>Ш</button>
-            <button className='btn btn-sm btn-warning' onClick={disabled}>Щ</button>
-            <button className='btn btn-sm btn-warning' onClick={disabled}>Ъ</button>
-            <button className='btn btn-sm btn-warning' onClick={disabled}>Ы</button>
-            <button className='btn btn-sm btn-warning' onClick={disabled}>Ь</button>
-            <button className='btn btn-sm btn-warning' onClick={disabled}>Э</button>
-            <button className='btn btn-sm btn-warning' onClick={disabled}>Ю</button>
-            <button className='btn btn-sm btn-warning' onClick={disabled}>Я</button>
+            <h2>
+                {lang === 'ru'&& <>Выберите буквы, которые Вы НЕ выговариваете</>}
+                {lang === 'en'&& <>Select letters that you DO NOT pronounce:</>}:
+            </h2><br/>
+            <button className='btn btn-sm btn-warning' onClick={disabled}>{lang === 'ru'&& <>А</>}{lang === 'en'&& <>А</>}</button>
+            <button className='btn btn-sm btn-warning' onClick={disabled}>{lang === 'ru'&& <>Б</>}{lang === 'en'&& <>B</>}</button>
+            <button className='btn btn-sm btn-warning' onClick={disabled}>{lang === 'ru'&& <>В</>}{lang === 'en'&& <>C</>}</button>
+            <button className='btn btn-sm btn-warning' onClick={disabled}>{lang === 'ru'&& <>Г</>}{lang === 'en'&& <>D</>}</button>
+            <button className='btn btn-sm btn-warning' onClick={disabled}>{lang === 'ru'&& <>Д</>}{lang === 'en'&& <>E</>}</button>
+            <button className='btn btn-sm btn-warning' onClick={disabled}>{lang === 'ru'&& <>Е</>}{lang === 'en'&& <>F</>}</button>
+            <button className='btn btn-sm btn-warning' onClick={disabled}>{lang === 'ru'&& <>Ё</>}{lang === 'en'&& <>G</>}</button>
+            <button className='btn btn-sm btn-warning' onClick={disabled}>{lang === 'ru'&& <>Ж</>}{lang === 'en'&& <>H</>}</button>
+            <button className='btn btn-sm btn-warning' onClick={disabled}>{lang === 'ru'&& <>З</>}{lang === 'en'&& <>I</>}</button>
+            <button className='btn btn-sm btn-warning' onClick={disabled}>{lang === 'ru'&& <>И</>}{lang === 'en'&& <>J</>}</button>
+            <button className='btn btn-sm btn-warning' onClick={disabled}>{lang === 'ru'&& <>Й</>}{lang === 'en'&& <>K</>}</button>
+            <button className='btn btn-sm btn-warning' onClick={disabled}>{lang === 'ru'&& <>К</>}{lang === 'en'&& <>L</>}</button>
+            <button className='btn btn-sm btn-warning' onClick={disabled}>{lang === 'ru'&& <>Л</>}{lang === 'en'&& <>M</>}</button>
+            <button className='btn btn-sm btn-warning' onClick={disabled}>{lang === 'ru'&& <>М</>}{lang === 'en'&& <>N</>}</button>
+            <button className='btn btn-sm btn-warning' onClick={disabled}>{lang === 'ru'&& <>Н</>}{lang === 'en'&& <>O</>}</button>
+            <button className='btn btn-sm btn-warning' onClick={disabled}>{lang === 'ru'&& <>О</>}{lang === 'en'&& <>P</>}</button>
+            <button className='btn btn-sm btn-warning' onClick={disabled}>{lang === 'ru'&& <>П</>}{lang === 'en'&& <>Q</>}</button>
+            <button className='btn btn-sm btn-warning' onClick={disabled}>{lang === 'ru'&& <>Р</>}{lang === 'en'&& <>R</>}</button>
+            <button className='btn btn-sm btn-warning' onClick={disabled}>{lang === 'ru'&& <>С</>}{lang === 'en'&& <>S</>}</button>
+            <button className='btn btn-sm btn-warning' onClick={disabled}>{lang === 'ru'&& <>Т</>}{lang === 'en'&& <>T</>}</button>
+            <button className='btn btn-sm btn-warning' onClick={disabled}>{lang === 'ru'&& <>У</>}{lang === 'en'&& <>U</>}</button>
+            <button className='btn btn-sm btn-warning' onClick={disabled}>{lang === 'ru'&& <>Ф</>}{lang === 'en'&& <>V</>}</button>
+            <button className='btn btn-sm btn-warning' onClick={disabled}>{lang === 'ru'&& <>Х</>}{lang === 'en'&& <>W</>}</button>
+            <button className='btn btn-sm btn-warning' onClick={disabled}>{lang === 'ru'&& <>Ц</>}{lang === 'en'&& <>X</>}</button>
+            <button className='btn btn-sm btn-warning' onClick={disabled}>{lang === 'ru'&& <>Ч</>}{lang === 'en'&& <>Y</>}</button>
+            <button className='btn btn-sm btn-warning' onClick={disabled}>{lang === 'ru'&& <>Ш</>}{lang === 'en'&& <>Z</>}</button>
+            {lang === 'ru' && <button className='btn btn-sm btn-warning' onClick={disabled}>Щ</button> }
+            {lang === 'ru' && <button className='btn btn-sm btn-warning' onClick={disabled}>Ъ</button> }
+            {lang === 'ru' && <button className='btn btn-sm btn-warning' onClick={disabled}>Ы</button> }
+            {lang === 'ru' && <button className='btn btn-sm btn-warning' onClick={disabled}>Ь</button> }
+            {lang === 'ru' && <button className='btn btn-sm btn-warning' onClick={disabled}>Э</button> }
+            {lang === 'ru' && <button className='btn btn-sm btn-warning' onClick={disabled}>Ю</button> }
+            {lang === 'ru' && <button className='btn btn-sm btn-warning' onClick={disabled}>Я</button> }
             <div className='row align-items-center'>
                 <div className='col'>
                     <button className='btn btn-warning' onClick={showPrevWord}>
@@ -98,7 +109,7 @@ function Letters({isLogged, colorsArray, showKey}) {
             {/*<div>*/}
             {/*    <img className='helper' src={helper} alt='helper'/>*/}
             {/*</div>*/}
-            <Contacts/>
+            <Contacts lang={lang}/>
         </div>
     )
 }
