@@ -50,7 +50,7 @@ function App() {
                 <Route path='/numbers' render={() => <Numbers showKey={showKey} isLogged={isLogged} colorsArray={colorsArray}/>}/>
                 <Route path='/tasks' render={() => <Tasks showKey={showKey} right={5} trueKey={key} isLogged={isLogged} lang={lang} />}/>
                 <Route path='/examples' render={() => <Examples showKey={showKey} right={8} trueKey={key} n={10} isLogged={isLogged} colorsArray={colorsArray} lang={lang}/>}/>
-                <Route path='/hardExamples' render={() => <Examples showKey={showKey} right={6} trueKey={key} n={20} isLogged={isLogged} colorsArray={colorsArray}/>}/>
+                <Route path='/hardExamples' render={() => <Examples showKey={showKey} right={6} trueKey={key} n={20} isLogged={isLogged} colorsArray={colorsArray} lang={lang}/>}/>
                 <Route path='/insertValue' render={() => <InsertValue showKey={showKey} right={8} trueKey={key} isLogged={isLogged} colorsArray={colorsArray} lang={lang}/>}/>
                 <Route path='/contacts' render={() => <Contacts lang={lang}/>}/>
                 <Route path='/popit' render={() => <Popit notShowKey={notShowKey} colorsArray={colorsArray} trueKey={key} setNewKey={setNewKey} lang={lang} />}/>
