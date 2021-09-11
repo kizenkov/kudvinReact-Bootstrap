@@ -33,13 +33,13 @@ function InsertValue({isLogged, colorsArray, showKey, right, lang}) {
     const [C5, setC5] = useState(Math.trunc(Math.random() * 11));
     const [D5, setD5] = useState(Math.trunc(Math.random() * 11));
 
-    let showTime;
     let arr = [];
     const button = useRef();
     // const result = useRef();
     const time = useRef();
 
     //timer
+    let showTime;
     useEffect(() => {
         showTime = setInterval(function () {
             setSec(sec - 1)

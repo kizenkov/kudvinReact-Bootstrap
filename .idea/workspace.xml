@@ -5,13 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3ccc0f47-c84b-4be3-b90f-9d9c64d2d083" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/InsertValue/ExampleValue.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/InsertValue/ExampleValue1.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/InsertValue/ExampleValue2.jsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/InsertValue/InsertValue.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/InsertValue/InsertValue.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Navbar/Navbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navbar/Navbar.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Tasks/Tasks.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Tasks/Tasks.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
     </list>
@@ -77,7 +72,7 @@
       <workItem from="1630699657158" duration="63471000" />
       <workItem from="1631039925468" duration="1187000" />
       <workItem from="1631041871203" duration="3082000" />
-      <workItem from="1631128328406" duration="22464000" />
+      <workItem from="1631128328406" duration="25482000" />
     </task>
     <servers />
   </component>
