@@ -43,8 +43,8 @@ code {
     border-color: white;
 }
 
-.navbar-brand:hover:after {
-    width: 0;
+.key {
+    color: dodgerblue;
 }
 
 .navbar-dark .navbar-nav .nav-link {
@@ -73,11 +73,11 @@ code {
     transition: 0.3s;
 }
 
-a {
+.nav-link {
     position: relative;
 }
 
-a:after {
+.nav-link:after {
     display: block;
     position: absolute;
     left: 0;
@@ -88,7 +88,7 @@ a:after {
     transition: width 0.3s ease-out;
 }
 
-a:hover:after {
+.nav-link:hover:after {
     width: 100%;
 }
 

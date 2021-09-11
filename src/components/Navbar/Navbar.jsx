@@ -45,21 +45,20 @@ function Navbar({isLogged, setLogged, keyForNavbar, setLang, lang}) {
     // }
 
     function notShow() {
-        menu.current.classList.remove('show');
+        menu.current['classList'].remove('show');
     }
 
     function setLangAndNotShow(lang) {
         setLang(lang);
-        menu.current.classList.remove('show');
+        menu.current['classList'].remove('show');
     }
 
     return (
-
         <nav className='navbar navbar-expand-lg navbar-dark bg-dark fs-5'>
             <div className='container-fluid px-1'>
                 <NavLink to='/' className='navbar-brand fs-2 fst-italic' onClick={notShow}><img src={clover}
                                                                                                 alt='clover'/> CleverKUDViN</NavLink>
-                {keyForNavbar && <span className='nav-link fs-6 text-center'>
+                {keyForNavbar && <span className='fs-6 text-center key'>
                     {lang === 'ru' && <>Ключ</>}
                     {lang === 'en' && <>Key</>}:
                     <br/>{keyForNavbar}
@@ -141,12 +140,12 @@ function Navbar({isLogged, setLogged, keyForNavbar, setLang, lang}) {
                                 <i className="bi bi-globe"></i>
                             </a>
                             <ul className='dropdown-menu dropdown-menu-dark bg-dark' aria-labelledby='navbarDropdown'>
-                                <li><a type='button' className='nav-link m-2' href='#' onClick={() => setLangAndNotShow('ru')}>
+                                <li><button className='btn btn-link nav-link m-2 w-100 text-start' onClick={() => setLangAndNotShow('ru')}>
                                     RU
-                                </a></li>
-                                <li><a type='button' className='nav-link m-2' href='#' onClick={() => setLangAndNotShow('en')}>
+                                </button></li>
+                                <li><button className='btn btn-link nav-link m-2 w-100 text-start' onClick={() => setLangAndNotShow('en')}>
                                     EN
-                                </a></li>
+                                </button></li>
                             </ul>
                         </li>
                         <li className='nav-item m-2'>

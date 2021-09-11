@@ -1,9 +1,7 @@
 import {useRef, useState, useEffect} from 'react';
-import ExampleValue1 from './ExampleValue1';
-import ExampleValue2 from './ExampleValue2';
+import ExampleValue from './ExampleValue';
 import helper from '../../files/helper1.gif';
 import Contacts from '../Contacts/Contacts';
-
 // import {Redirect} from 'react-router-dom';
 
 function InsertValue({isLogged, colorsArray, showKey, right, lang}) {
@@ -76,7 +74,7 @@ function InsertValue({isLogged, colorsArray, showKey, right, lang}) {
                 el[6].current.style.color = 'red';
             }
 
-            if (el[8] === true) {
+            if (el[8]) {
                 if (+el[5].current.value === el[2] - el[3]) {
                     el[7].current.innerHTML = '✓';
                     el[7].current.style.color = 'lime';
@@ -142,11 +140,11 @@ function InsertValue({isLogged, colorsArray, showKey, right, lang}) {
 
     return (
         <div><br/>
-            <ExampleValue1 arr={arr} a={A1} b={B1} c={C1} d={D1} colorsArray={colorsArray}/>
-            <ExampleValue2 arr={arr} a={A2} b={B2} c={C2} d={D2} colorsArray={colorsArray}/>
-            <ExampleValue1 arr={arr} a={A3} b={B3} c={C3} d={D3} colorsArray={colorsArray}/>
-            <ExampleValue2 arr={arr} a={A4} b={B4} c={C4} d={D4} colorsArray={colorsArray}/>
-            <ExampleValue1 arr={arr} a={A5} b={B5} c={C5} d={D5} colorsArray={colorsArray}/>
+            <ExampleValue arr={arr} a={A1} b={B1} c={C1} d={D1} colorsArray={colorsArray}/>
+            <ExampleValue arr={arr} a={A2} b={B2} c={C2} d={D2} colorsArray={colorsArray} isInputSecond={true}/>
+            <ExampleValue arr={arr} a={A3} b={B3} c={C3} d={D3} colorsArray={colorsArray}/>
+            <ExampleValue arr={arr} a={A4} b={B4} c={C4} d={D4} colorsArray={colorsArray} isInputSecond={true}/>
+            <ExampleValue arr={arr} a={A5} b={B5} c={C5} d={D5} colorsArray={colorsArray}/>
             <div className='row align-items-center text-center'>
                 <span className='col-lg-5 col-md-12 col-sm-12 col-xs-12 fs-4 fst-italic p-1 time'
                       ref={time}>
