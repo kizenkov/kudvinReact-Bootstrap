@@ -140,10 +140,10 @@ function Navbar({isLogged, setLogged, keyForNavbar, setLang, lang}) {
                                 <i className="bi bi-globe"></i>
                             </a>
                             <ul className='dropdown-menu dropdown-menu-dark bg-dark' aria-labelledby='navbarDropdown'>
-                                <li><button className='btn btn-link nav-link m-2 w-100 text-start' onClick={() => setLangAndNotShow('ru')}>
+                                <li><button className='btn btn-link nav-link m-2 w-50 text-start' onClick={() => setLangAndNotShow('ru')}>
                                     RU
                                 </button></li>
-                                <li><button className='btn btn-link nav-link m-2 w-100 text-start' onClick={() => setLangAndNotShow('en')}>
+                                <li><button className='btn btn-link nav-link m-2 w-50 text-start' onClick={() => setLangAndNotShow('en')}>
                                     EN
                                 </button></li>
                             </ul>

@@ -25,26 +25,35 @@ function Main({lang}) {
                 <div className='col-11 '>
                     <p className='fs-4 mainText'>
                         {lang === 'ru' && <>Сегодня не всем удаётся полностью изолировать своих чад от
-                            современных гаджетов. И, чтобы скоротать время, сидя в очереди, или не заскучать в машине, дети просят телефон.
-                            Так пусть они проведут это время с пользой! Перед Вами простой и понятный набор упражнений для детей от 3х до 8ми лет, благодаря которым
-                            мои дети выучили буквы, слоги и тренируются в счёте и задачах! А с веселыми помощниками обучение
+                            современных гаджетов. И, чтобы скоротать время, сидя в очереди, или не заскучать в машине,
+                            дети просят телефон.
+                            Так пусть они проведут это время с пользой! Перед Вами простой и понятный набор упражнений
+                            для детей от 3х до 8ми лет, благодаря которым
+                            мои дети выучили буквы, слоги и тренируются в счёте и задачах! А с веселыми помощниками
+                            обучение
                             будет проходить вдвойне интересней!</>}
                         {lang === 'en' && <>Today, not everyone manages to completely isolate their children from
-                            modern gadgets. And to pass the time, sitting in line, or not to get bored in the car, children ask for a phone.
-                            So let them make good use of this time! Here is a simple and understandable set of exercises for children from 3 to 8 years old, thanks to which
-                            my kids have learned letters, syllables and are practicing counting and problems! And with fun helpers, learning
+                            modern gadgets. And to pass the time, sitting in line, or not to get bored in the car,
+                            children ask for a phone.
+                            So let them make good use of this time! Here is a simple and understandable set of exercises
+                            for children from 3 to 8 years old, thanks to which
+                            my kids have learned letters, syllables and are practicing counting and problems! And with
+                            fun helpers, learning
                             will be doubly interesting!</>}
-                         <img src={helper} className='helperForMain' alt='helper'/>
+                        <img src={helper} className='helperForMain' alt='helper'/>
                     </p>
                     <p className='fs-4 mainText'>
-                        {lang === 'ru' && <>В разделе «Буквы», выбрав те, которые ребёнок не выговаривает, Вы будете изучать алфавит уже
+                        {lang === 'ru' && <>В разделе «Буквы», выбрав те, которые ребёнок не выговаривает, Вы будете
+                            изучать алфавит уже
                             без них. Не забывайте, что должно проводиться звуковое обучение: произносится звук, а не
                             буква (буква «В» произносится как звук «В», а не «ВЭ»; буква «М» - звук «М», а не «ЭМ»).</>}
-                        {lang === 'en' && <>In the section «Letters», choosing those that the child does not pronounce, you will learn the alphabet already
-                            without them. Do not forget that sound training must be carried out: the sound is pronounced, not
+                        {lang === 'en' && <>In the section «Letters», choosing those that the child does not pronounce,
+                            you will learn the alphabet already
+                            without them. Do not forget that sound training must be carried out: the sound is
+                            pronounced, not
                             letter.</>}
                     </p>
-
+                    {lang === 'ru' &&
                     <div id='carousel1' className='carousel carousel-dark slide ' data-bs-ride='carousel'>
                         <div className='carousel-inner text-center'>
                             <div className='carousel-item active'>
@@ -62,19 +71,28 @@ function Main({lang}) {
                                 data-bs-slide='next'>
                             <span className='carousel-control-next-icon' aria-hidden='true'></span>
                         </button>
-                    </div>
+                    </div>}
 
+                    {lang === 'en' &&
+                    <div id='carousel1' className='carousel carousel-dark slide ' data-bs-ride='carousel'>
+                        <div className='carousel-inner text-center'>
+                            <div className='carousel-item active'>
+                                <img src={letters} alt='letters'/>
+                            </div>
+                        </div>
+                    </div>}
+
+                    {lang === 'ru' && <p className='fs-4 mainText'>
+                        Слоговая таблица во вкладке «Слоги». Слог активируется нажатием на него, деактивируется
+                        вторым нажатием.
+                    </p>}
                     <p className='fs-4 mainText'>
-                        {lang === 'ru' && <>Слоговая таблица во вкладке «Слоги». Слог активируется нажатием на него, деактивируется
-                            вторым нажатием.</>}
-                        {lang === 'en' && <>Syllabic table in the «Syllables» tab. The syllable is activated by clicking on it, deactivated
-                            second by pressing.</>}
-                    </p>
-                    <p className='fs-4 mainText'>
-                        {lang === 'ru' && <>Учить цифры лучше в игре и когда ребёнок к этому расположен. Так что, если у Вас хорошее
+                        {lang === 'ru' && <>Учить цифры лучше в игре и когда ребёнок к этому расположен. Так что, если у
+                            Вас хорошее
                             настроение, заходите в раздел «Счёт». Он в себе содержит числа от 1 до 21, а также 0, так
                             как это основные числа для запоминания.</>}
-                        {lang === 'en' && <>It is better to learn numbers in the game and when the child is disposed to it. So if you have a good
+                        {lang === 'en' && <>It is better to learn numbers in the game and when the child is disposed to
+                            it. So if you have a good
                             mood, go to the «Account» section. It contains numbers from 1 to 21, as well as 0, so
                             how are these basic numbers to remember.</>}
                     </p>
@@ -99,16 +117,22 @@ function Main({lang}) {
                     </div>
 
                     <p className='fs-4 mainText'>
-                        {lang === 'ru' && <>Заметьте, что «Задачки» не только на вычисление, но и на внимательность. Не торопитесь.</>}
-                        {lang === 'en' && <>Please note that «Tasks» are not only for calculation, but also for attentiveness. Do not hurry.</>}
+                        {lang === 'ru' && <>Заметьте, что «Задачки» не только на вычисление, но и на внимательность. Не
+                            торопитесь.</>}
+                        {lang === 'en' && <>Please note that «Tasks» are not only for calculation, but also for
+                            attentiveness. Do not hurry.</>}
                     </p>
                     <p className='fs-4 mainText'>
-                        {lang === 'ru' && <>«Примеры» делятся на простые и сложные, в которых используются цифры от 0 до 10 и от 10 до
+                        {lang === 'ru' && <>«Примеры» делятся на простые и сложные, в которых используются цифры от 0 до
+                            10 и от 10 до
                             30 соответственно. В разделе «Примеры» идет счёт затраченного времени, а в разделе «Вставить
-                            число» таймер отсчитывает 1 минуту, в течение которой необходимо успеть справиться с заданием.</>}
-                        {lang === 'en' && <>«Examples» are divided into simple and complex, which use numbers from 0 to 10 and from 10 to
+                            число» таймер отсчитывает 1 минуту, в течение которой необходимо успеть справиться с
+                            заданием.</>}
+                        {lang === 'en' && <>«Examples» are divided into simple and complex, which use numbers from 0 to
+                            10 and from 10 to
                             30 respectively. In the «Examples» section, the time spent is counted, and in the «Insert
-                            number» the timer counts down 1 minute, during which it is necessary to have time to cope with the task.</>}
+                            number» the timer counts down 1 minute, during which it is necessary to have time to cope
+                            with the task.</>}
                     </p>
 
                     <div id='carousel3' className='carousel carousel-dark slide' data-bs-ride='carousel'>
@@ -130,7 +154,8 @@ function Main({lang}) {
                         </button>
                     </div>
                 </div>
-            </div><br/>
+            </div>
+            <br/>
             <h1 className='text-center'>
                 {lang === 'ru' && <>Успехов!</>}
                 {lang === 'en' && <>Good luck!</>}
