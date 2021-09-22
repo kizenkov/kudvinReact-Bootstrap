@@ -26,7 +26,7 @@ function Popit({colorsArray, trueKey, setNewKey, notShowKey, lang}) {
 
     const checkKey = (e) => {
         e.preventDefault();
-        if (code === trueKey) {
+        if (code == trueKey) {
             setCode('');
             setIsKeyTrue(true);
             notShowKey();
